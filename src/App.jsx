@@ -7,7 +7,7 @@ function PropellerHat() {
   return <primitive object={scene} scale={0.5} />;
 }
 
-const canvasStyle = {
+const canvasStyle = { //move styles out into seperate file later
   display: "block",
   margin: "0 auto",
   height: "80vh",
@@ -16,10 +16,17 @@ const canvasStyle = {
   objectFit: "contain",
 };
 
+const containerStyle = {
+  height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center"
+};
 
 export default function App() {
   return (
-    <Canvas>
+    <div style={containerStyle}>
+    <Canvas style = {canvasStyle}>
       <Suspense fallback={null}>
         <PropellerHat />
         <ambientLight intensity={0.5} />
@@ -27,5 +34,6 @@ export default function App() {
         <OrbitControls />
       </Suspense>
     </Canvas>
+    </div>
   );
 }
