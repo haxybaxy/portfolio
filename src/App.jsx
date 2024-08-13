@@ -17,7 +17,7 @@ function PropellerHat() {
 
   return (
     <group ref={group} scale={0.5}>
-      <primitive object={hat} />
+      <primitive object={hat} rotation={[0, 0.523599, 0]} />
       <primitive object={propeller} position={[0, 14, 0]}/>
     </group>
   );
@@ -42,12 +42,15 @@ const containerStyle = {
 export default function App() { //Always add ambient light to the scene
   return (
     <div style={containerStyle}>
-      <Canvas style={canvasStyle}>
+      <Canvas
+      style={canvasStyle}
+      camera={{ position: [2, 2, 20] }} // Adjust camera position and rotation
+      >
         <Suspense fallback={null}>
           <PropellerHat />
           <ambientLight intensity={0.5} />
           <directionalLight position={[10, 10, 5]} intensity={1} />
-          <OrbitControls />
+          <OrbitControls target0={[0, Math.PI, 0]}/>
         </Suspense>
       </Canvas>
     </div>
