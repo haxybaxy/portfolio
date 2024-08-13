@@ -1,13 +1,29 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
 function PropellerHat() {
-  const { scene } = useGLTF("../public/propeller_hat-v2/propeller_hat.gltf");
-  return <primitive object={scene} scale={0.5} />;
+  const group = useRef();
+  const { nodes } = useGLTF("../public/propeller_hat-v2/propeller_hat.gltf");
+  // console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
+
+  const hat = nodes.Hat__0;
+  const propeller = nodes.Propeller__0;
+
+  // Spin the propeller
+  useFrame(() => {
+    propeller.rotation.y += 0.1; // Adjust the speed and axis as needed
+  });
+
+  return (
+    <group ref={group} scale={0.5}>
+      <primitive object={hat} />
+      <primitive object={propeller} position={[0, 14, 0]}/>
+    </group>
+  );
 }
 
-const canvasStyle = { //move styles out into seperate file later
+const canvasStyle = { // Move styles out into a separate file later
   display: "block",
   margin: "0 auto",
   height: "80vh",
@@ -23,17 +39,17 @@ const containerStyle = {
   alignItems: "center"
 };
 
-export default function App() {
+export default function App() { //Always add ambient light to the scene
   return (
     <div style={containerStyle}>
-    <Canvas style = {canvasStyle}>
-      <Suspense fallback={null}>
-        <PropellerHat />
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        <OrbitControls />
-      </Suspense>
-    </Canvas>
+      <Canvas style={canvasStyle}>
+        <Suspense fallback={null}>
+          <PropellerHat />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <OrbitControls />
+        </Suspense>
+      </Canvas>
     </div>
   );
 }
