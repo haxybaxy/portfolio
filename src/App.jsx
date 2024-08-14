@@ -44,7 +44,7 @@ export default function App() { //Always add ambient light to the scene
     <div style={containerStyle}>
       <Canvas
       style={canvasStyle}
-      camera={{ position: [2, 2, 20] }} // Adjust camera position and rotation
+      camera={{ position: [2, 10, 20] }} // Camera position
       >
         <Suspense fallback={null}>
           <PropellerHat />
