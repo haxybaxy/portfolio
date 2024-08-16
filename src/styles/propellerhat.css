@@ -5,10 +5,44 @@
   width: 100%;
   max-height: 100%;
   object-fit: contain;
+
 }
 
 .containerStyle {
-  height: 50vh;
-  width: 30vw;
-  display: inline-block;
+  height: 30vh;
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: hsla(0, 0%, 100%, 1);
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+
+  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+
+  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#7B90ED", GradientType=1 );
+}
+
+.propellerHat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinMe {
+  font-weight: bold;
+  visibility: hidden;
+  opacity: 0;
+  height: 1em;
+  line-height: 1em;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
+}
+
+.spinMe.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }

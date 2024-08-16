@@ -17,7 +17,7 @@ function PropellerHat() {
   });
 
   return (
-    <group ref={group} scale={0.5}>
+    <group ref={group} scale={0.7}>
       <primitive object={hat} rotation={[0, 0.523599, 0]} />
       <primitive object={propeller} position={[0, 14, 0]}/>
     </group>
@@ -26,11 +26,29 @@ function PropellerHat() {
 
 
 export default function PropellerHatModel() {
+
+  const handleMouseEnter = () => {
+    const spinMeText = document.querySelector(".spinMe");
+    if (spinMeText) {
+      spinMeText.classList.add("visible");
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const spinMeText = document.querySelector(".spinMe");
+    if (spinMeText) {
+      spinMeText.classList.remove("visible");
+    }
+  };
+
   return (
+    <div className="propellerHat">
     <div className="containerStyle">
       <Canvas
       className="canvasStyle"
       camera={{ position: [2, 10, 20] }} // Camera position
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       >
         <Suspense fallback={null}>
           <PropellerHat />
@@ -39,6 +57,8 @@ export default function PropellerHatModel() {
           <OrbitControls enablePan={false} enableZoom={false} />
         </Suspense>
       </Canvas>
+    </div>
+    <p className="spinMe">&#x293B; Spin Me!</p>
     </div>
   );
 }
