@@ -4,7 +4,7 @@ import "../styles/intro.css";
 
 export default function Intro() {
   return (
-    <div className="intro-container">
+    <div className="intro-container" id="intro">
       <PropellerHatModel />
       <div id="title">
         <h1>Zaid Alsaheb</h1>
