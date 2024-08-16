@@ -10,26 +10,6 @@ import "../styles/navigation.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {
-  const [showNavbar, setShowNavbar] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.pageYOffset;
-      const threshold = window.innerHeight;
-      if (position > threshold) {
-        setShowNavbar(false);
-      } else {
-        setShowNavbar(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const handleNavClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -40,7 +20,7 @@ const NavBar = () => {
   return (
     <Navbar
       fixed="top"
-      className={`bg-body-tertiary ${showNavbar ? "visible" : "hidden"}`}
+      className={"bg-body-tertiary"}
     >
       <Container>
         <Navbar.Brand href="#">haxybaxy</Navbar.Brand>
