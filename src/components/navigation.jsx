@@ -21,6 +21,7 @@ const NavBar = () => {
     <Navbar
       fixed="top"
       className={"bg-body-tertiary"}
+      expand="lg"
     >
       <Container>
         <Navbar.Brand href="#">haxybaxy</Navbar.Brand>
@@ -32,22 +33,27 @@ const NavBar = () => {
             <Nav.Link onClick={() => handleNavClick("experience")}>Experience</Nav.Link>
             <Nav.Link onClick={() => handleNavClick("projects")}>Projects</Nav.Link>
           </Nav>
-          <Nav className="ml-auto">
-            <Nav.Link href="mailto:zaidksaheb@gmail.com">
+          <Nav className="ml-auto d-flex flex-row justify-content-end">
+            <Nav.Link href="mailto:zaidksaheb@gmail.com" className="mx-2">
               <EmailRoundedIcon style={{ fontSize: 20 }} />
             </Nav.Link>
-            <Nav.Link href="https://github.com/haxybaxy" target="_blank">
+            <Nav.Link
+              href="https://github.com/haxybaxy"
+              target="_blank"
+              className="mx-2">
               <GitHubIcon style={{ fontSize: 19 }} />
             </Nav.Link>
             <Nav.Link
               href="https://www.linkedin.com/in/zaidsaheb/"
               target="_blank"
+              className="mx-2"
             >
               <LinkedInIcon style={{ fontSize: 21 }} />
             </Nav.Link>
             <Nav.Link
               href="https://medium.com/@haxybaxy"
               target="_blank"
+              className="mx-2"
             >
               <BorderColorIcon style={{ fontSize: 20 }} />
             </Nav.Link>

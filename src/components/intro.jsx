@@ -7,8 +7,8 @@ export default function Intro() {
     <div className="intro-container" id="intro">
       <PropellerHatModel />
       <div id="title">
-        <h1>Zaid Alsaheb</h1>
-        <p>Welcome to my portfolio!</p>
+        <h1>hello, i am <span className="purpletext">zaid</span> 👋</h1>
+        <p>I like making things</p>
       </div>
     </div>
   );

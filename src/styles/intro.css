@@ -9,3 +9,7 @@
   align-items: center; /* Center items horizontally */
   height: 100vh; /* Make the div take up the full height of the viewport */
 }
+
+.purpletext {
+  color: hsla(295, 71%, 67%, 1);
+}
