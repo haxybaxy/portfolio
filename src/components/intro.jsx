@@ -6,7 +6,10 @@ export default function Intro() {
   return (
     <div className="intro-container">
       <PropellerHatModel />
-      <h1 id="title">Zaid Alsaheb</h1>
+      <div id="title">
+        <h1>Zaid Alsaheb</h1>
+        <p>Welcome to my portfolio!</p>
+      </div>
     </div>
   );
 }
