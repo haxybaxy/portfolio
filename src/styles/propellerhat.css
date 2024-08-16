@@ -1,0 +1,14 @@
+.canvasStyle {
+  display: block;
+  margin: 0 auto;
+  height: 80vh;
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.containerStyle {
+  height: 50vh;
+  width: 30vw;
+  display: inline-block;
+}

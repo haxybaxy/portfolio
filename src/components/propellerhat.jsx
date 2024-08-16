@@ -1,0 +1,44 @@
+import React, { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import "../styles/propellerhat.css";
+
+function PropellerHat() {
+  const group = useRef();
+  const { nodes } = useGLTF("../../public/propeller_hat-v2/propeller_hat.gltf");
+  // console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
+
+  const hat = nodes.Hat__0;
+  const propeller = nodes.Propeller__0;
+
+  // Spin the propeller
+  useFrame(() => {
+    propeller.rotation.y += 0.1; // Adjust the speed and axis as needed
+  });
+
+  return (
+    <group ref={group} scale={0.5}>
+      <primitive object={hat} rotation={[0, 0.523599, 0]} />
+      <primitive object={propeller} position={[0, 14, 0]}/>
+    </group>
+  );
+}
+
+
+export default function PropellerHatModel() {
+  return (
+    <div className="containerStyle">
+      <Canvas
+      className="canvasStyle"
+      camera={{ position: [2, 10, 20] }} // Camera position
+      >
+        <Suspense fallback={null}>
+          <PropellerHat />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[10, 10, 5]} intensity={1} />
+          <OrbitControls enablePan={false} enableZoom={false} />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+}
