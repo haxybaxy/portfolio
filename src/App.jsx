@@ -4,6 +4,7 @@ import AboutMe from "./components/aboutme";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
 import NavBar from "./components/navigation";
+import NewAboutMe from "./components/newaboutme";
 import "./styles/app.css";
 
 export default function App() { //Always add ambient light to the scene
@@ -14,6 +15,7 @@ export default function App() { //Always add ambient light to the scene
       <AboutMe />
       <Experience />
       <Projects />
+      <NewAboutMe />
     </div>
   );
 }

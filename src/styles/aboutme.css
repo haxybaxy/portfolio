@@ -108,3 +108,19 @@ hr {
   top: 2px;
   z-index: 2;
 }
+
+.typeAnimation {
+  font-family: 'Fira Code', monospace;
+  font-size: calc(1.375rem + 1.5vw); /* Adjust size as needed */
+  font-weight: 500;
+  padding: 15px;
+  display: inline-block;
+}
+.promptchars {
+  color: hsl(116, 96%, 43%);
+  font-family: 'Fira Code', monospace;
+  font-size: calc(1.375rem + 1.5vw); /* Adjust size as needed */
+  font-weight: 500;
+  padding: 20px;
+  display: inline-block;
+}

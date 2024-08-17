@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 400px;
+  max-width: 600px;
+  text-align: center;
 }
 
 .intro-container {
@@ -11,6 +12,7 @@
   justify-content: center; /* Center items vertically */
   align-items: center; /* Center items horizontally */
   height: 100vh; /* Make the div take up the full height of the viewport */
+  padding-top: 10vh;
 }
 
 .purpletext {
@@ -20,6 +22,7 @@
 h2 {
   font-size: 1em;
   color: gray !important;
+  text-align: center;
 }
 
 .contactButton {
@@ -43,6 +46,5 @@ h2 {
 }
 
 p {
-  text-align: justify;
-  text-justify: auto;
+  text-align: center;
 }
