@@ -5,7 +5,7 @@ import FadeInSection from "./fadeinsection"; // Import the Fadein component
 
 export default function AboutMe() {
   return (
-    <Window title="about me">
+    <Window title="about me" id="aboutme">
       <div className="contentContainer">
         <div className="textContainer">
           <p>

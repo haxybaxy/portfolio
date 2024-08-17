@@ -74,9 +74,9 @@ export default function Experience() {
   };
 
   return (
-    <Window title="experience">
+    <Window title="experience" id="experience">
     <ThemeProvider theme={theme}>
-      <div className="experience" id="experience">
+      <div className="experience" >
         <h1>Experience</h1>
         <Box
           sx={{

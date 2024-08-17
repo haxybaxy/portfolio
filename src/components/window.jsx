@@ -3,11 +3,11 @@ import "../styles/window.css";
 import FadeInSection from "./fadeinsection";
 import { Typewriter } from 'react-simple-typewriter';
 
-export default function Window({children, title}) {
+export default function Window({children, title,id}) {
   const [startTyping, setStartTyping] = useState(false);
   return (
     <FadeInSection onVisible={() => setStartTyping(true)}>
-    <div className="window">
+    <div className="window" id={id}>
       <div className="windowHeader">
         <ul className="windowControls">
           <li className="closeWindow">X</li>
@@ -29,15 +29,16 @@ export default function Window({children, title}) {
             cursorStyle='|'
             cursorBlinking = {false}
             typeSpeed={70}
-            deleteSpeed={50}
             delaySpeed={1000}
           />}
         </span>
       <hr className="headerLine"></hr>
       </div>
+      <FadeInSection delay={'900ms'}>
       <div className="contentContainer">
       {children}
       </div>
+      </FadeInSection>
     </div>
     </FadeInSection>
   );
