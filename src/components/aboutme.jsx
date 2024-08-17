@@ -1,6 +1,7 @@
 import React from "react";
 import Window from "./window"; // Import the Window component
 import "../styles/aboutme.css"; // Assuming this file contains styles specific to the about me content
+import FadeInSection from "./fadeinsection"; // Import the Fadein component
 
 export default function AboutMe() {
   return (
@@ -14,7 +15,7 @@ export default function AboutMe() {
           <p>
             Here are some of the technologies that I've worked with:
           </p>
-
+          <FadeInSection delay={'100ms'}>
           <ul>
             <li>Python</li>
             <li>Java</li>
@@ -22,6 +23,7 @@ export default function AboutMe() {
             <li>React</li>
             <li>Node.js</li>
           </ul>
+          </FadeInSection>
         </div>
         <img src="../../public/myphoto.jpeg" alt="My Photo" />
       </div>

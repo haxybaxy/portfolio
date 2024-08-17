@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .contentContainer {
@@ -68,15 +69,31 @@ hr {
   font-weight: bolder;
 }
 
+.closeWindow:hover {
+  background-color: #8e3336;
+  color:#ff5f56;
+}
+
 .minWindow {
   background-color: #ffbd2e;
   color:#d49408;
   font-weight: bolder;
 }
 
+.minWindow:hover {
+  background-color: #d49408;
+  color:#ffbd2e;
+}
+
 .expandWindow {
   background-color: #27c93f;
   color:#147623;
+  font-size: 7px !important;
+}
+
+.expandWindow:hover {
+  background-color: #147623;
+  color:#27c93f;
   font-size: 7px !important;
 }
 

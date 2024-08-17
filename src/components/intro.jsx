@@ -1,11 +1,13 @@
 import React from "react";
 import PropellerHatModel from "./propellerhat";
+import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
 
 export default function Intro() {
   return (
     <div className="intro-container" id="intro">
       <PropellerHatModel />
+      <FadeInSection>
       <div id="title">
         <h1>Hello, I am <span className="purpletext">Zaid</span> 👋</h1>
         <h2>i like making things</h2>
@@ -17,6 +19,7 @@ export default function Intro() {
       <span>Say Hi!</span>
     </a>
       </div>
+      </FadeInSection>
     </div>
   );
 }

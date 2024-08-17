@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/window.css";
+import FadeInSection from "./fadeinsection";
 import { Typewriter } from 'react-simple-typewriter';
 
 export default function Window({children, title}) {
+  const [startTyping, setStartTyping] = useState(false);
   return (
+    <FadeInSection onVisible={() => setStartTyping(true)}>
     <div className="window">
       <div className="windowHeader">
         <ul className="windowControls">
@@ -19,7 +22,7 @@ export default function Window({children, title}) {
       <div className="sectionHeader">
         <h1 className="promptchars"> <span style={{color:"#74c7ec"}}> ~ </span> ❯</h1>
         <span className="typeAnimation">
-        <Typewriter
+        {startTyping && <Typewriter
             words={[title]}
             loop={1}
             cursor = {false}
@@ -28,7 +31,7 @@ export default function Window({children, title}) {
             typeSpeed={70}
             deleteSpeed={50}
             delaySpeed={1000}
-          />
+          />}
         </span>
       <hr className="headerLine"></hr>
       </div>
@@ -36,5 +39,6 @@ export default function Window({children, title}) {
       {children}
       </div>
     </div>
+    </FadeInSection>
   );
 }
