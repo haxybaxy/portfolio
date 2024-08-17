@@ -5,11 +5,12 @@ import "../styles/propellerhat.css";
 
 function PropellerHat() {
   const group = useRef();
-  const { nodes } = useGLTF("../../public/propeller_hat-v2/propeller_hat.gltf");
-  // console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
+  const { nodes } = useGLTF("../../public/propeller_hat-v3/propellerhat.gltf");
+  console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
 
   const hat = nodes.Hat__0;
   const propeller = nodes.Propeller__0;
+  const sphere = nodes.Sphere;
 
   // Spin the propeller
   useFrame(() => {
@@ -20,6 +21,7 @@ function PropellerHat() {
     <group ref={group} scale={0.7}>
       <primitive object={hat} rotation={[0, 0.523599, 0]} />
       <primitive object={propeller} position={[0, 14, 0]}/>
+      <primitive object={sphere}  scale={[11, 11, 11]} rotation={[0.7,0.523599,-0.4]}/>
     </group>
   );
 }
