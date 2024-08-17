@@ -22,7 +22,7 @@ export default function Window({children, title}) {
         <Typewriter
             words={[title]}
             loop={1}
-            cursor
+            cursor = {false}
             cursorStyle='|'
             cursorBlinking = {false}
             typeSpeed={70}

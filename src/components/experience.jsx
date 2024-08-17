@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Tabs, Tab, Box, Typography, ThemeProvider, createTheme } from "@mui/material";
+import Window from "./window";
 import "../styles/experience.css";
 
 const theme = createTheme({
@@ -73,6 +74,7 @@ export default function Experience() {
   };
 
   return (
+    <Window title="experience">
     <ThemeProvider theme={theme}>
       <div className="experience" id="experience">
         <h1>Experience</h1>
@@ -116,5 +118,6 @@ export default function Experience() {
         </Box>
       </div>
     </ThemeProvider>
+    </Window>
   );
 }
