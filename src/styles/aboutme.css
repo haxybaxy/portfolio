@@ -4,4 +4,35 @@
   border-radius: 20px;
   background-color: rgb(48, 48, 48);
   margin:30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 20px
+}
+
+img {
+  max-width: 300px;
+  max-height: 300px;
+  align-self: center;
+}
+
+h1 {
+  display: inline;
+}
+
+hr {
+  display: inline;
 }
