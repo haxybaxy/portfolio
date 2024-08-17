@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/aboutme.css";
+import "../styles/window.css";
 import { Typewriter } from 'react-simple-typewriter';
 
 export default function Window({children, title}) {
   return (
-    <div className="aboutme" id="aboutme">
+    <div className="window">
       <div className="windowHeader">
         <ul className="windowControls">
           <li className="closeWindow">X</li>
@@ -17,7 +17,7 @@ export default function Window({children, title}) {
 
       </div>
       <div className="sectionHeader">
-        <h1 className="promptchars">~ ❯</h1>
+        <h1 className="promptchars"> <span style={{color:"#74c7ec"}}> ~ </span> ❯</h1>
         <span className="typeAnimation">
         <Typewriter
             words={[title]}
