@@ -12,7 +12,7 @@
   max-width: 300px;
   max-height: 300px;
   align-self: center;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 
 .aboutMeContainer {
@@ -34,7 +34,7 @@
 .skillsList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 10px; /* Adjust the gap between items */
+  gap: 15px; /* Adjust the gap between items */
   list-style-type: none; /* Remove bullets */
   padding: 0;
   margin: 10;
@@ -43,8 +43,49 @@
 .skillIcon {
   max-width: 40px;
   max-height: 40px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 50%;
   padding: 10px;
   margin-right: 5px;
+}
+
+.imgAndSocials {
+  position: relative;
+  display: inline-block;
+  color: #000000;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  transform: rotate(-2deg); /* Rotate the Polaroid for a more realistic look */
+}
+
+.socialIcon {
+  color: #000000; /* Set the color to black */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */;
+}
+
+.socialIcon:hover {
+  color: #5b5b5b; /* Ensure the hover color is also black */
+}
+
+.photoCaption {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.2em;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.tape {
+  position: absolute;
+  top: -20px; /* Adjust to position the tape above the div */
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Center and rotate the tape for a natural look */
+  width: 80px; /* Width of the tape */
+  height: 30px; /* Height of the tape */
+  background-color: #f0e68c; /* Light yellowish color to mimic tape */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for realism */
+  z-index: 1; /* Make sure the tape is on top of the Polaroid */
+  opacity: 0.8; /* Slightly transparent for a more realistic effect */
 }

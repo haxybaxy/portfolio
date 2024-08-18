@@ -2,6 +2,7 @@ import React from "react";
 import Window from "./window"; // Import the Window component
 import "../styles/aboutme.css"; // Assuming this file contains styles specific to the about me content
 import FadeInSection from "./fadeinsection"; // Import the Fadein component
+import { GitHub, LinkedIn, Article } from "@mui/icons-material";
 
 const skills = [
   { name: "Python", icon: "../../public/icons/python.svg" },
@@ -21,8 +22,8 @@ const skills = [
   { name: "Firebase", icon: "../../public/icons/firebase.svg" },
   { name: "Linux", icon: "../../public/icons/linux.svg" },
   { name: "Docker", icon: "../../public/icons/docker.svg" },
-  { name: "Github Actions", icon: "../../public/icons/github.svg" },
-  { name: "Scikit-Learn", icon: "../../public/icons/scikitlearn.svg" },
+  { name: "GH Actions", icon: "../../public/icons/github.svg" },
+  { name: "SK-Learn", icon: "../../public/icons/scikitlearn.svg" },
   { name: "Hugging Face", icon: "../../public/icons/huggingface.svg" },
   { name: "PyTorch", icon: "../../public/icons/pytorch.svg" },
   { name: "TensorFlow", icon: "../../public/icons/tensorflow.svg" },
@@ -54,9 +55,25 @@ export default function AboutMe() {
               ))}
           </ul>
           </FadeInSection>
-          <p>You can check also check out my socials here to get to know more about me:</p>
+          <p></p>
         </div>
-        <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
+        <div className="imgAndSocials">
+        <div className="tape"></div>
+          <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
+          <p className="photoCaption">You can also check out my socials here:</p>
+          <div className="socialIcons">
+                <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+                  <GitHub fontSize="large" className="socialIcon"/>
+                </a>
+                <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+                  <LinkedIn fontSize="large" className="socialIcon"/>
+                </a>
+                <a href="https://medium.com/@yourmedium" target="_blank" rel="noopener noreferrer">
+                  <Article fontSize="large" className="socialIcon"/>
+                </a>
+                </div>
+        </div>
+
       </div>
     </Window>
   );
