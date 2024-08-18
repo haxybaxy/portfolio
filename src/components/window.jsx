@@ -17,7 +17,10 @@ export default function Window({children, title,id}) {
             <span className="triangle">&#x25E2;</span>
           </li>
         </ul>
-
+        <div className="filename">
+        <img src="../../public/folder.svg" alt="folder" className="folderIcon" />
+        <span>filename</span>
+        </div>
       </div>
       <div className="sectionHeader">
         <h1 className="promptchars"> <span style={{color:"#74c7ec"}}> ~ </span> ❯</h1>

@@ -7,7 +7,7 @@
   padding: 20px
 }
 
-img {
+.myphoto {
   max-width: 300px;
   max-height: 300px;
   align-self: center;

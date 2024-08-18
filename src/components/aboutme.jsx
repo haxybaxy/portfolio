@@ -25,7 +25,7 @@ export default function AboutMe() {
           </ul>
           </FadeInSection>
         </div>
-        <img src="../../public/myphoto.jpeg" alt="My Photo" />
+        <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
       </div>
     </Window>
   );
