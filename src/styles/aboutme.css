@@ -89,3 +89,13 @@
   z-index: 1; /* Make sure the tape is on top of the Polaroid */
   opacity: 0.8; /* Slightly transparent for a more realistic effect */
 }
+
+@media (max-width: 769px) {
+  .aboutMeContainer {
+    flex-direction: column;
+  }
+
+  .textContainer {
+    width: 90%;
+  }
+}
