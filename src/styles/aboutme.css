@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 60%;
+  width: 62%;
   padding: 20px;
   text-align: left;
 }
@@ -40,13 +40,27 @@
   margin: 10;
 }
 
+.skillItem {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
 .skillIcon {
-  max-width: 40px;
-  max-height: 40px;
+  width: 40px;
+  height: 40px;
   background-color: #ffffff;
-  border-radius: 50%;
-  padding: 10px;
+  border-radius: 10%;
+  padding: 2px;
   margin-right: 5px;
+}
+
+.skillIcon img, .skillIcon svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures the entire SVG fits within the container */
 }
 
 .imgAndSocials {
@@ -58,6 +72,7 @@
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
+  margin-bottom: 10px;
   transform: rotate(-2deg); /* Rotate the Polaroid for a more realistic look */
 }
 
@@ -96,6 +111,6 @@
   }
 
   .textContainer {
-    width: 90%;
+    width: 95%;
   }
 }

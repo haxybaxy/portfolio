@@ -24,7 +24,7 @@ const skills = [
   { name: "Docker", icon: "../../public/icons/docker.svg" },
   { name: "GH Actions", icon: "../../public/icons/github.svg" },
   { name: "SK-Learn", icon: "../../public/icons/scikitlearn.svg" },
-  { name: "Hugging Face", icon: "../../public/icons/huggingface.svg" },
+  { name: "HuggingFace", icon: "../../public/icons/huggingface.svg" },
   { name: "PyTorch", icon: "../../public/icons/pytorch.svg" },
   { name: "TensorFlow", icon: "../../public/icons/tensorflow.svg" },
   { name: "OpenCV", icon: "../../public/icons/opencv.svg" },
