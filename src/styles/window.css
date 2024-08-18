@@ -11,9 +11,8 @@
 }
 
 .contentContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  position: relative;
+  height: 100%;
 }
 
 .sectionTitle{

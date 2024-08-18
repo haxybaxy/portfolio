@@ -7,7 +7,7 @@ export default function Intro() {
   return (
     <div className="intro-container" id="intro">
       <PropellerHatModel />
-      <FadeInSection>
+      <FadeInSection className="autoHeight">
       <div id="title">
         <h1>Hello, I am <span className="purpletext">Zaid</span> 👋</h1>
         <h2>i like making things</h2>

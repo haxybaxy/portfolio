@@ -34,11 +34,12 @@ export default function Window({children, title,id}) {
         </span>
       <hr className="headerLine"></hr>
       </div>
-      <FadeInSection delay={'900ms'}>
       <div className="contentContainer">
+      <FadeInSection delay={'900ms'}>
       {children}
-      </div>
       </FadeInSection>
+      </div>
+
     </div>
     </FadeInSection>
   );
