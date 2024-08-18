@@ -6,7 +6,7 @@ import "../styles/propellerhat.css";
 function PropellerHat() {
   const group = useRef();
   const { nodes } = useGLTF("../../public/propeller_hat-v3/propellerhat.gltf");
-  console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
+  // console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
 
   const hat = nodes.Hat__0;
   const propeller = nodes.Propeller__0;

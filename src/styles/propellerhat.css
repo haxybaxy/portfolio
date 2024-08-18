@@ -10,17 +10,17 @@
 
 .containerStyle {
   height: 30vh;
-  width: 25vw;
+  width: 60vw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: hsla(0, 0%, 100%, 1);
-  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
 
-  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
 
-  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 50%);
+  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#7B90ED", GradientType=1 );
 }
