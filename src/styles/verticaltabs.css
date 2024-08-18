@@ -1,0 +1,39 @@
+.vertical-tabs-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical-tabs-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5; /* Background color for the tabs list */
+  border-right: 1px solid #ddd; /* Border separating tabs list from content */
+  padding: 8px;
+}
+
+.vertical-tab-trigger {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #333;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.vertical-tab-trigger:hover {
+  background-color: #e6e6e6;
+}
+
+.vertical-tab-trigger[data-state='active'] {
+  background-color: #dddddd;
+  font-weight: bold;
+}
+
+.vertical-tab-content {
+  padding: 16px;
+  flex-grow: 1;
+  background-color: #ffffff;
+}

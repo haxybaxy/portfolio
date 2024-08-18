@@ -10,7 +10,7 @@ export default function Intro() {
       <PropellerHatModel />
       <FadeInSection style={{height: 'auto'}}>
       <div id="title">
-        <h1>👋 Hello! I am <span className="purpletext">Zaid</span> 👋</h1>
+        <h1>👋 Hello! I am <span className="purpletext">Zaid</span>. 👋</h1>
         <FadeInSection delay={'1000ms'}>
         <h2>i like making things</h2>
         <p>Versatile full-stack software developer and AI/ML engineer based in Madrid, Spain. Known for a holistic, interdisciplinary approach, and a strong commitment to continuous learning.</p>
