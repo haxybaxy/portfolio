@@ -15,7 +15,7 @@ export default function AboutMe() {
           <p>
             Here are some of the technologies that I've worked with:
           </p>
-          <FadeInSection delay={'100ms'}>
+          <FadeInSection delay={'1000ms'}>
           <ul>
             <li>Python</li>
             <li>Java</li>
