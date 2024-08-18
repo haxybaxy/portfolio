@@ -55,6 +55,10 @@
   margin-right: 5px;
 }
 
+.skillIcon:hover {
+  transform: scale(1.1); /* Scale the icon on hover */
+}
+
 .skillIcon img, .skillIcon svg {
   width: 100%;
   height: 100%;
@@ -88,7 +92,6 @@
 .photoCaption {
   font-family: "Shadows Into Light", cursive;
   font-size: 1.2em;
-  font-weight: bolder;
   margin-bottom: 5px;
 }
 

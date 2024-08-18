@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><rect width="36" height="36" x="6" y="6" fill="#1976d2"/><polygon fill="#fff" points="27.49,22 14.227,22 14.227,25.264 18.984,25.264 18.984,40 22.753,40 22.753,25.264 27.49,25.264"/><path fill="#fff" d="M39.194,26.084c0,0-1.787-1.192-3.807-1.192s-2.747,0.96-2.747,1.986 c0,2.648,7.381,2.383,7.381,7.712c0,8.209-11.254,4.568-11.254,4.568V35.22c0,0,2.152,1.622,4.733,1.622s2.483-1.688,2.483-1.92 c0-2.449-7.315-2.449-7.315-7.878c0-7.381,10.658-4.469,10.658-4.469L39.194,26.084z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g id="typescript.svg" transform="matrix(22.2866,0,0,22.2866,399.787,399.873)">
+        <g transform="matrix(1,0,0,1,-24,-24)">
+            <rect x="6" y="6" width="36" height="36" style="fill:rgb(25,118,210);fill-rule:nonzero;"/>
+            <path d="M27.49,22L14.227,22L14.227,25.264L18.984,25.264L18.984,40L22.753,40L22.753,25.264L27.49,25.264L27.49,22ZM39.194,26.084C39.194,26.084 37.407,24.892 35.387,24.892C33.367,24.892 32.64,25.852 32.64,26.878C32.64,29.526 40.021,29.261 40.021,34.59C40.021,42.799 28.767,39.158 28.767,39.158L28.767,35.22C28.767,35.22 30.919,36.842 33.5,36.842C36.081,36.842 35.983,35.154 35.983,34.922C35.983,32.473 28.668,32.473 28.668,27.044C28.668,19.663 39.326,22.575 39.326,22.575L39.194,26.084Z" style="fill:white;fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>
