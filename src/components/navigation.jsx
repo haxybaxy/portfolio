@@ -47,7 +47,7 @@ const NavBar = () => {
               <GitHubIcon style={{ fontSize: 19 }} />
             </Nav.Link>
             <Nav.Link
-              href="https://www.linkedin.com/in/zaidsaheb/"
+              href="www.linkedin.com/in/zaid-saheb"
               target="_blank"
               className="mx-2"
             >

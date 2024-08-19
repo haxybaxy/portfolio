@@ -62,13 +62,13 @@ export default function AboutMe() {
           <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
           <p className="photoCaption">You can also check out my socials here:</p>
           <div className="socialIcons">
-                <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/haxybaxy" target="_blank" rel="noopener noreferrer">
                   <GitHub fontSize="large" className="socialIcon"/>
                 </a>
-                <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" rel="noopener noreferrer">
+                <a href="www.linkedin.com/in/zaid-saheb" target="_blank" rel="noopener noreferrer">
                   <LinkedIn fontSize="large" className="socialIcon"/>
                 </a>
-                <a href="https://medium.com/@yourmedium" target="_blank" rel="noopener noreferrer">
+                <a href="https://medium.com/@haxybaxy" target="_blank" rel="noopener noreferrer">
                   <Article fontSize="large" className="socialIcon"/>
                 </a>
           </div>
