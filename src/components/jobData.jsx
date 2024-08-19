@@ -11,6 +11,7 @@ export const jobData = [
       "Designed 50+ posts for social media and helped build club presence on Campus, IEConnects, and Instagram.",
       "Tracked, reported, and acted on analytics gathered from marketing campaign responses to increase members by 100%.",
     ],
+    skills: ["Python","HTML/CSS","Google Cloud","Adobe Photoshop"," Adobe Illustrator", "Canva", "Buffer"]
   },
   {
     value: "tab2",
@@ -23,6 +24,7 @@ export const jobData = [
       "Utilizing React, Express.js, MySQL and Google Cloud Platform to design and maintain key features of the platform.",
       "Using Google Analytics to keep track of user traffic and behavior to boost performance and user experience.",
     ],
+    skills: ["React", "Tailwind CSS", "Express.js", "MySQL", "Google Analytics", "Google Cloud"]
   },
   {
     value: "tab3",
@@ -35,6 +37,7 @@ export const jobData = [
       "Presented 10+ hands-on workshops to 30+ attendees about open source development, state of the art ML models, and generative AI. Utilized working demos of AI/ML models and other projects for greater attendee interaction.",
       "Maintaining Club Website and GitHub with front-end and back-end design and managing developer projects with GitHub Projects.",
     ],
+    skills: ["TensorFlow", "PyTorch", "OpenCV", "Astro.js", "React", "Express.js","Node.js", "MongoDB", "Python"]
   },
   {
     value: "tab4",
@@ -47,6 +50,7 @@ export const jobData = [
       "Built a sentiment analysis model to improve brand management and e-commerce services on TikTok.",
       "Supported LATIDO's B2C expansion by providing e-commerce integration tools, data analysis strategies, and CRM system recommendations.",
     ],
+    skills: ["OpenAI API","Whisper","HuggingFace Transformers","Python", "Google Analytics","React","Node.js",]
   },
   {
     value: "tab5",
@@ -59,6 +63,7 @@ export const jobData = [
       "Developing an AI-driven computer vision system for remote access and automation of robots in the lab using OpenCV and Tensorflow.",
       "Using ROS and Docker to create simulation environments for the robots to test AI algorithms and perform student experiments.",
     ],
+    skills: ["TensorFlow", "PyTorch", "OpenCV", "Raspberry Pi", "ROS", "Python", "Docker"]
   },
   {
     value: "tab6",
@@ -72,5 +77,6 @@ export const jobData = [
       "Created AI tools to enhance employee productivity and operational efficiency within the company.",
       "Utilized Power BI to analyze data and provide actionable insights to improve decision-making and business processes.",
     ],
+    skills: ["Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "Langchain","Python", "C#", "Flutter"]
   },
 ];
