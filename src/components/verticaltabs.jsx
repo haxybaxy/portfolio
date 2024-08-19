@@ -114,7 +114,7 @@ export default function VerticalTabs() {
             ))}
           </ul>
           <h3 className='contentSkills'>{vimMode === 'VISUAL' ? '**' : ''}Skills: {tab.skills.join(', ')}.{vimMode === 'VISUAL' ? '**' : ''}</h3>
-          <Nvim lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode} />
+          <Nvim filename={tab.company}lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode} />
         </Tabs.Content>
       ))}
     </Tabs.Root>
