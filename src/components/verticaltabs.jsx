@@ -8,6 +8,7 @@ export default function VerticalTabs() {
 
   const [lineNumber, setLineNumber] = useState(0);
   const [charNumber, setCharNumber] = useState(0);
+  const [percent, setPercent] = useState(0);
   const [insertError, setInsertError] = useState("");
   const [vimMode, setVimMode] = useState("NORMAL");
 
@@ -41,8 +42,10 @@ export default function VerticalTabs() {
     // Update state with the calculated line number and character number
     setLineNumber(calculatedLineNumber);
     setCharNumber(calculatedCharNumber);
+    setPercent(Math.floor(calculatedLineNumber / lines.length * 100));
 
-    console.log(`Line Number: ${calculatedLineNumber}, Character Number: ${calculatedCharNumber}`);
+    // console.log(`Calculated percentage: ${Math.floor(calculatedLineNumber / lines.length * 100)}%`);
+    // console.log(`Line Number: ${calculatedLineNumber}, Character Number: ${calculatedCharNumber}`);
   };
 
   useEffect(() => {
@@ -76,19 +79,19 @@ export default function VerticalTabs() {
       </Tabs.List>
 
       {jobData.map((tab) => (
-        <Tabs.Content key={tab.value} value={tab.value} className="vertical-tab-content" onClick={handleClick}>
-          <h1 className='contentRole'>{tab.role}</h1>
+        <Tabs.Content key={tab.value} value={tab.value} className="vertical-tab-content" onClick={handleClick} style={vimMode=='VISUAL' ? {fontFamily: 'monospace'}: {}}>
+          <h1 className='contentRole' >{vimMode=='VISUAL' ? '# ':""}{tab.role}</h1>
           <div className='contentSubhead'>
-          <h2 className='contentCompany'>@ {tab.company}</h2>
+          <h2 className='contentCompany'> {vimMode=='VISUAL' ? '## ':""}@ {tab.company}</h2>
           <h3 className='contentDate'>{tab.startDate} - {tab.endDate}</h3>
           </div>
-         <ul>
+         <ul style={vimMode=='VISUAL' ? {listStyleType: `'- '`}: {}}>
             {tab.content.map((point, index) => (
               <li key={index}>{point}</li>
             ))}
           </ul>
-          <h3 className='contentSkills'>Skills: {tab.skills.join(', ')}</h3>
-          <Nvim lineNumber={lineNumber} charNumber={charNumber} insertError={insertError} vimMode={vimMode}/>
+          <h3 className='contentSkills'>Skills: {tab.skills.join(', ')}.</h3>
+          <Nvim lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode}/>
         </Tabs.Content>
       ))}
     </Tabs.Root>

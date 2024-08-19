@@ -116,4 +116,13 @@
   .textContainer {
     width: 95%;
   }
+  .skillsList {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+
+  .skillItem {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
