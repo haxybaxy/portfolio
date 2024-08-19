@@ -5,8 +5,8 @@ import '../styles/verticalTabs.css';
 import { jobData } from './jobData';
 
 export default function VerticalTabs() {
-  const [lineNumber, setLineNumber] = useState(0);
-  const [charNumber, setCharNumber] = useState(0);
+  const [lineNumber, setLineNumber] = useState(1);
+  const [charNumber, setCharNumber] = useState(1);
   const [percent, setPercent] = useState(0);
   const [insertError, setInsertError] = useState("");
   const [vimMode, setVimMode] = useState("NORMAL");
