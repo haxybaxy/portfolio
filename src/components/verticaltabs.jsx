@@ -82,15 +82,15 @@ export default function VerticalTabs() {
         <Tabs.Content key={tab.value} value={tab.value} className="vertical-tab-content" onClick={handleClick} style={vimMode=='VISUAL' ? {fontFamily: 'monospace'}: {}}>
           <h1 className='contentRole' >{vimMode=='VISUAL' ? '# ':""}{tab.role}</h1>
           <div className='contentSubhead'>
-          <h2 className='contentCompany'> {vimMode=='VISUAL' ? '## ':""}@ {tab.company}</h2>
+          <h2 className='contentCompany'> {vimMode=='VISUAL' ? '## **':""}@ {tab.company}{vimMode=='VISUAL' ? '**':""}</h2>
           <h3 className='contentDate'>{tab.startDate} - {tab.endDate}</h3>
           </div>
-         <ul style={vimMode=='VISUAL' ? {listStyleType: `'- '`}: {}}>
+         <ul style={vimMode=='VISUAL' ? {listStyleType: `'- '`}: {}} className='contentList'>
             {tab.content.map((point, index) => (
               <li key={index}>{point}</li>
             ))}
           </ul>
-          <h3 className='contentSkills'>Skills: {tab.skills.join(', ')}.</h3>
+          <h3 className='contentSkills'>{vimMode=='VISUAL' ? '**':""}Skills: {tab.skills.join(', ')}.{vimMode=='VISUAL' ? '**':""}</h3>
           <Nvim lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode}/>
         </Tabs.Content>
       ))}

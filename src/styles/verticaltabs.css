@@ -10,6 +10,7 @@
   background-color: rgb(48, 48, 48); /* Background color for the tabs list */
   border-right: 1px solid #ddd; /* Border separating tabs list from content */
   padding: 8px;
+  width: 20%;
 }
 
 .vertical-tab-trigger {
@@ -38,6 +39,7 @@
   flex-grow: 1;
   background-color: rgb(48, 48, 48);
   position: relative;
+  width: 80%;
 }
 
 .listBullet {
@@ -48,10 +50,14 @@
 
 .contentCompany {
   color: hsla(295, 71%, 67%, 1);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .contentDate {
   color: hsla(295, 71%, 67%, 1);
+  font-size: 1.2rem;
+
 }
 
 .contentSubhead {
@@ -59,8 +65,26 @@
   justify-content: space-between;
 }
 
+.contentList {
+  font-size: 1rem;
+}
+
+.contentSkills {
+  font-size: 1rem;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
+
 @media (max-width: 769px) {
   .vertical-tabs-container {
     flex-direction: column;
+  }
+
+  .vertical-tab-content {
+    width: auto;
+  }
+
+  .vertical-tabs-list {
+    width: auto;
   }
 }
