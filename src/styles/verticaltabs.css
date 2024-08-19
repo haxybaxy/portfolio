@@ -37,4 +37,5 @@
   padding: 16px;
   flex-grow: 1;
   background-color: rgb(48, 48, 48);
+  position: relative;
 }

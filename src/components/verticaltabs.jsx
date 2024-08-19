@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
+import Nvim from './nvim';
 import '../styles/verticalTabs.css';
 import {jobData} from './jobData';
 
@@ -12,7 +13,7 @@ export default function VerticalTabs() {
             {tab.company}
           </Tabs.Trigger>
         ))}
-      <p>hi</p>
+        <p>hii</p>
       </Tabs.List>
 
       {jobData.map((tab) => (
@@ -25,7 +26,7 @@ export default function VerticalTabs() {
               <li key={index}>{point}</li>
             ))}
           </ul>
-          <p>hi</p>
+          <Nvim />
         </Tabs.Content>
       ))}
     </Tabs.Root>
