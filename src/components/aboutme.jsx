@@ -35,7 +35,7 @@ const skills = [
 
 export default function AboutMe() {
   return (
-    <Window title="about me" id="aboutme">
+    <Window title="about me" id="aboutme" filename="fastfetch">
       <div className="aboutMeContainer">
         <div className="textContainer">
           <p>

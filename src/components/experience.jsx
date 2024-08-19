@@ -6,7 +6,7 @@ import "../styles/experience.css";
 export default function Experience() {
 
   return (
-    <Window title="experience" id="experience">
+    <Window title="experience" id="experience" filename="nvim">
     <VerticalTabs />
     </Window>
   );

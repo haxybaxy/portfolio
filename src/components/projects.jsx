@@ -5,7 +5,7 @@ import "../styles/projects.css";
 
 export default function Projects() {
   return (
-    <Window title="projects" id="projects">
+    <Window title="projects" id="projects" filename="tmux">
     <div className="projects">
       <h1>Projects</h1>
       <p>

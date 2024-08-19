@@ -3,7 +3,7 @@ import "../styles/window.css";
 import FadeInSection from "./fadeinsection";
 import { Typewriter } from 'react-simple-typewriter';
 
-export default function Window({children, title,id}) {
+export default function Window({children, title, id, filename}) {
   const [startTyping, setStartTyping] = useState(false);
   return (
     <FadeInSection onVisible={() => setStartTyping(true)}>
@@ -19,7 +19,7 @@ export default function Window({children, title,id}) {
         </ul>
         <div className="filename">
         <img src="../../public/folder.svg" alt="folder" className="folderIcon" />
-        <span>filename</span>
+        <span>{filename}</span>
         </div>
       </div>
       <div className="sectionHeader">
