@@ -77,6 +77,6 @@ export const jobData = [
       "Created AI tools to enhance employee productivity and operational efficiency within the company.",
       "Utilized Power BI to analyze data and provide actionable insights to improve decision-making and business processes.",
     ],
-    skills: ["Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "Langchain","Python", "C#", "Flutter"]
+    skills: ["C#", "ASP.net","Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "Langchain", "Python", "Flutter"]
   },
 ];

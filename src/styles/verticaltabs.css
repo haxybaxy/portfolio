@@ -2,13 +2,14 @@
   display: flex;
   height: 100%;
   width: 100%;
+  min-height: 50vh;
 }
 
 .vertical-tabs-list {
   display: flex;
   flex-direction: column;
   background-color: rgb(48, 48, 48); /* Background color for the tabs list */
-  border-right: 1px solid #ddd; /* Border separating tabs list from content */
+  border-right: 1px solid rgb(100, 100, 100); /* Border separating tabs list from content */
   padding: 8px;
   width: 20%;
 }
@@ -19,7 +20,7 @@
   color: #74c7ec;
   background-color: rgb(48, 48, 48);
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgb(100, 100, 100);
   text-align: left;
   transition: background-color 0.3s ease;
   font-family: 'Fira Code';
@@ -63,10 +64,12 @@
 .contentSubhead {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 30px;
 }
 
 .contentList {
   font-size: 1rem;
+  padding-bottom: 30px;
 }
 
 .contentSkills {

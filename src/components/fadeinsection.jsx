@@ -12,7 +12,7 @@ export default function FadeInSection({ children, onVisible, delay, style={} }) 
 
   const { ref, inView } = useInView({
     triggerOnce: true, // Only trigger the animation once
-    threshold: 0.1, // Trigger when 10% of the element is visible
+    threshold: 0.2, // Trigger when 20% of the element is visible
   });
 
   React.useEffect(() => {
