@@ -1,25 +1,16 @@
 export const jobData = [
   {
     value: 'tab1',
-    label: 'Tab 1',
+    label: 'Coding Club - IE University',
     content: [
-      'First point for Tab 1',
-      'Second point for Tab 1',
-      'Third point for Tab 2',
+      'First point for Tab 4',
+      'Second point for Tab 4',
+      'Third point for Tab 4',
     ],
   },
   {
     value: 'tab2',
-    label: 'Tab 2',
-    content: [
-      'First point for Tab 2',
-      'Second point for Tab 2',
-      'Third point for Tab 2',
-    ],
-  },
-  {
-    value: 'tab3',
-    label: 'Tab 3',
+    label: 'Mind & Mood',
     content: [
       'First point for Tab 3',
       'Second point for Tab 3',
@@ -27,12 +18,21 @@ export const jobData = [
     ],
   },
   {
-    value: 'tab4',
-    label: 'Tab 4',
+    value: 'tab3',
+    label: 'Robotics and AI Club - IE University',
     content: [
-      'First point for Tab 4',
-      'Second point for Tab 4',
-      'Third point for Tab 4',
+      'First point for Tab 2',
+      'Second point for Tab 2',
+      'Third point for Tab 2',
+    ],
+  },
+  {
+    value: 'tab4',
+    label: 'IEU School of Science and Technology',
+    content: [
+      'First point for Tab 1',
+      'Second point for Tab 1',
+      'Third point for Tab 2',
     ],
   },
 ];

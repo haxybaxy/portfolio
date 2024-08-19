@@ -7,7 +7,7 @@ export default function VerticalTabs() {
   return (
     <Tabs.Root defaultValue={jobData[0].value} className="vertical-tabs-container">
       <Tabs.List className="vertical-tabs-list" orientation="vertical">
-        {jobData.map((tab) => (
+        {jobData.slice().reverse().map((tab) => (
           <Tabs.Trigger key={tab.value} value={tab.value} className="vertical-tab-trigger">
             {tab.label}
           </Tabs.Trigger>
