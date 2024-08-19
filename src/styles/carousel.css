@@ -1,21 +1,21 @@
 .slider {
   width: 90%;
   margin: 0 auto; /* Center the slider */
-  padding: 20px 0 50px 0;
+  padding: 0px 0 50px 0;
 }
 
 .projects-slider {
   width: 100%;
   margin: 0 auto; /* Center the slider */
-  padding: 20px 0 50px 0;
+  padding: 0px 0 30px 0;
 }
 
 .slide {
   position: relative;
   width: calc(100% - 20px); /* Adjust width to account for margin */
-  height: 400px; /* Set a fixed height for the slide container */
+  height: 70vh; /* Set a fixed height for the slide container */
   overflow: hidden; /* Ensure that overflowed content is hidden */
-  box-shadow: 10 10 10px rgba(0, 0, 0, 0.5);
+
   margin-right: 20px; /* Add horizontal gap between slides */
 }
 
@@ -56,14 +56,12 @@
 
 .project-link {
   display: inline-block;
-  padding: 8px 16px;
-  background-color: #0073b1;
-  color: white;
-  text-decoration: none;
+  padding: 8px;
+  background-color: transparent; /* Remove background color */
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease; /* Add a hover effect */
 }
 
 .project-link:hover {
-  background-color: #005f8c;
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }

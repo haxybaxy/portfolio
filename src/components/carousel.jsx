@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { projectsData } from "./projectsData";
 import "../styles/carousel.css";
 import Tmux from "./tmux";
+import GitHubIcon from '@mui/icons-material/GitHub'; // Import GitHub icon
 
 export function NextArrow(props) {
   const { className, style, onClick } = props;
@@ -56,17 +57,16 @@ export default function ProjectsSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    afterChange: (current) => {
-      console.log("Active slide index:", current); // Debugging: Check the active slide index
-      setActiveSlide(current);
-    },
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    afterChange: (current) => setActiveSlide(current),
+    centerMode: true, // Enable center mode to ensure slides are centered with visible gaps
+    centerPadding: "10px", // Adjust the padding around the center slide
   };
 
   return (
-    <>
-      <Slider {...settings} className="slider">
+    <div className="projects-slider">
+      <Slider {...settings}>
         {projectsData.map((project, index) => (
           <div key={index} className="slide">
             <img src={project.imageUrl} alt={project.title} className="slide-image" />
@@ -74,13 +74,13 @@ export default function ProjectsSlider() {
               <h2 className="projectTitle">{project.title}</h2>
               <p className="projectDesc">{project.description}</p>
               <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                View Project
+                <GitHubIcon fontSize="large" style={{ color: "white" }} />
               </a>
             </div>
           </div>
         ))}
       </Slider>
       <Tmux activeSlide={activeSlide} />
-    </>
+    </div>
   );
 }

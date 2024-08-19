@@ -33,7 +33,7 @@ export default function Tmux({ activeSlide }) {
       <p> [projects]{" "}
         {projectsData.map((project, index) => (
           <span key={index}>
-            {index + 1}:{project.title}{index === activeSlide ? "*" : ""}{" "}
+            {index + 1}:{project.tmuxname}{index === activeSlide ? "*" : ""}{" "}
           </span>
         ))}
       </p>
