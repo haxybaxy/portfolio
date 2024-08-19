@@ -143,3 +143,9 @@ hr {
   display: inline-block;
 }
 
+@media (max-width: 769px) {
+  .filename {
+    left: 70%;
+    white-space: nowrap;
+  }
+}

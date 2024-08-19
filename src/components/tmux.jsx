@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/tmux.css";
+import { projectsData } from "./projectsData";
 
-export default function Tmux() {
+export default function Tmux({ activeSlide }) {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    // Function to update time and date
     const updateTimeAndDate = () => {
       const now = new Date();
       const formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -19,19 +19,24 @@ export default function Tmux() {
       setDate(formattedDate);
     };
 
-    // Update the time and date once when the component mounts
     updateTimeAndDate();
 
-    // Set an interval to update the time every minute
     const intervalId = setInterval(updateTimeAndDate, 60000);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
+  console.log("Active slide in Tmux:", activeSlide); // Debugging: Check the active slide in Tmux
+
   return (
     <div className="tmuxContainer" id="tmux">
-      <p>[0] 0:bash* </p>
+      <p> [projects]{" "}
+        {projectsData.map((project, index) => (
+          <span key={index}>
+            {index + 1}:{project.title}{index === activeSlide ? "*" : ""}{" "}
+          </span>
+        ))}
+      </p>
       <p>"localhost" {time} {date} </p>
     </div>
   );

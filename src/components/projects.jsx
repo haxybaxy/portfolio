@@ -10,7 +10,6 @@ export default function Projects() {
     <div className="projects">
       <CarouselGallery />
     </div>
-    <Tmux />
     </Window>
   );
 }

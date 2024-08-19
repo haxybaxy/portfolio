@@ -1,14 +1,22 @@
-.projects-slider {
-  width: 80%;
+.slider {
+  width: 90%;
   margin: 0 auto; /* Center the slider */
-  padding: 20px 0;
+  padding: 20px 0 50px 0;
+}
+
+.projects-slider {
+  width: 100%;
+  margin: 0 auto; /* Center the slider */
+  padding: 20px 0 50px 0;
 }
 
 .slide {
   position: relative;
-  width: 100%;
+  width: calc(100% - 20px); /* Adjust width to account for margin */
   height: 400px; /* Set a fixed height for the slide container */
   overflow: hidden; /* Ensure that overflowed content is hidden */
+  box-shadow: 10 10 10px rgba(0, 0, 0, 0.5);
+  margin-right: 20px; /* Add horizontal gap between slides */
 }
 
 .slide-image {
@@ -43,6 +51,7 @@
 .projectDesc {
   font-size: 1rem;
   margin-bottom: 10px;
+  max-width: 70%;
 }
 
 .project-link {

@@ -1,5 +1,3 @@
-// data/projectsData.js
-
 export const projectsData = [
   {
     title: "Remote Lab",
