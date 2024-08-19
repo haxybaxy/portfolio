@@ -19,8 +19,7 @@
   color: hsla(295, 71%, 67%, 1);
 }
 
-h2 {
-  font-size: 1em;
+.introCaption {
   color: gray !important;
   text-align: center;
 }

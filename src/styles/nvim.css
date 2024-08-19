@@ -1,4 +1,14 @@
 .nvim {
+  font-family: 'Fira Code', monospace;
+}
+
+.insertError {
+  position: absolute;
+  bottom: 10px;
+  color: rgb(233, 39, 39);
+}
+
+.nvimbar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -10,12 +20,12 @@
   flex-wrap: nowrap;
   white-space: nowrap;
   padding: 0;
-  font-family: 'Fira Code', monospace;
 }
 
 .mode {
   background-color: #cba6f7;
   clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  color: #000;
 }
 
 .nvimItem {
@@ -25,12 +35,17 @@
 }
 
 .percent {
-  background-color: #cba6f7;
+  padding-right: 10px;
   clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 90% 50%, 100% 100%, 10% 100%);
 }
 
 .line {
   background-color: #cba6f7;
   clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
+}
+
+.nvimRight {
+  clip-path: polygon(0% 50%, 10% 0%, 100% 0%, 100% 100%, 10% 100%);
+  background-color: rgb(83, 85, 83);
 }
 

@@ -71,7 +71,7 @@ export default function AboutMe() {
                 <a href="https://medium.com/@yourmedium" target="_blank" rel="noopener noreferrer">
                   <Article fontSize="large" className="socialIcon"/>
                 </a>
-                </div>
+          </div>
         </div>
 
       </div>

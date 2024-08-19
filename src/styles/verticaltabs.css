@@ -25,11 +25,11 @@
 }
 
 .vertical-tab-trigger:hover {
-  background-color: #e6e6e6;
+  background-color: rgb(52, 54, 69);
 }
 
 .vertical-tab-trigger[data-state='active'] {
-  background-color: #dddddd;
+  background-color: rgb(66, 69, 91);
   font-weight: bold;
 }
 
@@ -38,4 +38,29 @@
   flex-grow: 1;
   background-color: rgb(48, 48, 48);
   position: relative;
+}
+
+.listBullet {
+  max-width: 15px;
+  max-height: 15px;
+  margin-right: 10px;
+}
+
+.contentCompany {
+  color: hsla(295, 71%, 67%, 1);
+}
+
+.contentDate {
+  color: hsla(295, 71%, 67%, 1);
+}
+
+.contentSubhead {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 769px) {
+  .vertical-tabs-container {
+    flex-direction: column;
+  }
 }
