@@ -12,7 +12,7 @@ export default function Nvim({lineNumber, charNumber, percent, insertError, vimM
 
   return (
   <div className="nvim">
-    <p className="insertError">{insertError}</p>
+    <p className="insertError" style={insertError =='--VISUAL--' ? {color: '#ffffff'}: {}}>{insertError}</p>
     <div className="nvimbar">
       <div className="nvimLeft"><p className="mode nvimItem" style={vimMode=='VISUAL' ? {backgroundColor: '#f5ff8b'}: {}}>{vimMode}</p>
       <p className="jobfile nvimItem">filename.md</p></div>
