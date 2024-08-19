@@ -12,7 +12,7 @@ export default function Nvim({lineNumber, charNumber}) {
         setInsertError("E45: 'readonly' option is set");
       } else if (event.key === "V" || event.key === "v") {
         setVimMode("VISUAL");
-      } else if (event.key === "N" || event.key === "n") {
+      } else if (event.key === 'Escape') {
         setVimMode("NORMAL");
       }
 

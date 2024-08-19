@@ -65,6 +65,7 @@ export default function VerticalTabs() {
               <li key={index}>{point}</li>
             ))}
           </ul>
+          <h3 className='contentSkills'>Skills: {tab.skills.join(', ')}</h3>
           <Nvim lineNumber={lineNumber} charNumber={charNumber}/>
         </Tabs.Content>
       ))}
