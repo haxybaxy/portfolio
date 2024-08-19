@@ -20,12 +20,14 @@ export default function ProjectsSlider() {
       <Slider {...settings}>
         {projectsData.map((project, index) => (
           <div key={index} className="slide">
+            <div className="text-overlay">
+              <h2 className="projectTitle">{project.title}</h2>
+              <p className="projectDesc">{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                View Project
+              </a>
+            </div>
             <img src={project.imageUrl} alt={project.title} className="slide-image" />
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-              View Project
-            </a>
           </div>
         ))}
       </Slider>
