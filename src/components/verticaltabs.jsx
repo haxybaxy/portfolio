@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import Nvim from './nvim';
 import '../styles/verticalTabs.css';
@@ -8,6 +8,8 @@ export default function VerticalTabs() {
 
   const [lineNumber, setLineNumber] = useState(0);
   const [charNumber, setCharNumber] = useState(0);
+  const [insertError, setInsertError] = useState("");
+  const [vimMode, setVimMode] = useState("NORMAL");
 
   const handleClick = (event) => {
     const contentElement = event.currentTarget;
@@ -43,6 +45,26 @@ export default function VerticalTabs() {
     console.log(`Line Number: ${calculatedLineNumber}, Character Number: ${calculatedCharNumber}`);
   };
 
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === "I" || event.key === "i") {
+        setInsertError("E45: 'readonly' option is set");
+      } else if (event.key === "V" || event.key === "v") {
+        setVimMode("VISUAL");
+      } else if (event.key === 'Escape') {
+        setVimMode("NORMAL");
+      }
+
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
   return (
     <Tabs.Root defaultValue={jobData[jobData.length - 1].value} className="vertical-tabs-container">
       <Tabs.List className="vertical-tabs-list" orientation="vertical">
@@ -66,7 +88,7 @@ export default function VerticalTabs() {
             ))}
           </ul>
           <h3 className='contentSkills'>Skills: {tab.skills.join(', ')}</h3>
-          <Nvim lineNumber={lineNumber} charNumber={charNumber}/>
+          <Nvim lineNumber={lineNumber} charNumber={charNumber} insertError={insertError} vimMode={vimMode}/>
         </Tabs.Content>
       ))}
     </Tabs.Root>
