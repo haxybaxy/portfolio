@@ -7,9 +7,7 @@ export default function Experience() {
 
   return (
     <Window title="experience" id="experience">
-    <h1>Experience</h1>
     <VerticalTabs />
-    <Tmux />
     </Window>
   );
 }
