@@ -49,3 +49,22 @@
   background-color: rgb(83, 85, 83);
 }
 
+
+.jobfile {
+  padding-right: 4px;
+
+}
+.markdownicon {
+  height: 10px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+.jobfile {
+  display: none;
+}
+.markdownicon {
+  display: none;
+}
+
+}

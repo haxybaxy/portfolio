@@ -30,14 +30,14 @@ export default function Tmux({ activeSlide }) {
 
   return (
     <div className="tmuxContainer" id="tmux">
-      <p> [projects]{" "}
+      <p className="tmuxItem"> [projects]{" "}
         {projectsData.map((project, index) => (
           <span key={index}>
             {index + 1}:{project.tmuxname}{index === activeSlide ? "*" : ""}{" "}
           </span>
         ))}
       </p>
-      <p>"localhost" {time} {date} </p>
+      <p className="tmuxItem datetime">"localhost" {time} {date} </p>
     </div>
   );
 }
