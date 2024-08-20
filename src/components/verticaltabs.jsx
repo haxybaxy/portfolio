@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import Nvim from './nvim';
-import '../styles/verticalTabs.css';
+import '../styles/verticaltabs.css';
 import { jobData } from './jobData';
 
 export default function VerticalTabs() {
