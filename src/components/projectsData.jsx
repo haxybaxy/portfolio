@@ -5,13 +5,26 @@ export const projectsData = [
     imageUrl: "../../public/projectphotos/remotelab.png",
     link: "https://github.com/IE-Robotics-Lab/remote_lab",
     tmuxname: "remotelab",
+    icons: {
+      ROS: "../../public/icons/ros.svg",
+      Docker: "../../public/icons/docker.svg",
+      Python: "../../public/icons/python.svg",
+      Opencv: "../../public/icons/opencv.svg",
+      Tensorflow: "../../public/icons/tensorflow.svg",
+    },
   },
   {
     title: "X++ Assistant",
-    description: "Extremely proficient coding assitant for the obsecure X++ language in Dynamics 365 Finance and Operations. Currently deployed at Dynamics Innovations.",
+    description: "Extremely proficient coding assistant for the obscure X++ language in Dynamics 365 Finance and Operations. Currently deployed at Dynamics Innovations.",
     imageUrl: "../../public/projectphotos/xppcoder.png",
     link: "https://github.com/haxybaxy/xppcoder",
     tmuxname: "xppcoder",
+    icons: {
+      Python: "../../public/icons/python.svg",
+      Langchain: "../../public/icons/langchain.svg",
+      Huggingface: "../../public/icons/huggingface.svg",
+      Pinecone: "../../public/icons/pinecone.svg",
+    },
   },
   {
     title: "EC Language",
@@ -19,6 +32,10 @@ export const projectsData = [
     imageUrl: "../../public/projectphotos/eclang.png",
     link: "https://github.com/haxybaxy/ec-lang",
     tmuxname: "eclang",
+    icons: {
+      C: "../../public/icons/c.svg",
+      CMake: "../../public/icons/cmake.svg",
+    },
   },
   {
     title: "AI Hackathon 2023",
@@ -26,6 +43,12 @@ export const projectsData = [
     imageUrl: "../../public/projectphotos/aihackathon.jpeg",
     link: "https://github.com/haxybaxy/aihackathon2023",
     tmuxname: "aihackathon",
+    icons: {
+      Python: "../../public/icons/python.svg",
+      Langchain: "../../public/icons/langchain.svg",
+      OpenAI: "../../public/icons/openai.svg",
+      Pandas: "../../public/icons/pandas.svg",
+    },
   },
   {
     title: "IE Robotics Club Website",
@@ -33,5 +56,13 @@ export const projectsData = [
     imageUrl: "../../public/projectphotos/ierobotics.png",
     link: "https://github.com/IERoboticsClub/club_website_v0",
     tmuxname: "clubwebsite",
+    icons: {
+      React: "../../public/icons/react.svg",
+      Astro: "../../public/icons/astro.svg",
+      Nodejs: "../../public/icons/nodejs.svg",
+      Express: "../../public/icons/express.svg",
+      Mongodb: "../../public/icons/mongodb.svg",
+      Docker: "../../public/icons/docker.svg",
+    },
   },
 ];

@@ -26,7 +26,7 @@ export default function Tmux({ activeSlide }) {
     return () => clearInterval(intervalId);
   }, []);
 
-  console.log("Active slide in Tmux:", activeSlide); // Debugging: Check the active slide in Tmux
+  // console.log("Active slide in Tmux:", activeSlide); // Debugging: Check the active slide in Tmux
 
   return (
     <div className="tmuxContainer" id="tmux">

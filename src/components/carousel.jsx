@@ -71,11 +71,21 @@ export default function ProjectsSlider() {
           <div key={index} className="slide">
             <img src={project.imageUrl} alt={project.title} className="slide-image" />
             <div className="text-overlay">
-              <h2 className="projectTitle">{project.title}</h2>
-              <p className="projectDesc">{project.description}</p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+            <div className="titlediv"><h2 className="projectTitle">{project.title}</h2> <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
                 <GitHubIcon fontSize="large" style={{ color: "white" }} />
-              </a>
+              </a> </div>
+              <p className="projectDesc">{project.description}</p>
+              <div className="projectIcons">
+                <div className="iconContainer">
+                {Object.entries(project.icons).map(([name, iconUrl], iconIndex) => (
+                  <div key={iconIndex} className="iconWithName">
+                  <img src={iconUrl} alt={name} title={name} className="projectIcon" />
+                  <span className="icon-name">{name}</span>
+                  </div>
+                ))}
+
+                </div>
+              </div>
             </div>
           </div>
         ))}

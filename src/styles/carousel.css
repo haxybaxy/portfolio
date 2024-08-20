@@ -46,6 +46,7 @@
 .projectTitle {
   margin: 10px 0;
   font-size: 1.5rem;
+  display: inline;
 }
 
 .projectDesc {
@@ -64,4 +65,47 @@
 
 .project-link:hover {
   transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+.projectIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 10%;
+  padding: 2px;
+  margin-right: 5px;
+  align-self: center;
+}
+
+.projectIcon:hover {
+  transform: scale(1.1);
+}
+
+.iconContainer {
+
+  display: flex;
+  gap:10px;
+}
+
+@media (max-width: 700px) {
+    .iconContainer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+      grid-template-rows: auto auto; /* Set 2 rows */
+      justify-content: center; /* Center the items horizontally */
+    }
+  }
+
+.iconWithName {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.titlediv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
