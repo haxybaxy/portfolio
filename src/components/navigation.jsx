@@ -6,7 +6,6 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Logo from "../../public/haxybaxy.svg";
 import "../styles/navigation.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,7 +25,7 @@ const NavBar = () => {
     >
       <Container>
         <Navbar.Brand href="#">
-        <img src={Logo} alt="Logo" height="40" />
+        <img src="haxybaxy.svg" alt="Logo" height="40" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -47,7 +46,7 @@ const NavBar = () => {
               <GitHubIcon style={{ fontSize: 19 }} />
             </Nav.Link>
             <Nav.Link
-              href="www.linkedin.com/in/zaid-saheb"
+              href="https://www.linkedin.com/in/zaid-saheb"
               target="_blank"
               className="mx-2"
             >

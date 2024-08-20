@@ -46,3 +46,13 @@
   opacity: 1;
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }
+
+@media (max-width: 769px) {
+  .containerStyle {
+    background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+
+  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+
+  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+  }
+}

@@ -5,31 +5,31 @@ import FadeInSection from "./fadeinsection"; // Import the Fadein component
 import { GitHub, LinkedIn, Article } from "@mui/icons-material";
 
 const skills = [
-  { name: "Python", icon: "../../public/icons/python.svg" },
-  { name: "C", icon: "../../public/icons/c.svg" },
-  { name: "C#", icon: "../../public/icons/csharp.svg" },
-  { name: "JavaScript", icon: "../../public/icons/javascript.svg" },
-  { name: "TypeScript", icon: "../../public/icons/typescript.svg" },
-  { name: "React", icon: "../../public/icons/react.svg" },
-  { name: "Node.js", icon: "../../public/icons/nodejs.svg" },
-  { name: "Express.js", icon: "../../public/icons/express.svg" },
-  { name: "MySQL", icon: "../../public/icons/mysql.svg" },
-  { name: "PostgreSQL", icon: "../../public/icons/postgresql.svg" },
-  { name: "MongoDB", icon: "../../public/icons/mongodb.svg" },
-  { name: "Azure", icon: "../../public/icons/azure.svg" },
-  { name: "AWS", icon: "../../public/icons/aws.svg" },
-  { name: "Firebase", icon: "../../public/icons/firebase.svg" },
-  { name: "Linux", icon: "../../public/icons/linux.svg" },
-  { name: "Docker", icon: "../../public/icons/docker.svg" },
-  { name: "GH Actions", icon: "../../public/icons/github.svg" },
-  { name: "SK-Learn", icon: "../../public/icons/scikitlearn.svg" },
-  { name: "HuggingFace", icon: "../../public/icons/huggingface.svg" },
-  { name: "Langchain", icon: "../../public/icons/langchain.svg" },
-  { name: "PyTorch", icon: "../../public/icons/pytorch.svg" },
-  { name: "TensorFlow", icon: "../../public/icons/tensorflow.svg" },
-  { name: "OpenCV", icon: "../../public/icons/opencv.svg" },
-  { name: "ROS", icon: "../../public/icons/ros.svg" },
-  { name: "Git", icon: "../../public/icons/git.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "C", icon: "/icons/c.svg" },
+  { name: "C#", icon: "/icons/csharp.svg" },
+  { name: "JavaScript", icon: "/icons/javascript.svg" },
+  { name: "TypeScript", icon: "/icons/typescript.svg" },
+  { name: "React", icon: "/icons/react.svg" },
+  { name: "Node.js", icon: "/icons/nodejs.svg" },
+  { name: "Express.js", icon: "/icons/express.svg" },
+  { name: "MySQL", icon: "/icons/mysql.svg" },
+  { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+  { name: "MongoDB", icon: "/icons/mongodb.svg" },
+  { name: "Azure", icon: "/icons/azure.svg" },
+  { name: "AWS", icon: "/icons/aws.svg" },
+  { name: "Firebase", icon: "/icons/firebase.svg" },
+  { name: "Linux", icon: "/icons/linux.svg" },
+  { name: "Docker", icon: "/icons/docker.svg" },
+  { name: "GH Actions", icon: "/icons/github.svg" },
+  { name: "SK-Learn", icon: "/icons/scikitlearn.svg" },
+  { name: "HuggingFace", icon: "/icons/huggingface.svg" },
+  { name: "Langchain", icon: "/icons/langchain.svg" },
+  { name: "PyTorch", icon: "/icons/pytorch.svg" },
+  { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
+  { name: "OpenCV", icon: "/icons/opencv.svg" },
+  { name: "ROS", icon: "/icons/ros.svg" },
+  { name: "Git", icon: "/icons/git.svg" },
 ];
 
 
@@ -59,13 +59,13 @@ export default function AboutMe() {
         </div>
         <div className="imgAndSocials">
         <div className="tape"></div>
-          <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
+          <img src="myphoto.jpeg" alt="My Photo" className="myphoto"/>
           <p className="photoCaption">You can also check out my socials here:</p>
           <div className="socialIcons">
                 <a href="https://github.com/haxybaxy" target="_blank" rel="noopener noreferrer">
                   <GitHub fontSize="large" className="socialIcon"/>
                 </a>
-                <a href="www.linkedin.com/in/zaid-saheb" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/zaid-saheb" target="_blank" rel="noopener noreferrer">
                   <LinkedIn fontSize="large" className="socialIcon"/>
                 </a>
                 <a href="https://medium.com/@haxybaxy" target="_blank" rel="noopener noreferrer">
