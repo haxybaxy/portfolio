@@ -4,4 +4,5 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 3vh;
+  overflow-x: hidden;
 }
