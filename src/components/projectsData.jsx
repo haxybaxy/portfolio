@@ -59,8 +59,8 @@ export const projectsData = [
     icons: {
       React: "react.svg",
       Astro: "astro.svg",
-      Node: "nodejs.svg",
-      Express: "express.svg",
+      "Node.js": "nodejs.svg",
+      "Express.js": "express.svg",
       MongoDB: "mongodb.svg",
       Docker: "docker.svg",
     },
