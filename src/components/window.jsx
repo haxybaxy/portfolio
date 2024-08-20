@@ -18,7 +18,7 @@ export default function Window({children, title, id, filename, headerstyle}) {
           </li>
         </ul>
         <div className="filename">
-        <img src="public/folder.svg" alt="folder" className="folderIcon" />
+        <img src="folder.svg" alt="folder" className="folderIcon" />
         <span>{filename}</span>
         </div>
       </div>

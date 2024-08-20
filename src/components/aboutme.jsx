@@ -5,31 +5,31 @@ import FadeInSection from "./fadeinsection"; // Import the Fadein component
 import { GitHub, LinkedIn, Article } from "@mui/icons-material";
 
 const skills = [
-  { name: "Python", icon: "/public/python.svg" },
-  { name: "C", icon: "/public/c.svg" },
-  { name: "C#", icon: "/public/csharp.svg" },
-  { name: "JavaScript", icon: "/public/javascript.svg" },
-  { name: "TypeScript", icon: "/public/typescript.svg" },
-  { name: "React", icon: "/public/react.svg" },
-  { name: "Node.js", icon: "/public/nodejs.svg" },
-  { name: "Express.js", icon: "/public/express.svg" },
-  { name: "MySQL", icon: "/public/mysql.svg" },
-  { name: "PostgreSQL", icon: "/public/postgresql.svg" },
-  { name: "MongoDB", icon: "/public/mongodb.svg" },
-  { name: "Azure", icon: "/public/azure.svg" },
-  { name: "AWS", icon: "/public/aws.svg" },
-  { name: "Firebase", icon: "/public/firebase.svg" },
-  { name: "Linux", icon: "/public/linux.svg" },
-  { name: "Docker", icon: "/public/docker.svg" },
-  { name: "GH Actions", icon: "/public/github.svg" },
-  { name: "SK-Learn", icon: "/public/scikitlearn.svg" },
-  { name: "HuggingFace", icon: "/public/huggingface.svg" },
-  { name: "Langchain", icon: "/public/langchain.svg" },
-  { name: "PyTorch", icon: "/public/pytorch.svg" },
-  { name: "TensorFlow", icon: "/public/tensorflow.svg" },
-  { name: "OpenCV", icon: "/public/opencv.svg" },
-  { name: "ROS", icon: "/public/ros.svg" },
-  { name: "Git", icon: "/public/git.svg" },
+  { name: "Python", icon: "python.svg" },
+  { name: "C", icon: "c.svg" },
+  { name: "C#", icon: "csharp.svg" },
+  { name: "JavaScript", icon: "javascript.svg" },
+  { name: "TypeScript", icon: "typescript.svg" },
+  { name: "React", icon: "react.svg" },
+  { name: "Node.js", icon: "nodejs.svg" },
+  { name: "Express.js", icon: "express.svg" },
+  { name: "MySQL", icon: "mysql.svg" },
+  { name: "PostgreSQL", icon: "postgresql.svg" },
+  { name: "MongoDB", icon: "mongodb.svg" },
+  { name: "Azure", icon: "azure.svg" },
+  { name: "AWS", icon: "aws.svg" },
+  { name: "Firebase", icon: "firebase.svg" },
+  { name: "Linux", icon: "linux.svg" },
+  { name: "Docker", icon: "docker.svg" },
+  { name: "GH Actions", icon: "github.svg" },
+  { name: "SK-Learn", icon: "scikitlearn.svg" },
+  { name: "HuggingFace", icon: "huggingface.svg" },
+  { name: "Langchain", icon: "langchain.svg" },
+  { name: "PyTorch", icon: "pytorch.svg" },
+  { name: "TensorFlow", icon: "tensorflow.svg" },
+  { name: "OpenCV", icon: "opencv.svg" },
+  { name: "ROS", icon: "ros.svg" },
+  { name: "Git", icon: "git.svg" },
 ];
 
 
@@ -59,7 +59,7 @@ export default function AboutMe() {
         </div>
         <div className="imgAndSocials">
         <div className="tape"></div>
-          <img src="../../public/myphoto.jpeg" alt="My Photo" className="myphoto"/>
+          <img src="myphoto.jpeg" alt="My Photo" className="myphoto"/>
           <p className="photoCaption">You can also check out my socials here:</p>
           <div className="socialIcons">
                 <a href="https://github.com/haxybaxy" target="_blank" rel="noopener noreferrer">
