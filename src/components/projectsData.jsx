@@ -6,11 +6,11 @@ export const projectsData = [
     link: "https://github.com/IE-Robotics-Lab/remote_lab",
     tmuxname: "remotelab",
     icons: {
-      ROS: "ros.svg",
-      Docker: "docker.svg",
-      Python: "python.svg",
-      OpenCV: "opencv.svg",
-      Tensorflow: "tensorflow.svg",
+      ROS: "/icons/ros.svg",
+      Docker: "/icons/docker.svg",
+      Python: "/icons/python.svg",
+      OpenCV: "/icons/opencv.svg",
+      Tensorflow: "/icons/tensorflow.svg",
     },
   },
   {
@@ -20,10 +20,10 @@ export const projectsData = [
     link: "https://github.com/haxybaxy/xppcoder",
     tmuxname: "xppcoder",
     icons: {
-      Python: "python.svg",
-      Langchain: "langchain.svg",
-      HuggingFace: "huggingface.svg",
-      Pinecone: "pinecone.svg",
+      Python: "/icons/python.svg",
+      Langchain: "/icons/langchain.svg",
+      HuggingFace: "/icons/huggingface.svg",
+      Pinecone: "/icons/pinecone.svg",
     },
   },
   {
@@ -33,8 +33,8 @@ export const projectsData = [
     link: "https://github.com/haxybaxy/ec-lang",
     tmuxname: "eclang",
     icons: {
-      C: "c.svg",
-      CMake: "cmake.svg",
+      C: "/icons/c.svg",
+      CMake: "/icons/cmake.svg",
     },
   },
   {
@@ -44,10 +44,10 @@ export const projectsData = [
     link: "https://github.com/haxybaxy/aihackathon2023",
     tmuxname: "aihackathon",
     icons: {
-      Python: "python.svg",
-      Langchain: "langchain.svg",
-      OpenAI: "openai.svg",
-      Pandas: "pandas.svg",
+      Python: "/icons/python.svg",
+      Langchain: "/icons/langchain.svg",
+      OpenAI: "/icons/openai.svg",
+      Pandas: "/icons/pandas.svg",
     },
   },
   {
@@ -57,12 +57,12 @@ export const projectsData = [
     link: "https://github.com/IERoboticsClub/club_website_v0",
     tmuxname: "clubwebsite",
     icons: {
-      React: "react.svg",
-      Astro: "astro.svg",
-      "Node.js": "nodejs.svg",
-      "Express.js": "express.svg",
-      MongoDB: "mongodb.svg",
-      Docker: "docker.svg",
+      React: "/icons/react.svg",
+      Astro: "/icons/astro.svg",
+      "Node.js": "/icons/nodejs.svg",
+      "Express.js": "/icons/express.svg",
+      MongoDB: "/icons/mongodb.svg",
+      Docker: "/icons/docker.svg",
     },
   },
 ];
