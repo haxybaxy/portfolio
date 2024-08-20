@@ -40,7 +40,7 @@ export const projectsData = [
   {
     title: "AI Hackathon 2023",
     description: "Won runner-up with 96% accuracy in the IEU Hackathon 2023 which required building LLM application to extract financial data from various term sheets.",
-    imageUrl: "aihackathon.jpeg",
+    imageUrl: "/projectphotos/aihackathon.jpeg",
     link: "https://github.com/haxybaxy/aihackathon2023",
     tmuxname: "aihackathon",
     icons: {
