@@ -2,7 +2,7 @@ export const projectsData = [
   {
     title: "Remote Lab",
     description: "Remote lab access for users to control the IE Robotics Lab robots from anywhere in the world.",
-    imageUrl: "remotelab.png",
+    imageUrl: "/projectphotos/remotelab.png",
     link: "https://github.com/IE-Robotics-Lab/remote_lab",
     tmuxname: "remotelab",
     icons: {
@@ -16,7 +16,7 @@ export const projectsData = [
   {
     title: "X++ Assistant",
     description: "Extremely proficient coding assistant for the obscure X++ language in Dynamics 365 Finance and Operations. Currently deployed at Dynamics Innovations.",
-    imageUrl: "xppcoder.png",
+    imageUrl: "/projectphotos/xppcoder.png",
     link: "https://github.com/haxybaxy/xppcoder",
     tmuxname: "xppcoder",
     icons: {
@@ -29,7 +29,7 @@ export const projectsData = [
   {
     title: "EC Language",
     description: "Bytecode interpreter for custom programming language with dynamic typing and garbage collection, written in C.",
-    imageUrl: "eclang.png",
+    imageUrl: "/projectphotos/eclang.png",
     link: "https://github.com/haxybaxy/ec-lang",
     tmuxname: "eclang",
     icons: {
@@ -53,7 +53,7 @@ export const projectsData = [
   {
     title: "IE Robotics Club Website",
     description: "IE Robotics Club website built with Astro.js and MongoDB.",
-    imageUrl: "ierobotics.png",
+    imageUrl: "/projectphotos/ierobotics.png",
     link: "https://github.com/IERoboticsClub/club_website_v0",
     tmuxname: "clubwebsite",
     icons: {
