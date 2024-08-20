@@ -46,4 +46,11 @@
 
 .caption {
   text-align: center;
+  max-width: 90vw;
+}
+
+@media (max-width: 769px) {
+  .intro-container {
+    padding-top: 7.5vh;
+  }
 }
