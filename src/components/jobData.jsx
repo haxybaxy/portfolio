@@ -79,4 +79,17 @@ export const jobData = [
     ],
     skills: ["C#", "ASP.net","Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "Langchain", "Python", "Flutter"]
   },
+  {
+    value: "tab7",
+    company: "Google Developer Groups",
+    role: "Campus Lead",
+    startDate: "August 2024",
+    endDate: "Present",
+    content: [
+      "Led team of 10+ officers.",
+      "Coordinated hands-on workshops and events for bachelor and master students about developer technologies.",
+      "Collaborated with professionals and the Google Developer Network to create technical resources to grow the developer community.",
+    ],
+    skills: ["GCP", "ASP.net","Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "Langchain", "Python", "Flutter"]
+  },
 ];
