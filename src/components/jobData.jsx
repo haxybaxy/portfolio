@@ -81,7 +81,7 @@ export const jobData = [
   },
   {
     value: "tab7",
-    company: "Google Developer Groups",
+    company: "Google Developer Group",
     role: "Campus Lead",
     startDate: "August 2024",
     endDate: "Present",
