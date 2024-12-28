@@ -23,7 +23,7 @@ const skills = [
   { name: "Docker", icon: "/icons/docker.svg" },
   { name: "GH Actions", icon: "/icons/github.svg" },
   { name: "SK-Learn", icon: "/icons/scikitlearn.svg" },
-  { name: "HuggingFace", icon: "/icons/huggingface.svg" },
+  { name: "HF", icon: "/icons/huggingface.svg" },
   { name: "Langchain", icon: "/icons/langchain.svg" },
   { name: "PyTorch", icon: "/icons/pytorch.svg" },
   { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
