@@ -4,7 +4,7 @@ export const jobData = [
     company: "Coding Club - IE University",
     role: "Software Developer",
     startDate: "September 2022",
-    endDate: "Present",
+    endDate: "September 2024",
     content: [
       "Developed central codebase and infrastructure to automate club event management and execution.",
       "Led and presented practical workshops on Python, AI, and Web Development to 50+ students.",
@@ -29,7 +29,7 @@ export const jobData = [
   {
     value: "tab3",
     company: "Robotics and AI Club - IE University",
-    role: "Software Developer and Researcher",
+    role: "Vice President",
     startDate: "September 2023",
     endDate: "Present",
     content: [
