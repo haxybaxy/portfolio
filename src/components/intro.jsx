@@ -12,7 +12,6 @@ export default function Intro() {
       <div id="title">
         <h1>👋 Hello! I am <span className="purpletext">Zaid</span>. 👋</h1>
         <FadeInSection delay={'1000ms'}>
-        <h2 className="introCaption">I like making things</h2>
         <p className="caption">Versatile full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
         <a
       href="mailto:zaidksaheb@gmail.com"
