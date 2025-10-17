@@ -27,6 +27,7 @@
 }
 
 .greeting-text {
+  font-size: 40px;
   margin-bottom: 0px;
 }
 
@@ -70,7 +71,8 @@
 }
 
 .caption {
-  color: gray !important;
+  color: #dddddd;
+  margin-top: 10px;
   text-align: center;
   max-width: 90vw;
 }

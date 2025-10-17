@@ -15,12 +15,12 @@ export default function Intro({ onOpenSection }) {
         filename="zaidalsaheb - fastfetch"
         id="intro-window"
       >
-        <PropellerHatModel />
         <div id="title">
-          <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid</span>. <span className="wave-emoji">👋</span></h1>
+          <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid </span><span className="wave-emoji">👋</span></h1>
           <FadeInSection delay={'1000ms'}>
             <p className="caption">Full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
 
+        <PropellerHatModel />
             <div className="buttons-container">
               <div className="section-buttons">
                 <button

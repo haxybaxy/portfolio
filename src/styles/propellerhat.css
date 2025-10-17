@@ -37,6 +37,7 @@
   font-weight: bold;
   visibility: hidden;
   opacity: 0;
+  margin: 0;
   height: 1em;
   line-height: 1em;
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
