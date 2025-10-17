@@ -44,9 +44,9 @@
   width: 1120px;
   max-width: 1120px;
   min-width: 1120px;
-  height: 500px;
-  max-height: 500px;
-  min-height: 500px;
+  height: 600px;
+  max-height: 600px;
+  min-height: 600px;
   margin: 0 20px 20px 20px;
   overflow: hidden;
   border-radius: 8px;
@@ -55,8 +55,8 @@
 
 .detail-image {
   width: 1120px;
-  height: 500px;
-  max-height: 500px;
+  height: 600px;
+  max-height: 600px;
   object-fit: cover;
   border-radius: 8px;
 }

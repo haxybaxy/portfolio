@@ -25,9 +25,9 @@
 }
 
 #projects {
-  height: 700px;
-  max-height: 700px;
-  min-height: 700px;
+  height: 750px;
+  max-height: 750px;
+  min-height: 750px;
   width: 1200px;
   max-width: 1200px;
   min-width: 1200px;
@@ -35,9 +35,9 @@
 
 #projects .contentContainer {
   position: relative;
-  height: 630px;
-  max-height: 630px;
-  min-height: 630px;
+  height: 880px;
+  max-height: 780px;
+  min-height: 780px;
   overflow-y: auto;
   overflow-x: hidden;
   flex: 1;
