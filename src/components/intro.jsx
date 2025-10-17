@@ -1,8 +1,7 @@
-import React from "react";
 import PropellerHatModel from "./propellerhat";
 import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
-import { Person, Work, Folder, Email } from "@mui/icons-material";
+import { Person, Work, Folder } from "@mui/icons-material";
 
 export default function Intro({ onOpenSection }) {
   return (

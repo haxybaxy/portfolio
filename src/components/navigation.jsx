@@ -8,13 +8,6 @@ import "../styles/navigation.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavBar = () => {
-  const handleNavClick = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-
   return (
     <Navbar
       fixed="top"
@@ -22,9 +15,6 @@ const NavBar = () => {
       expand="lg"
     >
       <Container>
-        <Navbar.Brand href="#">
-        <img src="haxybaxy.svg" alt="Logo" height="40" />
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex flex-row">
