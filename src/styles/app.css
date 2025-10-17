@@ -31,6 +31,13 @@ body.overlay-open {
   overscroll-behavior: contain; /* Prevent scroll chaining to body */
 }
 
+.overlay-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 /* Ensure overlays are scrollable on mobile */
 @media (max-width: 768px) {
   .overlay {

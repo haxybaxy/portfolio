@@ -47,19 +47,25 @@ export default function App() {
 
         {openSection === 'about' && (
           <div className="overlay">
-            <AboutMe onClose={handleCloseSection} />
+            <div className="overlay-content">
+              <AboutMe onClose={handleCloseSection} />
+            </div>
           </div>
         )}
 
         {openSection === 'experience' && (
           <div className="overlay">
-            <Experience onClose={handleCloseSection} />
+            <div className="overlay-content">
+              <Experience onClose={handleCloseSection} />
+            </div>
           </div>
         )}
 
         {openSection === 'projects' && (
           <div className="overlay">
-            <Projects onClose={handleCloseSection} />
+            <div className="overlay-content">
+              <Projects onClose={handleCloseSection} />
+            </div>
           </div>
         )}
       </div>

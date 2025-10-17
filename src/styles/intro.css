@@ -1,4 +1,5 @@
 #title {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +15,13 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100%;
+}
+
+.intro-fadein-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 

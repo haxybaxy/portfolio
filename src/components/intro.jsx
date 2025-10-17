@@ -18,10 +18,11 @@ export default function Intro({ onOpenSection }) {
         <div id="title">
           <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid </span><span className="wave-emoji">👋</span></h1>
           <FadeInSection delay={'1000ms'}>
-            <p className="caption">Full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
+            <div className="intro-fadein-content">
+              <p className="caption">Full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
 
-        <PropellerHatModel />
-            <div className="buttons-container">
+              <PropellerHatModel />
+              <div className="buttons-container">
               <div className="section-buttons">
                 <button
                   className="sectionButton"
@@ -53,6 +54,7 @@ export default function Intro({ onOpenSection }) {
                   <IconLucideFolderOpen className="button-icon" />
                   <span>Projects</span>
                 </button>
+              </div>
               </div>
             </div>
           </FadeInSection>
