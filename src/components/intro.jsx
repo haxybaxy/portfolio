@@ -4,8 +4,10 @@ import "../styles/intro.css";
 import IconLucideUser from '~icons/lucide/user';
 import IconLucideBriefcase from '~icons/lucide/briefcase';
 import IconLucideFolderOpen from '~icons/lucide/folder-open';
+import useSound from 'use-sound';
 
 export default function Intro({ onOpenSection }) {
+  const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
     <div className="intro-container" id="intro">
       <PropellerHatModel />
@@ -19,21 +21,30 @@ export default function Intro({ onOpenSection }) {
               <div className="section-buttons">
                 <button
                   className="sectionButton"
-                  onClick={() => onOpenSection('about')}
+                  onClick={() => {
+                    playClick();
+                    onOpenSection('about');
+                  }}
                 >
                   <IconLucideUser className="button-icon" />
                   <span>About Me</span>
                 </button>
                 <button
                   className="sectionButton"
-                  onClick={() => onOpenSection('experience')}
+                  onClick={() => {
+                    playClick();
+                    onOpenSection('experience');
+                  }}
                 >
                   <IconLucideBriefcase className="button-icon" />
                   <span>Experience</span>
                 </button>
                 <button
                   className="sectionButton"
-                  onClick={() => onOpenSection('projects')}
+                  onClick={() => {
+                    playClick();
+                    onOpenSection('projects');
+                  }}
                 >
                   <IconLucideFolderOpen className="button-icon" />
                   <span>Projects</span>
