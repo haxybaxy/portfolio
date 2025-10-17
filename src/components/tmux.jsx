@@ -26,13 +26,15 @@ export default function Tmux({ selectedProject }) {
     return () => clearInterval(intervalId);
   }, []);
 
-  const displayText = selectedProject === null
+  const projectName = selectedProject === null
     ? "projects"
     : projectsData[selectedProject].tmuxname;
 
+  const modeIndicator = selectedProject === null ? "0:fzf*" : "0:[tmux]*";
+
   return (
     <div className="tmuxContainer" id="tmux">
-      <p className="tmuxItem">[{displayText}]</p>
+      <p className="tmuxItem">[{projectName}] {modeIndicator}</p>
       <p className="tmuxItem datetime">&quot;localhost&quot; {time} {date} </p>
     </div>
   );

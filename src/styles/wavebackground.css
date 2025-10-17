@@ -19,3 +19,14 @@
   z-index: 0;
   transition: background-color 0.3s ease;
 }
+
+/* Light mode gradient for wave base */
+[data-theme="light"] .wave-base {
+  background: linear-gradient(
+    to top,
+    #1e8e00 0%,    /* deep grassy green at bottom */
+    #3cb521 35%,   /* bright lush mid-green */
+    #6cd43f 70%,   /* light sunlit green */
+    #9ce86f 100%   /* near-horizon soft yellow-green */
+  );
+}

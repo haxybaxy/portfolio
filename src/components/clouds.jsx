@@ -10,6 +10,10 @@ export default function Clouds() {
 
     const ctx = canvas.getContext('2d');
 
+    // Load cloud image
+    const cloudImage = new Image();
+    cloudImage.src = '/cloud.png';
+
     // Set canvas size with high DPI support
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -30,40 +34,16 @@ export default function Clouds() {
         this.width = Math.random() * 150 + 100;
         this.height = this.width * 0.6;
         this.speed = Math.random() * 0.3 + 0.2;
-
-        // Fixed circle positions and sizes (calculated once)
-        this.circles = [];
-        const numCircles = 5;
-
-        // Bottom arc circles
-        for (let i = 0; i < numCircles; i++) {
-          this.circles.push({
-            offsetX: (i * this.width) / (numCircles - 1),
-            offsetY: Math.sin((i / (numCircles - 1)) * Math.PI) * this.height * 0.3,
-            radius: this.height * 0.4
-          });
-        }
-
-        // Top puff circles (2-3 circles on top)
-        const topCircles = 3;
-        for (let i = 0; i < topCircles; i++) {
-          this.circles.push({
-            offsetX: this.width * 0.25 + (i * this.width * 0.3),
-            offsetY: -this.height * 0.2,
-            radius: this.height * 0.35
-          });
-        }
+        this.opacity = Math.random() * 0.3 + 0.7; // Random opacity between 0.7 and 1
       }
 
       draw() {
-        ctx.fillStyle = 'white';
+        if (!cloudImage.complete) return;
 
-        // Draw cloud using fixed circles
-        this.circles.forEach(circle => {
-          ctx.beginPath();
-          ctx.arc(this.x + circle.offsetX, this.y + circle.offsetY, circle.radius, 0, Math.PI * 2);
-          ctx.fill();
-        });
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.drawImage(cloudImage, this.x, this.y, this.width, this.height);
+        ctx.restore();
       }
 
       update() {
@@ -97,7 +77,10 @@ export default function Clouds() {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    // Start animation after image loads
+    cloudImage.onload = () => {
+      animate();
+    };
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
