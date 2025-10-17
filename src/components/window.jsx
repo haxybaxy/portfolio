@@ -3,14 +3,14 @@ import "../styles/window.css";
 import FadeInSection from "./fadeinsection";
 import { Typewriter } from 'react-simple-typewriter';
 
-export default function Window({children, title, id, filename, headerstyle}) {
+export default function Window({children, title, id, filename, headerstyle, onClose}) {
   const [startTyping, setStartTyping] = useState(false);
   return (
     <FadeInSection onVisible={() => setStartTyping(true)}>
     <div className="window" id={id}>
       <div className="windowHeader">
         <ul className="windowControls">
-          <li className="closeWindow">X</li>
+          <li className="closeWindow" onClick={onClose} style={{cursor: 'pointer'}}>X</li>
           <li className="minWindow">&ndash;</li>
           <li className="expandWindow">
             <span className="triangle">&#x25E4;</span>

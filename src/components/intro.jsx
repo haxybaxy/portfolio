@@ -4,7 +4,7 @@ import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
 import { Fade } from "react-bootstrap";
 
-export default function Intro() {
+export default function Intro({ onOpenSection }) {
   return (
     <div className="intro-container" id="intro">
       <PropellerHatModel />
@@ -13,6 +13,28 @@ export default function Intro() {
         <h1>👋 Hello! I am <span className="purpletext">Zaid</span>. 👋</h1>
         <FadeInSection delay={'1000ms'}>
         <p className="caption">Versatile full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
+
+        <div className="section-buttons">
+          <button
+            className="sectionButton"
+            onClick={() => onOpenSection('about')}
+          >
+            About Me
+          </button>
+          <button
+            className="sectionButton"
+            onClick={() => onOpenSection('experience')}
+          >
+            Experience
+          </button>
+          <button
+            className="sectionButton"
+            onClick={() => onOpenSection('projects')}
+          >
+            Projects
+          </button>
+        </div>
+
         <a
       href="mailto:zaidksaheb@gmail.com"
       className="contactButton"
