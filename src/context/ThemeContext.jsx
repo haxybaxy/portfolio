@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect, useContext } from 'react';
+import useSound from 'use-sound';
 
 const ThemeContext = createContext();
 
@@ -17,6 +18,10 @@ export const ThemeProvider = ({ children }) => {
     return savedTheme || 'dark'; // Default to dark theme
   });
 
+  // Sound effects for theme switching
+  const [playDarkModeSound] = useSound('/sounds/cricket.wav', { volume: 0.5 });
+  const [playLightModeSound] = useSound('/sounds/magic.wav', { volume: 0.5 });
+
   useEffect(() => {
     // Update data-theme attribute on document element
     document.documentElement.setAttribute('data-theme', theme);
@@ -26,7 +31,18 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+
+      // Play sound based on the new theme
+      if (newTheme === 'dark') {
+        playDarkModeSound();
+      } else {
+        playLightModeSound();
+      }
+
+      return newTheme;
+    });
   };
 
   return (
