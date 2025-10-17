@@ -19,7 +19,7 @@ export const projectsData = [
     title: "Holla at Your Boy",
     description: "Github action to tag your coworkers with code comments.",
     imageUrl: "/projectphotos/holla.png",
-    category: "Cool Tools",
+    category: "Dev Tools",
     github: "https://github.com/haxybaxy/holla-at-your-boy",
     tmuxname: "holla-at-your-boy",
     icons: {
@@ -30,7 +30,7 @@ export const projectsData = [
     title: "Search Preview",
     description: "VSCode Extension to mimic file searching with Telescope in Neovim.",
     imageUrl: "/projectphotos/searchpreview.png",
-    category: "Cool Tools",
+    category: "Dev Tools",
     github: "https://github.com/haxybaxy/search-preview",
     tmuxname: "searchpreview",
     icons: {
@@ -163,6 +163,33 @@ export const projectsData = [
     icons: {
       C: "/icons/c.svg",
       CMake: "/icons/cmake.svg",
+    },
+  },
+  {
+    title: "Monsieur",
+    description: "AI Platform that uses ElevenLabs API to provide a managable fleet of virtual front desk employees for hotels. Facilitates phone calls and is able to book rooms and provide services for hotel guests.",
+    imageUrl: "/projectphotos/monsieur.jpg",
+    category: "Competitions",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7327688977786785793/",
+    tmuxname: "monsieur",
+    icons: {
+      "Next.js": "/icons/nextjs.svg",
+      Langgraph: "/icons/langgraph.svg",
+      FastAPI: "/icons/fastapi.svg",
+      Supabase: "/icons/supabase.svg",
+    },
+  },
+  {
+    title: "Agentic Investment Tracker",
+    description: "Tracknetic is a toolkit designed to help Venture Capitalists and Investors to find new investments in different fields, and keep tabs on notable technologies, companies, people and more, using AI Agents that you can dispatch tasks to conversationally. Won the IE x OpenAI Use Case Showcase Competition.",
+    imageUrl: "/projectphotos/tracknetic.jpg",
+    category: "Competitions",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7332082469791227905/",
+    tmuxname: "tracknetic",
+    icons: {
+      React: "/icons/react.svg",
+      Langchain: "/icons/langchain.svg",
+      Langgraph: "/icons/langgraph.svg",
     },
   },
   {
