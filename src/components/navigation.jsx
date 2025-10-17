@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -46,7 +44,7 @@ const NavBar = () => {
               <GitHubIcon style={{ fontSize: 19 }} />
             </Nav.Link>
             <Nav.Link
-              href="https://www.linkedin.com/in/zaid-saheb"
+              href="https://www.linkedin.com/in/zaidalsaheb"
               target="_blank"
               className="mx-2"
             >
