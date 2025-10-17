@@ -1,7 +1,10 @@
 import { projectsData } from "./projectsData";
 import "../styles/projectgrid.css";
+import useSound from 'use-sound';
 
 export default function ProjectGrid({ onSelectProject }) {
+  const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
+
   // Group projects by category
   const projectsByCategory = projectsData.reduce((acc, project, index) => {
     const category = project.category || "Uncategorized";
@@ -11,6 +14,11 @@ export default function ProjectGrid({ onSelectProject }) {
     acc[category].push({ ...project, originalIndex: index });
     return acc;
   }, {});
+
+  const handleSelectProject = (index) => {
+    playClick();
+    onSelectProject(index);
+  };
 
   return (
     <div className="project-grid-container">
@@ -22,7 +30,7 @@ export default function ProjectGrid({ onSelectProject }) {
               <div
                 key={project.originalIndex}
                 className="project-thumbnail"
-                onClick={() => onSelectProject(project.originalIndex)}
+                onClick={() => handleSelectProject(project.originalIndex)}
               >
                 <img
                   src={project.imageUrl}

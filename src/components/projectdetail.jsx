@@ -1,13 +1,20 @@
 import { projectsData } from "./projectsData";
 import "../styles/projectdetail.css";
 import { Github, Link, ArrowLeft } from 'lucide-react';
+import useSound from 'use-sound';
 
 export default function ProjectDetail({ projectIndex, onBack }) {
   const project = projectsData[projectIndex];
+  const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
+
+  const handleBack = () => {
+    playClick();
+    onBack();
+  };
 
   return (
     <div className="project-detail-container">
-      <button className="back-button" onClick={onBack}>
+      <button className="back-button" onClick={handleBack}>
         <ArrowLeft size={24} /> Back to Projects
       </button>
       <div className="project-detail">
