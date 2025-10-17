@@ -15,8 +15,9 @@
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
   padding: 20px;
+  padding-top: 100px;
   overflow-y: auto;
 }
