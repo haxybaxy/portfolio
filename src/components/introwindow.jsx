@@ -3,7 +3,7 @@ import FadeInSection from "./fadeinsection";
 
 export default function IntroWindow({ children, id, filename }) {
   return (
-    <FadeInSection style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <FadeInSection style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'visible' }}>
       <div className="intro-window" id={id}>
         <div className="intro-window-header">
           <div className="intro-filename">
