@@ -6,6 +6,7 @@ import Projects from "./components/projects";
 import Footer from "./components/footer";
 import ThemeToggle from "./components/themetoggle";
 import WaveBackground from "./components/wavebackground";
+import BackgroundEffects from "./components/backgroundeffects";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
@@ -25,6 +26,7 @@ export default function App() {
     <ThemeProvider>
       <div className="App">
         <ThemeToggle />
+        <BackgroundEffects />
         <WaveBackground />
         <Intro onOpenSection={setOpenSection} />
         <Footer />
