@@ -7,7 +7,7 @@
   color: #000000; /* Text color */
   padding: 3px 16px;
   box-sizing: border-box; /* Ensures padding doesn't affect the width */
-  font-family: 'Fira Code', monospace; /* Monospaced font for a terminal-like feel */
+  font-family: 'IBM Plex Mono', monospace; /* Monospaced font for a terminal-like feel */
   display: flex;
   justify-content: space-between; /* Distributes content across the bar */
   align-items: center; /* Centers items vertically */

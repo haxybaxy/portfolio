@@ -23,7 +23,7 @@
   border-bottom: 1px solid rgb(100, 100, 100);
   text-align: left;
   transition: background-color 0.3s ease;
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .vertical-tab-trigger:hover {

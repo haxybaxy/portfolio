@@ -19,7 +19,7 @@
 .sectionTitle{
   display: inline;
   padding: 20px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .sectionHeader {
@@ -134,7 +134,7 @@ hr {
 }
 
 .typeAnimation {
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 500;
   padding: 20px 15px;
@@ -143,7 +143,7 @@ hr {
 }
 .promptchars {
   color: hsl(116, 96%, 43%);
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 500;
   padding: 20px;
