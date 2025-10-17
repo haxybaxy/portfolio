@@ -2,17 +2,15 @@
   width: 1160px;
   max-width: 1160px;
   min-width: 1160px;
-  height: 630px;
-  max-height: 630px;
-  min-height: 630px;
-  padding: 20px 0 0 0;
+  height: 100%;
+  padding: 20px 0 20px 0;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .back-button {
