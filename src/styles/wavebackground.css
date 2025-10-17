@@ -14,7 +14,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40vh;
+  height: 25vh;
   background: var(--bg-wave);
   z-index: 0;
   transition: background-color 0.3s ease;

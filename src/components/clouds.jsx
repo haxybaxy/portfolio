@@ -30,11 +30,23 @@ export default function Clouds() {
         // Fixed circle positions and sizes (calculated once)
         this.circles = [];
         const numCircles = 5;
+
+        // Bottom arc circles
         for (let i = 0; i < numCircles; i++) {
           this.circles.push({
             offsetX: (i * this.width) / (numCircles - 1),
             offsetY: Math.sin((i / (numCircles - 1)) * Math.PI) * this.height * 0.3,
             radius: this.height * 0.4
+          });
+        }
+
+        // Top puff circles (2-3 circles on top)
+        const topCircles = 3;
+        for (let i = 0; i < topCircles; i++) {
+          this.circles.push({
+            offsetX: this.width * 0.25 + (i * this.width * 0.3),
+            offsetY: -this.height * 0.2,
+            radius: this.height * 0.35
           });
         }
       }

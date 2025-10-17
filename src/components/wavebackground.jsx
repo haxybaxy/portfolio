@@ -9,6 +9,9 @@ export default function WaveBackground() {
   const waveColor1 = theme === 'light' ? 'hsl(130, 60%, 45%)' : 'hsla(195, 71%, 47%, 1)';
   const waveColor2 = theme === 'light' ? 'hsl(130, 60%, 45%)' : 'hsla(195, 46%, 57%, 1)';
 
+  // Pause waves in light mode
+  const isPaused = theme === 'light';
+
   return (
     <div className="wave-container">
       {/* Base fill - color managed via CSS variables */}
@@ -17,13 +20,13 @@ export default function WaveBackground() {
       {/* Animated waves */}
       <Wave
         fill={waveColor1}
-        paused={false}
+        paused={isPaused}
         style={{
           position: 'absolute',
           bottom: 0,
           left: 0,
           width: '100%',
-          height: '60vh',
+          height: '40vh',
           zIndex: 2
         }}
         options={{
@@ -35,13 +38,13 @@ export default function WaveBackground() {
       />
       <Wave
         fill={waveColor2}
-        paused={false}
+        paused={isPaused}
         style={{
           position: 'absolute',
           bottom: 0,
           left: 0,
           width: '100%',
-          height: '50vh',
+          height: '30vh',
           zIndex: 1
         }}
         options={{
