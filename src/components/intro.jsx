@@ -10,7 +10,7 @@ export default function Intro({ onOpenSection }) {
       <PropellerHatModel />
       <FadeInSection style={{height: 'auto'}}>
       <div id="title">
-        <h1>👋 Hello! I am <span className="purpletext">Zaid</span>. 👋</h1>
+        <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid</span>. <span className="wave-emoji">👋</span></h1>
         <FadeInSection delay={'1000ms'}>
         <p className="caption">Versatile full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
 
