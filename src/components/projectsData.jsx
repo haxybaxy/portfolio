@@ -167,7 +167,7 @@ export const projectsData = [
   },
   {
     title: "Monsieur",
-    description: "AI Platform that uses ElevenLabs API to provide a managable fleet of virtual front desk employees for hotels. Facilitates phone calls and is able to book rooms and provide services for hotel guests.",
+    description: "AI Platform that uses ElevenLabs API to provide a managable fleet of virtual front desk employees for hotels. Facilitates phone calls and is able to book rooms and provide services for hotel guests. Built at the Entrepreneur First European Builders League Hackathon.",
     imageUrl: "/projectphotos/monsieur.jpg",
     category: "Competitions",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7327688977786785793/",
