@@ -31,6 +31,7 @@
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
+    "react-wavify": "^1.11.1",
     "slick-carousel": "^1.8.1",
     "smoothscroll-polyfill": "^0.4.4",
     "three": "^0.167.1",

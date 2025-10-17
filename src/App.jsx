@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import Intro from "./components/intro";
 import AboutMe from "./components/aboutme";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
 import Footer from "./components/footer";
+import WaveBackground from "./components/wavebackground";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <WaveBackground />
       <Intro onOpenSection={setOpenSection} />
       <Footer />
 

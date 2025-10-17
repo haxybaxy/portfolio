@@ -16,10 +16,6 @@
 body {
   margin: 0;
   background: hsla(0, 0%, 2%, 1);
-  background: linear-gradient(270deg, hsla(0, 0%, 2%, 1) 0%, hsla(295, 46%, 57%, 1) 93%, hsla(295, 71%, 67%, 1) 100%);
-  background: -moz-linear-gradient(270deg, hsla(0, 0%, 2%, 1) 0%, hsla(295, 46%, 57%, 1) 93%, hsla(295, 71%, 67%, 1) 100%);
-  background: -webkit-linear-gradient(270deg, hsla(0, 0%, 2%, 1) 0%, hsla(295, 46%, 57%, 1) 93%, hsla(295, 71%, 67%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#050505", endColorstr="#BA5EC3", GradientType=1 );
   color: white !important;
   overflow: hidden;
   height: 100vh;
