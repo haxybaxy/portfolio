@@ -12,7 +12,7 @@ export default function Window({ children, title, id, filename, headerstyle, onC
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
     <FadeInSection onVisible={() => setStartTyping(true)} isClosing={isClosing}>
-      <Draggable>
+      <Draggable handle=".windowHeader">
         <div className="window" id={id}>
           <div className="windowHeader">
             <ul className="windowControls">

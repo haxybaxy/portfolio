@@ -49,6 +49,12 @@ hr {
   box-sizing: border-box;
   position: relative;
   transition: background-color 0.3s ease;
+  cursor: move;
+  cursor: grab;
+}
+
+.windowHeader:active {
+  cursor: grabbing;
 }
 
 .windowControls {
