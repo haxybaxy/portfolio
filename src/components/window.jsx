@@ -8,17 +8,22 @@ import useSound from 'use-sound';
 
 export default function Window({ children, title, id, filename, headerstyle, onClose }) {
   const [startTyping, setStartTyping] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
-    <FadeInSection onVisible={() => setStartTyping(true)}>
+    <FadeInSection onVisible={() => setStartTyping(true)} isClosing={isClosing}>
       <Draggable>
         <div className="window" id={id}>
           <div className="windowHeader">
             <ul className="windowControls">
               <li className="closeWindow"
                 onClick={() => {
-                  onClose()
                   playClick();
+                  setIsClosing(true);
+                  // Wait for fade-out animation to complete before closing
+                  setTimeout(() => {
+                    onClose();
+                  }, 400); // Match the CSS transition duration
                 }}
                 style={{ cursor: 'pointer' }}>X</li>
             </ul>

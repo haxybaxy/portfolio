@@ -9,3 +9,9 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.fade-in-section.is-closing {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
