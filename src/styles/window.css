@@ -85,7 +85,6 @@ hr {
 
 .windowHeader {
   width: 100%;
-  min-height: 40px;
   background-color: var(--window-header-bg);
   display: flex;
   flex-direction: row;
