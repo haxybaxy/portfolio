@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/tmux.css";
 import { projectsData } from "./projectsData";
 
@@ -37,7 +37,7 @@ export default function Tmux({ activeSlide }) {
           </span>
         ))}
       </p>
-      <p className="tmuxItem datetime">"localhost" {time} {date} </p>
+      <p className="tmuxItem datetime">&quot;localhost&quot; {time} {date} </p>
     </div>
   );
 }

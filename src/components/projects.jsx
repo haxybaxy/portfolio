@@ -1,9 +1,6 @@
-import React from "react";
 import Window from "./window";
-import Tmux from "./tmux";
 import CarouselGallery from "./carousel";
 import "../styles/projects.css";
-import zIndex from "@mui/material/styles/zIndex";
 
 export default function Projects({ onClose }) {
   return (

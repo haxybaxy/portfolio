@@ -1,8 +1,7 @@
-import React from "react";
 import Window from "./window"; // Import the Window component
 import "../styles/aboutme.css"; // Assuming this file contains styles specific to the about me content
 import FadeInSection from "./fadeinsection"; // Import the Fadein component
-import { GitHub, LinkedIn, Article } from "@mui/icons-material";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 
 const skills = [
   { name: "Python", icon: "/icons/python.svg" },
@@ -43,7 +42,7 @@ export default function AboutMe({ onClose }) {
           </p>
 
           <p>
-            Here are some of the technologies that I've worked with:
+            Here are some of the technologies that I&apos;ve worked with:
           </p>
           <FadeInSection delay={'1000ms'}>
           <ul className="skillsList">
