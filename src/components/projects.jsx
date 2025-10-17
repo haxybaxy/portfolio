@@ -21,11 +21,9 @@ export default function Projects({ onClose }) {
       title="projects"
       id="projects"
       filename="projects - tmux"
-      headerstyle={{ position: 'absolute',zIndex: 20,top: '70px' }}
       onClose={onClose}
       bottomBar={<Tmux selectedProject={selectedProject} />}
       hideTitle={selectedProject !== null}
-      hideLine={true}
     >
       <div className={`projects ${selectedProject === null ? 'grid-view' : 'detail-view'}`}>
         {selectedProject === null ? (
