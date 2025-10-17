@@ -90,8 +90,17 @@
   max-width: 70%;
 }
 
+.project-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: 12px;
+}
+
 .project-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px;
   background-color: transparent;
   border-radius: 4px;

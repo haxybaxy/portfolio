@@ -1,7 +1,6 @@
 import { projectsData } from "./projectsData";
 import "../styles/projectdetail.css";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Github, Link, ArrowLeft } from 'lucide-react';
 
 export default function ProjectDetail({ projectIndex, onBack }) {
   const project = projectsData[projectIndex];
@@ -9,16 +8,25 @@ export default function ProjectDetail({ projectIndex, onBack }) {
   return (
     <div className="project-detail-container">
       <button className="back-button" onClick={onBack}>
-        <ArrowBackIcon /> Back to Projects
+        <ArrowLeft size={24} /> Back to Projects
       </button>
       <div className="project-detail">
         <img src={project.imageUrl} alt={project.title} className="detail-image" />
         <div className="detail-overlay">
           <div className="titlediv">
             <h2 className="projectTitle">{project.title}</h2>
-            <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-              <GitHubIcon fontSize="large" style={{ color: "white" }} />
-            </a>
+            <div className="project-links">
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                  <Github size={32} color="white" />
+                </a>
+              )}
+              {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                  <Link size={32} color="white" />
+                </a>
+              )}
+            </div>
           </div>
           <p className="projectDesc">{project.description}</p>
           <div className="projectIcons">
