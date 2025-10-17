@@ -3,38 +3,67 @@ import "../styles/aboutme.css"; // Assuming this file contains styles specific t
 import FadeInSection from "./fadeinsection"; // Import the Fadein component
 import { GitHub, LinkedIn } from "@mui/icons-material";
 
-const skills = [
-  { name: "Python", icon: "/icons/python.svg" },
-  { name: "C", icon: "/icons/c.svg" },
-  { name: "C#", icon: "/icons/csharp.svg" },
-  { name: "C++", icon: "/icons/cpp.svg" },
-  { name: "JavaScript", icon: "/icons/javascript.svg" },
-  { name: "TypeScript", icon: "/icons/typescript.svg" },
-  { name: "React", icon: "/icons/react.svg" },
-  { name: "React Native", icon: "/icons/react.svg" },
-  { name: "Expo", icon: "/icons/expo.svg" },
-  { name: "Next.js", icon: "/icons/nextjs.svg" },
-  { name: "NestJS", icon: "/icons/nestjs.svg" },
-  { name: "Node.js", icon: "/icons/nodejs.svg" },
-  { name: "Express.js", icon: "/icons/express.svg" },
-  { name: "MySQL", icon: "/icons/mysql.svg" },
-  { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
-  { name: "MongoDB", icon: "/icons/mongodb.svg" },
-  { name: "Azure", icon: "/icons/azure.svg" },
-  { name: "AWS", icon: "/icons/aws.svg" },
-  { name: "Firebase", icon: "/icons/firebase.svg" },
-  { name: "Linux", icon: "/icons/linux.svg" },
-  { name: "Docker", icon: "/icons/docker.svg" },
-  { name: "GH Actions", icon: "/icons/github.svg" },
-  { name: "SK-Learn", icon: "/icons/scikitlearn.svg" },
-  { name: "Hugging Face", icon: "/icons/huggingface.svg" },
-  { name: "Langchain", icon: "/icons/langchain.svg" },
-  { name: "Langgraph", icon: "/icons/langgraph.svg" },
-  { name: "PyTorch", icon: "/icons/pytorch.svg" },
-  { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
-  { name: "OpenCV", icon: "/icons/opencv.svg" },
-  { name: "ROS", icon: "/icons/ros.svg" },
-  { name: "Git", icon: "/icons/git.svg" },
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: [
+      { name: "Python", icon: "/icons/python.svg" },
+      { name: "JavaScript", icon: "/icons/javascript.svg" },
+      { name: "TypeScript", icon: "/icons/typescript.svg" },
+      { name: "C", icon: "/icons/c.svg" },
+      { name: "C++", icon: "/icons/cpp.svg" },
+      { name: "C#", icon: "/icons/csharp.svg" },
+    ]
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: [
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "React Native", icon: "/icons/react.svg" },
+      { name: "Next.js", icon: "/icons/nextjs.svg" },
+      { name: "Node.js", icon: "/icons/nodejs.svg" },
+      { name: "Express.js", icon: "/icons/express.svg" },
+      { name: "NestJS", icon: "/icons/nestjs.svg" },
+      { name: "Expo", icon: "/icons/expo.svg" },
+      { name: "Django", icon: "/icons/django.svg" },
+      { name: "FastAPI", icon: "/icons/fastapi.svg" },
+    ]
+  },
+  {
+    title: "Databases",
+    skills: [
+      { name: "MySQL", icon: "/icons/mysql.svg" },
+      { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+      { name: "MongoDB", icon: "/icons/mongodb.svg" },
+      { name: "SQLite", icon: "/icons/sqlite.svg" },
+    ]
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: [
+      { name: "Azure", icon: "/icons/azure.svg" },
+      { name: "AWS", icon: "/icons/aws.svg" },
+      { name: "Firebase", icon: "/icons/firebase.svg" },
+      { name: "Docker", icon: "/icons/docker.svg" },
+      { name: "Linux", icon: "/icons/linux.svg" },
+      { name: "GH Actions", icon: "/icons/github.svg" },
+      { name: "DigitalOcean", icon: "/icons/digitalocean.svg" },
+      { name: "Git", icon: "/icons/git.svg" },
+    ]
+  },
+  {
+    title: "AI & ML",
+    skills: [
+      { name: "PyTorch", icon: "/icons/pytorch.svg" },
+      { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
+      { name: "SK-Learn", icon: "/icons/scikitlearn.svg" },
+      { name: "Hugging Face", icon: "/icons/huggingface.svg" },
+      { name: "Langchain", icon: "/icons/langchain.svg" },
+      { name: "Langgraph", icon: "/icons/langgraph.svg" },
+      { name: "OpenCV", icon: "/icons/opencv.svg" },
+      { name: "ROS", icon: "/icons/ros.svg" },
+    ]
+  },
 ];
 
 
@@ -51,14 +80,21 @@ export default function AboutMe({ onClose }) {
             Here are some of the technologies that I&apos;ve worked with:
           </p>
           <FadeInSection delay={'1000ms'}>
-          <ul className="skillsList">
-          {skills.map((skill, index) => (
-                <li key={index} className="skillItem">
-                  <span className="skillName">{skill.name}</span>
-                  <img src={skill.icon} alt={`${skill.name} icon`} className="skillIcon" />
-                </li>
+            <div className="skillsContainer">
+              {skillCategories.map((category, categoryIndex) => (
+                <div key={categoryIndex} className="skillCategory">
+                  <h3 className="categoryTitle">{category.title}</h3>
+                  <ul className="skillsList">
+                    {category.skills.map((skill, skillIndex) => (
+                      <li key={skillIndex} className="skillItem">
+                        <span className="skillName">{skill.name}</span>
+                        <img src={skill.icon} alt={`${skill.name} icon`} className="skillIcon" />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-          </ul>
+            </div>
           </FadeInSection>
           <p></p>
         </div>

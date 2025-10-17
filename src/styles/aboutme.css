@@ -32,13 +32,34 @@
   font-weight: bolder;
 }
 
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skillCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categoryTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: hsla(295, 71%, 67%, 1);
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsla(295, 71%, 67%, 0.3);
+}
+
 .skillsList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px; /* Adjust the gap between items */
+  grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  gap: 8px; /* Adjust the gap between items */
   list-style-type: none; /* Remove bullets */
   padding: 0;
-  margin: 10;
+  margin: 0;
 }
 
 .skillItem {
@@ -53,6 +74,7 @@
 .skillName {
   text-align: center;
   font-weight: 500;
+  font-size: 0.85rem;
 }
 
 .skillIcon {
