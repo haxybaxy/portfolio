@@ -3,22 +3,47 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark Theme (Default) */
+[data-theme="dark"] {
+  --bg-primary: hsla(0, 0%, 2%, 1);
+  --bg-wave: hsla(295, 46%, 57%, 1);
+  --wave-color-1: hsla(295, 71%, 67%, 1);
+  --wave-color-2: hsla(295, 46%, 57%, 1);
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: white;
+  --window-bg: rgb(48, 48, 48);
+  --window-header-bg: rgb(32, 31, 31);
+  --window-text: white;
+  --nav-icon-color: white;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: hsl(200, 100%, 70%);
+  --bg-wave: hsl(200, 90%, 60%);
+  --wave-color-1: hsl(140, 70%, 50%);
+  --wave-color-2: hsl(140, 60%, 45%);
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgb(40, 40, 40);
+  --window-bg: white;
+  --window-header-bg: rgb(220, 220, 220);
+  --window-text: rgb(40, 40, 40);
+  --nav-icon-color: rgb(40, 40, 40);
+}
+
 body {
   margin: 0;
-  background: hsla(0, 0%, 2%, 1);
-  color: white !important;
+  background: var(--bg-primary);
+  color: var(--text-secondary) !important;
   overflow: hidden;
   height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {

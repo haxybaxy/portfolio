@@ -4,7 +4,9 @@ import AboutMe from "./components/aboutme";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
 import Footer from "./components/footer";
+import ThemeToggle from "./components/themetoggle";
 import WaveBackground from "./components/wavebackground";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -20,28 +22,31 @@ export default function App() {
   };
 
   return (
-    <div className="App">
-      <WaveBackground />
-      <Intro onOpenSection={setOpenSection} />
-      <Footer />
+    <ThemeProvider>
+      <div className="App">
+        <ThemeToggle />
+        <WaveBackground />
+        <Intro onOpenSection={setOpenSection} />
+        <Footer />
 
-      {openSection === 'about' && (
-        <div className="overlay">
-          <AboutMe onClose={handleCloseSection} />
-        </div>
-      )}
+        {openSection === 'about' && (
+          <div className="overlay">
+            <AboutMe onClose={handleCloseSection} />
+          </div>
+        )}
 
-      {openSection === 'experience' && (
-        <div className="overlay">
-          <Experience onClose={handleCloseSection} />
-        </div>
-      )}
+        {openSection === 'experience' && (
+          <div className="overlay">
+            <Experience onClose={handleCloseSection} />
+          </div>
+        )}
 
-      {openSection === 'projects' && (
-        <div className="overlay">
-          <Projects onClose={handleCloseSection} />
-        </div>
-      )}
-    </div>
+        {openSection === 'projects' && (
+          <div className="overlay">
+            <Projects onClose={handleCloseSection} />
+          </div>
+        )}
+      </div>
+    </ThemeProvider>
   );
 }

@@ -6,6 +6,8 @@
   width: 62%;
   padding: 20px;
   text-align: left;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .myphoto {

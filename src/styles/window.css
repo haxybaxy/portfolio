@@ -3,12 +3,13 @@
   width: 95%;
   max-width: 1400px;
   border-radius: 20px;
-  background-color: rgb(48, 48, 48);
+  background-color: var(--window-bg);
   margin:30px auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
 }
 
 .contentContainer {
@@ -40,13 +41,14 @@ hr {
 .windowHeader {
   width: 100%;
   min-height: 40px;
-  background-color: rgb(32, 31, 31);
+  background-color: var(--window-header-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px 5px;
   box-sizing: border-box;
   position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .windowControls {
@@ -132,6 +134,8 @@ hr {
   display: flex;
   align-items: center;
   font-weight: bold;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .typeAnimation {
@@ -141,6 +145,8 @@ hr {
   padding: 20px 15px;
   display: inline-block;
   line-height: 1;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 .promptchars {
   color: hsl(116, 96%, 43%);

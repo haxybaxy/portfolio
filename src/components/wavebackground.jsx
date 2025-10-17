@@ -1,15 +1,22 @@
 import Wave from 'react-wavify';
 import '../styles/wavebackground.css';
+import { useTheme } from '../context/ThemeContext';
 
 export default function WaveBackground() {
+  const { theme } = useTheme();
+
+  // Define colors based on theme
+  const waveColor1 = theme === 'light' ? 'hsl(140, 70%, 50%)' : 'hsla(295, 71%, 67%, 1)';
+  const waveColor2 = theme === 'light' ? 'hsl(140, 60%, 45%)' : 'hsla(295, 46%, 57%, 1)';
+
   return (
     <div className="wave-container">
-      {/* Base purple fill */}
+      {/* Base fill - color managed via CSS variables */}
       <div className="wave-base" />
 
       {/* Animated waves */}
       <Wave
-        fill="hsla(295, 71%, 67%, 1)"
+        fill={waveColor1}
         paused={false}
         style={{
           position: 'absolute',
@@ -27,7 +34,7 @@ export default function WaveBackground() {
         }}
       />
       <Wave
-        fill="hsla(295, 46%, 57%, 1)"
+        fill={waveColor2}
         paused={false}
         style={{
           position: 'absolute',

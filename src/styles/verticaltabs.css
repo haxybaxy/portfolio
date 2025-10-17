@@ -8,17 +8,18 @@
 .vertical-tabs-list {
   display: flex;
   flex-direction: column;
-  background-color: rgb(48, 48, 48); /* Background color for the tabs list */
+  background-color: var(--window-bg); /* Background color for the tabs list */
   border-right: 1px solid rgb(100, 100, 100); /* Border separating tabs list from content */
   padding: 8px;
   width: 20%;
+  transition: background-color 0.3s ease;
 }
 
 .vertical-tab-trigger {
   padding: 10px 16px;
   cursor: pointer;
   color: #74c7ec;
-  background-color: rgb(48, 48, 48);
+  background-color: var(--window-bg);
   border: none;
   border-bottom: 1px solid rgb(100, 100, 100);
   text-align: left;
@@ -38,9 +39,10 @@
 .vertical-tab-content {
   padding: 16px;
   flex-grow: 1;
-  background-color: rgb(48, 48, 48);
+  background-color: var(--window-bg);
   position: relative;
   width: 80%;
+  transition: background-color 0.3s ease;
 }
 
 .listBullet {
@@ -51,6 +53,8 @@
 
 .contentRole {
   margin: 0;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .contentCompany {
@@ -73,12 +77,16 @@
 .contentList {
   font-size: 1rem;
   padding-bottom: 30px;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .contentSkills {
   font-size: 1rem;
   padding-bottom: 30px;
   font-weight: bold;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 @media (max-width: 769px) {

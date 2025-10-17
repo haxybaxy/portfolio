@@ -21,15 +21,19 @@
   color: hsla(295, 71%, 67%, 1);
 }
 
+.greeting-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 40px;
+  margin-bottom: 0px;
+  color: var(--window-text);
+  transition: color 0.3s ease;
+}
+
 .wave-emoji {
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.greeting-text {
-  font-size: 40px;
-  margin-bottom: 0px;
-}
 
 .greeting-text:hover .wave-emoji {
   animation: wave 0.6s ease-in-out infinite;
@@ -71,10 +75,12 @@
 }
 
 .caption {
-  color: #dddddd;
+  color: var(--window-text);
   margin-top: 10px;
   text-align: center;
   max-width: 90vw;
+  transition: color 0.3s ease;
+  opacity: 0.85;
 }
 
 .buttons-container {
@@ -100,7 +106,7 @@
   justify-content: center;
   gap: 12px;
   text-decoration: none;
-  color: white;
+  color: var(--window-text);
   background-color: transparent;
   font-size: 16px;
   font-weight: 600;
@@ -131,6 +137,7 @@
   width: 56px !important;
   height: 56px !important;
   transition: transform 0.3s ease;
+  color: var(--window-text);
 }
 
 @media (max-width: 769px) {

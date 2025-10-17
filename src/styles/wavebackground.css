@@ -15,6 +15,7 @@
   left: 0;
   width: 100%;
   height: 40vh;
-  background: hsla(295, 46%, 57%, 1);
+  background: var(--bg-wave);
   z-index: 0;
+  transition: background-color 0.3s ease;
 }
