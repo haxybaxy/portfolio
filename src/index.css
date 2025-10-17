@@ -21,6 +21,10 @@
   --window-header-bg: rgb(32, 31, 31);
   --window-text: white;
   --nav-icon-color: white;
+  --nvim-bar-bg: rgb(54, 56, 54);
+  --nvim-item-bg: rgb(83, 85, 83);
+  --tab-hover-bg: rgb(52, 54, 69);
+  --tab-active-bg: rgb(66, 69, 91);
 }
 
 /* Light Theme */
@@ -35,6 +39,10 @@
   --window-header-bg: rgb(220, 220, 220);
   --window-text: rgb(40, 40, 40);
   --nav-icon-color: rgb(40, 40, 40);
+  --nvim-bar-bg: rgb(230, 230, 230);
+  --nvim-item-bg: rgb(200, 200, 200);
+  --tab-hover-bg: rgb(240, 240, 240);
+  --tab-active-bg: rgb(220, 220, 220);
 }
 
 body {

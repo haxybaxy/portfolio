@@ -1,6 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { Sun, Moon } from 'lucide-react';
 import "../styles/themetoggle.css";
 
 export default function ThemeToggle() {
@@ -9,9 +8,9 @@ export default function ThemeToggle() {
   return (
     <div className="theme-toggle-fixed" onClick={toggleTheme}>
       {theme === 'light' ? (
-        <DarkModeIcon style={{ fontSize: 24 }} />
+        <Sun size={40} className="sun-icon" />
       ) : (
-        <LightModeIcon style={{ fontSize: 24 }} />
+        <Moon size={40} />
       )}
     </div>
   );

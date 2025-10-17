@@ -28,11 +28,11 @@
 }
 
 .vertical-tab-trigger:hover {
-  background-color: rgb(52, 54, 69);
+  background-color: var(--tab-hover-bg);
 }
 
 .vertical-tab-trigger[data-state='active'] {
-  background-color: rgb(66, 69, 91);
+  background-color: var(--tab-active-bg);
   font-weight: bold;
 }
 
