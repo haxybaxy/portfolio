@@ -49,6 +49,10 @@
   margin-right: 10px;
 }
 
+.contentRole {
+  margin: 0;
+}
+
 .contentCompany {
   color: hsla(295, 71%, 67%, 1);
   font-size: 1.2rem;
@@ -64,7 +68,6 @@
 .contentSubhead {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
 }
 
 .contentList {

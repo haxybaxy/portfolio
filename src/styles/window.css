@@ -128,9 +128,10 @@ hr {
 .filename {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); /* Center the filename horizontally */
+  transform: translateX(-50%);
   display: flex;
-  align-items: center; /* Vertically center the icon and text */
+  align-items: center;
+  font-weight: bold;
 }
 
 .typeAnimation {

@@ -58,6 +58,7 @@
 .intro-filename {
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
 .intro-type-animation {
