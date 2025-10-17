@@ -1,7 +1,9 @@
 import PropellerHatModel from "./propellerhat";
 import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
-import { Person, Work, Folder } from "@mui/icons-material";
+import IconLucideUser from '~icons/lucide/user';
+import IconLucideBriefcase from '~icons/lucide/briefcase';
+import IconLucideFolderOpen from '~icons/lucide/folder-open';
 
 export default function Intro({ onOpenSection }) {
   return (
@@ -19,21 +21,21 @@ export default function Intro({ onOpenSection }) {
               className="sectionButton"
               onClick={() => onOpenSection('about')}
             >
-              <Person className="button-icon" />
+              <IconLucideUser className="button-icon" />
               <span>About Me</span>
             </button>
             <button
               className="sectionButton"
               onClick={() => onOpenSection('experience')}
             >
-              <Work className="button-icon" />
+              <IconLucideBriefcase className="button-icon" />
               <span>Experience</span>
             </button>
             <button
               className="sectionButton"
               onClick={() => onOpenSection('projects')}
             >
-              <Folder className="button-icon" />
+              <IconLucideFolderOpen className="button-icon" />
               <span>Projects</span>
             </button>
           </div>
