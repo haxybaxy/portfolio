@@ -18,6 +18,20 @@ export default function App() {
     smoothscroll.polyfill();
   }, []);
 
+  // Manage body class for overlay state to control scrolling
+  useEffect(() => {
+    if (openSection) {
+      document.body.classList.add('overlay-open');
+    } else {
+      document.body.classList.remove('overlay-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('overlay-open');
+    };
+  }, [openSection]);
+
   const handleCloseSection = () => {
     setOpenSection(null);
   };
