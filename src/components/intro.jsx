@@ -2,7 +2,7 @@ import React from "react";
 import PropellerHatModel from "./propellerhat";
 import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
-import { Fade } from "react-bootstrap";
+import { Person, Work, Folder, Email } from "@mui/icons-material";
 
 export default function Intro({ onOpenSection }) {
   return (
@@ -12,35 +12,33 @@ export default function Intro({ onOpenSection }) {
       <div id="title">
         <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid</span>. <span className="wave-emoji">👋</span></h1>
         <FadeInSection delay={'1000ms'}>
-        <p className="caption">Versatile full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
+        <p className="caption">Full-stack software developer and AI/ML engineer based in Madrid, Spain.</p>
 
-        <div className="section-buttons">
-          <button
-            className="sectionButton"
-            onClick={() => onOpenSection('about')}
-          >
-            About Me
-          </button>
-          <button
-            className="sectionButton"
-            onClick={() => onOpenSection('experience')}
-          >
-            Experience
-          </button>
-          <button
-            className="sectionButton"
-            onClick={() => onOpenSection('projects')}
-          >
-            Projects
-          </button>
+        <div className="buttons-container">
+          <div className="section-buttons">
+            <button
+              className="sectionButton"
+              onClick={() => onOpenSection('about')}
+            >
+              <Person className="button-icon" />
+              <span>About Me</span>
+            </button>
+            <button
+              className="sectionButton"
+              onClick={() => onOpenSection('experience')}
+            >
+              <Work className="button-icon" />
+              <span>Experience</span>
+            </button>
+            <button
+              className="sectionButton"
+              onClick={() => onOpenSection('projects')}
+            >
+              <Folder className="button-icon" />
+              <span>Projects</span>
+            </button>
+          </div>
         </div>
-
-        <a
-      href="mailto:zaidksaheb@gmail.com"
-      className="contactButton"
-    >
-      <span>Say Hi!</span>
-    </a>
         </FadeInSection>
       </div>
       </FadeInSection>
