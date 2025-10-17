@@ -83,15 +83,15 @@ export const projectsData = [
     description: "Prototype for Agentic AI System that can deploy any code on any machine using various MCPs. Done for Recommenders Systems and Chatbots course.",
     imageUrl: "/projectphotos/deploypilot.png",
     category: "University Projects",
-    github: "https://github.com/IE-Robotics-Lab/remote_lab",
     link: "https://www.youtube.com/watch?v=II6IIS46uPw",
-    tmuxname: "remotelab",
+    tmuxname: "deploypilot",
     icons: {
-      ROS: "/icons/ros.svg",
       Docker: "/icons/docker.svg",
       Python: "/icons/python.svg",
-      OpenCV: "/icons/opencv.svg",
-      Tensorflow: "/icons/tensorflow.svg",
+      FastAPI: "/icons/fastapi.svg",
+      Langchain: "/icons/langchain.svg",
+      DigitalOcean: "/icons/digitalocean.svg",
+
     },
   },
   {
