@@ -8,10 +8,14 @@
 
 .intro-container {
   display: flex;
-  flex-direction: column; /* Arrange items in a column */
-  justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
-  height: 100vh; /* Make the div take up the full height of the viewport */
+  flex-direction: column;
+  /* Arrange items in a column */
+  justify-content: center;
+  /* Center items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  height: 100vh;
+  /* Make the div take up the full height of the viewport */
   width: 100%;
 }
 
@@ -30,14 +34,37 @@
 }
 
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .introCaption {
@@ -73,7 +100,7 @@
   justify-content: center;
   gap: 12px;
   text-decoration: none;
-  color: hsla(295, 71%, 67%, 1);
+  color: white;
   background-color: transparent;
   font-size: 16px;
   font-weight: 600;
