@@ -26,9 +26,7 @@ body.overlay-open {
   justify-content: center;
   align-items: flex-start;
   z-index: 2000;
-  padding: 20px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   overscroll-behavior: contain; /* Prevent scroll chaining to body */
 }
