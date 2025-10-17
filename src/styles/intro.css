@@ -12,7 +12,7 @@
   justify-content: center; /* Center items vertically */
   align-items: center; /* Center items horizontally */
   height: 100vh; /* Make the div take up the full height of the viewport */
-  padding-top: 10vh;
+  width: 100%;
 }
 
 .purpletext {
@@ -83,10 +83,6 @@
 }
 
 @media (max-width: 769px) {
-  .intro-container {
-    padding-top: 7.5vh;
-  }
-
   .section-buttons {
     gap: 15px;
   }

@@ -1,9 +1,10 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding-bottom: 3vh;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .overlay {

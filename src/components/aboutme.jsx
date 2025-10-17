@@ -68,9 +68,6 @@ export default function AboutMe({ onClose }) {
                 <a href="https://www.linkedin.com/in/zaid-saheb" target="_blank" rel="noopener noreferrer">
                   <LinkedIn fontSize="large" className="socialIcon"/>
                 </a>
-                <a href="https://medium.com/@haxybaxy" target="_blank" rel="noopener noreferrer">
-                  <Article fontSize="large" className="socialIcon"/>
-                </a>
           </div>
         </div>
 

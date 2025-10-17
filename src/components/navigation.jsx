@@ -52,13 +52,6 @@ const NavBar = () => {
             >
               <LinkedInIcon style={{ fontSize: 21 }} />
             </Nav.Link>
-            <Nav.Link
-              href="https://medium.com/@haxybaxy"
-              target="_blank"
-              className="mx-2"
-            >
-              <BorderColorIcon style={{ fontSize: 20 }} />
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
