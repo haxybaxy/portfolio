@@ -242,18 +242,26 @@ hr {
   }
 
   #projects {
-    height: auto;
-    min-height: 85vh;
-    max-height: 90vh;
+    height: 85vh;
+    max-height: 85vh;
     width: 100%;
     max-width: 100%;
     min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
 
   #projects .contentContainer {
-    height: auto;
-    min-height: 60vh;
-    max-height: 70vh;
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #projects .windowBottomBar {
+    position: relative;
+    flex-shrink: 0;
+    bottom: auto;
   }
 }

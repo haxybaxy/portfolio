@@ -19,7 +19,30 @@
 }
 
 @media (max-width: 768px) {
+  .tmuxContainer {
+    padding: 5px 12px 15px 12px;
+    font-size: 14px;
+    height: 25px;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .tmuxItem {
+    font-size: 13px;
+  }
+
   .datetime {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tmuxContainer {
+    padding: 4px 10px 12px 10px;
+    font-size: 12px;
+    height: 22px;
+  }
+
+  .tmuxItem {
+    font-size: 11px;
   }
 }

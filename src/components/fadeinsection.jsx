@@ -10,9 +10,12 @@ export default function FadeInSection({ children, onVisible, delay, style={}, is
     ...style, // Override default styles with any provided inline styles
   };
 
+  // Lower threshold for mobile devices to ensure animations trigger
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
   const { ref, inView } = useInView({
     triggerOnce: true, // Only trigger the animation once
-    threshold: 0.2, // Trigger when 20% of the element is visible
+    threshold: isMobile ? 0.05 : 0.2, // Lower threshold on mobile (5% vs 20%)
   });
 
   React.useEffect(() => {
