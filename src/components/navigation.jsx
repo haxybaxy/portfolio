@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <Navbar
       fixed="top"
-      className={"bg-body-tertiary"}
+      className="transparent-navbar"
       expand="lg"
     >
       <Container>
@@ -27,28 +27,22 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link onClick={() => handleNavClick("intro")}>Home</Nav.Link>
-            <Nav.Link onClick={() => handleNavClick("aboutme")}>About Me</Nav.Link>
-            <Nav.Link onClick={() => handleNavClick("experience")}>Experience</Nav.Link>
-            <Nav.Link onClick={() => handleNavClick("projects")}>Projects</Nav.Link>
-          </Nav>
-          <Nav className="ml-auto d-flex flex-row justify-content-end">
+          <Nav className="ms-auto d-flex flex-row">
             <Nav.Link href="mailto:zaidksaheb@gmail.com" className="mx-2">
-              <EmailRoundedIcon style={{ fontSize: 20 }} />
+              <EmailRoundedIcon style={{ fontSize: 20, color: 'white' }} />
             </Nav.Link>
             <Nav.Link
               href="https://github.com/haxybaxy"
               target="_blank"
               className="mx-2">
-              <GitHubIcon style={{ fontSize: 19 }} />
+              <GitHubIcon style={{ fontSize: 19, color: 'white' }} />
             </Nav.Link>
             <Nav.Link
               href="https://www.linkedin.com/in/zaidalsaheb"
               target="_blank"
               className="mx-2"
             >
-              <LinkedInIcon style={{ fontSize: 21 }} />
+              <LinkedInIcon style={{ fontSize: 21, color: 'white' }} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
