@@ -10,7 +10,8 @@
 
 .containerStyle {
   height: 30vh;
-  width: 60vw;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,4 +1,5 @@
 import PropellerHatModel from "./propellerhat";
+import IntroWindow from "./introwindow";
 import FadeInSection from "./fadeinsection";
 import "../styles/intro.css";
 import IconLucideUser from '~icons/lucide/user';
@@ -10,8 +11,11 @@ export default function Intro({ onOpenSection }) {
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
     <div className="intro-container" id="intro">
-      <PropellerHatModel />
-      <FadeInSection style={{ height: 'auto' }}>
+      <IntroWindow
+        filename="zaidalsaheb - fastfetch"
+        id="intro-window"
+      >
+        <PropellerHatModel />
         <div id="title">
           <h1 className="greeting-text"><span className="wave-emoji">👋</span> Hello! I am <span className="purpletext">Zaid</span>. <span className="wave-emoji">👋</span></h1>
           <FadeInSection delay={'1000ms'}>
@@ -53,7 +57,7 @@ export default function Intro({ onOpenSection }) {
             </div>
           </FadeInSection>
         </div>
-      </FadeInSection>
+      </IntroWindow>
     </div>
   );
 }

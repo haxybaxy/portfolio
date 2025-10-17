@@ -35,7 +35,7 @@ const skills = [
 
 export default function AboutMe({ onClose }) {
   return (
-    <Window title="about me" id="aboutme" filename="zaidalsaheb - fastfetch" onClose={onClose}>
+    <Window title="about me" id="aboutme" filename="zaidalsaheb - whoami" onClose={onClose}>
       <div className="aboutMeContainer">
         <div className="textContainer">
           <p>
