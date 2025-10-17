@@ -11,13 +11,9 @@
 .intro-container {
   display: flex;
   flex-direction: column;
-  /* Arrange items in a column */
   justify-content: center;
-  /* Center items vertically */
   align-items: center;
-  /* Center items horizontally */
   height: 100vh;
-  /* Make the div take up the full height of the viewport */
   width: 100%;
 }
 
@@ -28,6 +24,10 @@
 .wave-emoji {
   display: inline-block;
   transition: transform 0.3s ease;
+}
+
+.greeting-text {
+  margin-bottom: 0px;
 }
 
 .greeting-text:hover .wave-emoji {
@@ -69,12 +69,8 @@
   }
 }
 
-.introCaption {
-  color: gray !important;
-  text-align: center;
-}
-
 .caption {
+  color: gray !important;
   text-align: center;
   max-width: 90vw;
 }
