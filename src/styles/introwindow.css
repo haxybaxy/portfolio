@@ -1,0 +1,115 @@
+.intro-window {
+  height: auto;
+  width: 95vw;
+  max-width: 900px;
+  border-radius: 20px;
+  background-color: var(--window-bg);
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.intro-window-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-content-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.intro-section-header {
+  display: flex;
+}
+
+.intro-header-line {
+  flex-grow: 1;
+  margin: auto 30px;
+  display: inline;
+}
+
+.intro-window-header {
+  width: 100%;
+  height: 40px;
+  background-color: var(--window-header-bg);
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.folderIcon {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 8px;
+}
+
+.intro-filename {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: var(--window-text);
+  transition: color 0.3s ease;
+}
+
+.intro-type-animation {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 500;
+  padding: 15px;
+  display: inline-block;
+}
+
+.intro-promptchars {
+  color: hsl(116, 96%, 43%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: calc(1.375rem + 1.5vw);
+  font-weight: 500;
+  padding: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .intro-window {
+    width: 90vw;
+    max-width: 500px;
+    border-radius: 15px;
+  }
+
+  .intro-window-header {
+    height: 35px;
+    padding: 8px 15px;
+  }
+
+  .intro-content-container {
+    padding: 30px 15px;
+  }
+
+  .intro-filename {
+    white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .folderIcon {
+    max-width: 16px;
+    max-height: 16px;
+    margin-right: 6px;
+  }
+}

@@ -1,52 +1,93 @@
 .vertical-tabs-container {
   display: flex;
-  height: 100%;
   width: 100%;
-  min-height: 50vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .vertical-tabs-list {
   display: flex;
   flex-direction: column;
-  background-color: rgb(48, 48, 48); /* Background color for the tabs list */
+  background-color: var(--window-bg); /* Background color for the tabs list */
   border-right: 1px solid rgb(100, 100, 100); /* Border separating tabs list from content */
   padding: 8px;
   width: 20%;
+  transition: background-color 0.3s ease;
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .vertical-tab-trigger {
   padding: 10px 16px;
   cursor: pointer;
-  color: #74c7ec;
-  background-color: rgb(48, 48, 48);
+  background-color: var(--window-bg);
   border: none;
   border-bottom: 1px solid rgb(100, 100, 100);
   text-align: left;
   transition: background-color 0.3s ease;
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
+  flex-shrink: 0;
+  min-height: fit-content;
+}
+
+.tab-trigger-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tab-company {
+  color: #74c7ec;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tab-role {
+  color: #a6adc8;
+  font-size: 0.85rem;
+  line-height: 1.2;
 }
 
 .vertical-tab-trigger:hover {
-  background-color: rgb(52, 54, 69);
+  background-color: var(--tab-hover-bg);
 }
 
 .vertical-tab-trigger[data-state='active'] {
-  background-color: rgb(66, 69, 91);
+  background-color: var(--tab-active-bg);
   font-weight: bold;
 }
 
 .vertical-tab-content {
   padding: 16px;
   flex-grow: 1;
-  background-color: rgb(48, 48, 48);
+  background-color: var(--window-bg);
   position: relative;
   width: 80%;
+  transition: background-color 0.3s ease;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .listBullet {
   max-width: 15px;
   max-height: 15px;
   margin-right: 10px;
+}
+
+.contentRole {
+  margin: 0;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .contentCompany {
@@ -64,30 +105,94 @@
 .contentSubhead {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
 }
 
 .contentList {
   font-size: 1rem;
   padding-bottom: 30px;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .contentSkills {
   font-size: 1rem;
   padding-bottom: 30px;
   font-weight: bold;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .vertical-tabs-container {
     flex-direction: column;
-  }
-
-  .vertical-tab-content {
-    width: auto;
+    height: 100%;
   }
 
   .vertical-tabs-list {
-    width: auto;
+    width: 100%;
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    padding: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: auto;
+    max-height: 120px;
+    flex-shrink: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vertical-tab-trigger {
+    border-bottom: none;
+    border-right: 1px solid rgb(100, 100, 100);
+    min-width: 180px;
+    padding: 12px;
+  }
+
+  .vertical-tab-trigger:last-child {
+    border-right: none;
+  }
+
+  .tab-company {
+    font-size: 1rem;
+  }
+
+  .tab-role {
+    font-size: 0.8rem;
+  }
+
+  .vertical-tab-content {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    min-height: 0;
+  }
+
+  .contentRole {
+    font-size: 1.3rem;
+  }
+
+  .contentCompany {
+    font-size: 1.1rem;
+  }
+
+  .contentDate {
+    font-size: 1rem;
+  }
+
+  .contentSubhead {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contentList {
+    font-size: 0.95rem;
+    padding-bottom: 20px;
+  }
+
+  .contentSkills {
+    font-size: 0.95rem;
+    padding-bottom: 20px;
   }
 }

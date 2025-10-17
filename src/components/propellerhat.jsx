@@ -1,4 +1,5 @@
-import React, { Suspense, useRef } from "react";
+/* eslint-disable react/no-unknown-property */
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import "../styles/propellerhat.css";

@@ -1,33 +1,96 @@
 .window {
   height: auto;
-  width: 95vw;
+  width: 95%;
+  max-width: 1400px;
+  max-height: 90vh;
   border-radius: 20px;
-  background-color: rgb(48, 48, 48);
-  margin:30px 0px;
+  background-color: var(--window-bg);
+  margin:30px auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+#aboutme {
+  height: auto;
+  max-height: 90vh;
+}
+
+#aboutme .contentContainer {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#experience {
+  height: 80vh;
+  max-height: 80vh;
+}
+
+#experience .contentContainer {
+  position: relative;
+  height: calc(80vh - 140px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+#projects {
+  height: 750px;
+  max-height: 750px;
+  min-height: 750px;
+  width: 1200px;
+  max-width: 1200px;
+  min-width: 1200px;
+}
+
+#projects .contentContainer {
+  position: relative;
+  height: 880px;
+  max-height: 780px;
+  min-height: 780px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.windowBottomBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.sectionHeader.hidden {
+  display: none;
 }
 
 .contentContainer {
   position: relative;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sectionTitle{
   display: inline;
   padding: 20px;
-  font-family: 'Fira Code', monospace;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 .sectionHeader {
   display: flex;
+  align-items: center;
 }
 
 .headerLine {
-  flex-grow: 1; /* Take up the remaining space */
-  margin:  auto 30px;
+  flex-grow: 1;
+  margin: 0 30px;
+  align-self: center;
 }
 
 hr {
@@ -36,11 +99,28 @@ hr {
 
 .windowHeader {
   width: 100%;
-  height: 40px;
-  background-color: rgb(32, 31, 31);
+  background-color: var(--window-header-bg);
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 10px 5px;
+  box-sizing: border-box;
+  position: relative;
+  transition: background-color 0.3s ease;
+  cursor: move;
+  cursor: grab;
+}
+
+.windowHeader:active {
+  cursor: grabbing;
+}
+
+.windowHeader.mobile {
+  cursor: default;
+}
+
+.windowHeader.mobile:active {
+  cursor: default;
 }
 
 .windowControls {
@@ -122,30 +202,92 @@ hr {
 .filename {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%); /* Center the filename horizontally */
+  transform: translateX(-50%);
   display: flex;
-  align-items: center; /* Vertically center the icon and text */
+  align-items: center;
+  font-weight: bold;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .typeAnimation {
-  font-family: 'Fira Code', monospace;
-  font-size: calc(1.375rem + 1.5vw); /* Adjust size as needed */
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 500;
-  padding: 15px;
+  padding: 20px 15px;
   display: inline-block;
+  line-height: 1;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 .promptchars {
   color: hsl(116, 96%, 43%);
-  font-family: 'Fira Code', monospace;
-  font-size: calc(1.375rem + 1.5vw); /* Adjust size as needed */
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 500;
   padding: 20px;
   display: inline-block;
+  line-height: 1;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .filename {
     left: 70%;
     white-space: nowrap;
+  }
+
+  .window {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 15px;
+    max-height: 85vh;
+  }
+
+  #aboutme {
+    height: auto;
+    max-height: 85vh;
+  }
+
+  #aboutme .contentContainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #experience {
+    height: auto;
+    min-height: 85vh;
+    max-height: 90vh;
+  }
+
+  #experience .contentContainer {
+    height: auto;
+    min-height: 60vh;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  #projects {
+    height: 85vh;
+    max-height: 85vh;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  #projects .contentContainer {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #projects .windowBottomBar {
+    position: relative;
+    flex-shrink: 0;
+    bottom: auto;
   }
 }

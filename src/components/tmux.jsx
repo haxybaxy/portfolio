@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/tmux.css";
 import { projectsData } from "./projectsData";
 
-export default function Tmux({ activeSlide }) {
+export default function Tmux({ selectedProject }) {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 
@@ -26,18 +26,16 @@ export default function Tmux({ activeSlide }) {
     return () => clearInterval(intervalId);
   }, []);
 
-  // console.log("Active slide in Tmux:", activeSlide); // Debugging: Check the active slide in Tmux
+  const projectName = selectedProject === null
+    ? "projects"
+    : projectsData[selectedProject].tmuxname;
+
+  const modeIndicator = selectedProject === null ? "0:fzf*" : "0:[tmux]*";
 
   return (
     <div className="tmuxContainer" id="tmux">
-      <p className="tmuxItem"> [projects]{" "}
-        {projectsData.map((project, index) => (
-          <span key={index}>
-            {index + 1}:{project.tmuxname}{index === activeSlide ? "*" : ""}{" "}
-          </span>
-        ))}
-      </p>
-      <p className="tmuxItem datetime">"localhost" {time} {date} </p>
+      <p className="tmuxItem">[{projectName}] {modeIndicator}</p>
+      <p className="tmuxItem datetime">&quot;localhost&quot; {time} {date} </p>
     </div>
   );
 }

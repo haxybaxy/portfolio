@@ -6,6 +6,8 @@
   width: 62%;
   padding: 20px;
   text-align: left;
+  color: var(--window-text);
+  transition: color 0.3s ease;
 }
 
 .myphoto {
@@ -19,8 +21,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
 }
 
 .purpleText {
@@ -31,19 +32,49 @@
   font-weight: bolder;
 }
 
+.skillsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skillCategory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categoryTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: hsla(295, 71%, 67%, 1);
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsla(295, 71%, 67%, 0.3);
+}
+
 .skillsList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 15px; /* Adjust the gap between items */
+  grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+  gap: 8px; /* Adjust the gap between items */
   list-style-type: none; /* Remove bullets */
   padding: 0;
-  margin: 10;
+  margin: 0;
 }
 
 .skillItem {
+  font-size: 0.8rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   white-space: nowrap;
+  gap: 5px;
+}
+
+.skillName {
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.85rem;
 }
 
 .skillIcon {
@@ -52,7 +83,6 @@
   background-color: #ffffff;
   border-radius: 10%;
   padding: 2px;
-  margin-right: 5px;
 }
 
 .skillIcon:hover {
@@ -75,9 +105,14 @@
   background-color: white;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 20px auto 10px auto;
   transform: rotate(-2deg); /* Rotate the Polaroid for a more realistic look */
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .socialIcon {
@@ -118,11 +153,6 @@
   }
   .skillsList {
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  }
-
-  .skillItem {
-    display: flex;
-    flex-direction: column;
   }
 
 }

@@ -1,0 +1,128 @@
+.project-grid-container {
+  width: 100%;
+  max-width: 1160px;
+  height: 100%;
+  padding: 20px 20px 250px 20px;
+  box-sizing: border-box;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.category-section {
+  margin-bottom: 40px;
+}
+
+.category-section:last-child {
+  margin-bottom: 20px;
+}
+
+.category-title {
+  color: var(--window-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--nvim-bar-bg);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.project-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  max-height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-thumbnail:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-thumbnail:hover .thumbnail-image {
+  transform: scale(1.05);
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.thumbnail-title {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid-container {
+    padding: 80px 15px 10px 15px;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .category-title {
+    font-size: 1.2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  .project-thumbnail {
+    height: 200px;
+  }
+
+  .thumbnail-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid-container {
+    padding: 80px 10px 10px 10px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-thumbnail {
+    height: 180px;
+  }
+}

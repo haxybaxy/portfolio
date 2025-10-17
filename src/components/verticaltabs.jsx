@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import Nvim from './nvim';
 import '../styles/verticaltabs.css';
@@ -60,9 +60,7 @@ export default function VerticalTabs() {
         setVimMode("NORMAL");
         setInsertError("");
       } else if (event.key === 'k') {
-        moveToNextTab();
-      } else if (event.key === 'j') {
-        moveToPreviousTab();
+        setActiveTab(jobData[jobData.length - 1].value);
       }
     };
 
@@ -73,24 +71,20 @@ export default function VerticalTabs() {
     };
   }, [activeTab]); // Adding activeTab as a dependency ensures the key press handler always has the latest activeTab value
 
-  const moveToNextTab = () => {
-    const currentIndex = jobData.findIndex((tab) => tab.value === activeTab);
-    const nextIndex = (currentIndex + 1) % jobData.length;
-    setActiveTab(jobData[nextIndex].value);
-  };
 
-  const moveToPreviousTab = () => {
-    const currentIndex = jobData.findIndex((tab) => tab.value === activeTab);
-    const previousIndex = (currentIndex - 1 + jobData.length) % jobData.length;
-    setActiveTab(jobData[previousIndex].value);
-  };
 
   return (
     <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="vertical-tabs-container">
       <Tabs.List className="vertical-tabs-list" orientation="vertical">
         {jobData.slice().reverse().map((tab) => (
           <Tabs.Trigger key={tab.value} value={tab.value} className="vertical-tab-trigger">
-            <img src="folder.svg" className='listBullet' />{tab.company}
+            <div className="tab-trigger-content">
+              <img src="folder.svg" className='listBullet' />
+              <div className="tab-text">
+                <div className="tab-company">{tab.company}</div>
+                <div className="tab-role">{tab.role}</div>
+              </div>
+            </div>
           </Tabs.Trigger>
         ))}
       </Tabs.List>

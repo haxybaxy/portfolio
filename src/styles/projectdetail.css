@@ -1,0 +1,234 @@
+.project-detail-container {
+  height: 100%;
+  padding: 20px 0 20px 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--nvim-item-bg);
+  color: var(--window-text);
+  border: 1px solid var(--nvim-bar-bg);
+  padding: 10px 20px;
+  margin: 0 20px 15px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  z-index: 10;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.back-button:hover {
+  background-color: var(--tab-hover-bg);
+  transform: translateX(-5px);
+}
+
+.project-detail {
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 600px;
+  margin: 0 20px 20px 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.projectTitle {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.projectDesc {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: 12px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+  transform: scale(1.1);
+}
+
+.projectIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff;
+  border-radius: 10%;
+  padding: 2px;
+  margin-right: 5px;
+  align-self: center;
+}
+
+.projectIcon:hover {
+  transform: scale(1.1);
+}
+
+.iconContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.iconWithName {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.titlediv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-name {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 10px 0;
+    overflow-y: visible;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .project-detail {
+    width: 95%;
+    height: 500px;
+    margin: 0 10px 10px 10px;
+  }
+
+  .detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    margin: 0 10px 10px 10px;
+  }
+
+  .projectTitle {
+    font-size: 1.3rem;
+  }
+
+  .projectDesc {
+    font-size: 0.95rem;
+    max-width: 95%;
+  }
+
+  .projectIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .iconContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail-container {
+    padding: 8px 0;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .project-detail {
+    width: 100%;
+    height: 450px;
+    margin: 0 5px 8px 5px;
+  }
+
+  .detail-image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    margin: 0 5px 8px 5px;
+  }
+
+  .projectTitle {
+    font-size: 1.1rem;
+  }
+
+  .projectDesc {
+    font-size: 0.9rem;
+    max-width: 98%;
+  }
+
+  .projectIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .icon-name {
+    font-size: 0.7rem;
+  }
+}

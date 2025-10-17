@@ -1,18 +1,17 @@
 .tmuxContainer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  background-color: #24e712; /* Background color */
-  color: #000000; /* Text color */
-  padding: 3px 16px;
-  box-sizing: border-box; /* Ensures padding doesn't affect the width */
-  font-family: 'Fira Code', monospace; /* Monospaced font for a terminal-like feel */
+  height: 30px;
+  background-color: #24e712;
+  color: #000000;
+  padding: 5px 16px 20px 16px;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
   display: flex;
-  justify-content: space-between; /* Distributes content across the bar */
-  align-items: center; /* Centers items vertically */
-  z-index: 10; /* Ensures the bar is on top of other content */
-  height: auto; /* Explicit height for the bar */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 15;
+  border-radius: 0 0 20px 20px;
 }
 
 .tmuxItem {
@@ -20,7 +19,30 @@
 }
 
 @media (max-width: 768px) {
+  .tmuxContainer {
+    padding: 5px 12px 15px 12px;
+    font-size: 14px;
+    height: 25px;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .tmuxItem {
+    font-size: 13px;
+  }
+
   .datetime {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .tmuxContainer {
+    padding: 4px 10px 12px 10px;
+    font-size: 12px;
+    height: 22px;
+  }
+
+  .tmuxItem {
+    font-size: 11px;
   }
 }

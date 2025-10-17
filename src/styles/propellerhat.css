@@ -9,19 +9,17 @@
 }
 
 .containerStyle {
-  height: 30vh;
-  width: 60vw;
+  height: 25vh;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: hsla(0, 0%, 100%, 1);
-  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
-
-  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
-
-  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 25%);
-
+  background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 35%);
+  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 35%);
+  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 35%);
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#7B90ED", GradientType=1 );
 }
 
@@ -36,6 +34,7 @@
   font-weight: bold;
   visibility: hidden;
   opacity: 0;
+  margin: 0;
   height: 1em;
   line-height: 1em;
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0.5s;
@@ -47,12 +46,36 @@
   transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .containerStyle {
-    background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+    height: 20vh;
+    max-width: 100%;
+    background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 30%);
+    background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 30%);
+    background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 30%);
+  }
 
-  background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+  .canvasStyle {
+    height: 30vh;
+    max-height: 30vh;
+  }
 
-  background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(229, 76%, 71%, 0) 60%);
+  .spinMe {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerStyle {
+    height: 18vh;
+  }
+
+  .canvasStyle {
+    height: 25vh;
+    max-height: 25vh;
+  }
+
+  .spinMe {
+    font-size: 0.85rem;
   }
 }

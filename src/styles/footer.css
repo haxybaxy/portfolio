@@ -1,0 +1,37 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: transparent;
+  z-index: 50;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--text-secondary);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.socialLink:active {
+  transform: translateY(-1px);
+}

@@ -31,7 +31,7 @@ export const jobData = [
     company: "Robotics and AI Club - IE University",
     role: "Vice President",
     startDate: "September 2023",
-    endDate: "Present",
+    endDate: "September 2025",
     content: [
       "Led multiple teams developing AI/ML models using NLP, Computer Vision, and others, to create 6+ different projects.",
       "Presented 10+ hands-on workshops to 30+ attendees about open source development, state of the art ML models, and generative AI. Utilized working demos of AI/ML models and other projects for greater attendee interaction.",
@@ -84,12 +84,26 @@ export const jobData = [
     company: "Google Developer Group",
     role: "Campus Lead",
     startDate: "August 2024",
-    endDate: "Present",
+    endDate: "August 2025",
     content: [
       "Led team of 10+ officers.",
       "Coordinated hands-on workshops and events for bachelor and master students about developer technologies.",
       "Collaborated with professionals and the Google Developer Network to create technical resources to grow the developer community.",
     ],
     skills: ["Google Cloud Platform", "Firebase", "Flutter", "Python", "Node.js", "React"]
+  },
+  {
+    value: "tab8",
+    company: "MVST",
+    role: "Full Stack Engineer Intern",
+    startDate: "June 2025",
+    endDate: "November 2025",
+    content: [
+      "Developed mobile app pet care marketplace (Liesl) using React Native, NestJS, and PostgreSQL.",
+      "Architected and managed scalable backend infrastructure on AWS (ECS, RDS, S3, CloudFront), and AWS CDK for Infrastructure as Code.",
+      "Implemented CI/CD pipelines with GitHub Actions and Docker, automating testing, deployment, and containerized service delivery.",
+      "Collaborated with Designers, Product Managers, and Developers to launch the application on App Stores in Switzerland, to more than 5k active users.",
+    ],
+    skills: ["AWS", "Next.js", "React Native", "NestJS", "PostgreSQL", "Docker", "GitHub Actions", "TypeScript", "CI/CD", "Cloud Architecture"]
   },
 ];
