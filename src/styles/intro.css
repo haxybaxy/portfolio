@@ -140,20 +140,57 @@
   color: var(--window-text);
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
+
+  .greeting-text {
+    font-size: 28px;
+  }
+
+  .caption {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .buttons-container {
+    margin: 20px 0;
+    gap: 15px;
+  }
+
   .section-buttons {
-    gap: 20px;
+    gap: 12px;
     width: 100%;
   }
 
   .sectionButton {
-    font-size: 14px;
-    padding: 20px 24px;
-    min-width: 120px;
+    font-size: 13px;
+    padding: 16px 20px;
+    min-width: 100px;
+    gap: 8px;
   }
 
   .button-icon {
-    width: 48px !important;
-    height: 48px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting-text {
+    font-size: 24px;
+  }
+
+  .caption {
+    font-size: 13px;
+  }
+
+  .sectionButton {
+    font-size: 12px;
+    padding: 14px 16px;
+    min-width: 90px;
+  }
+
+  .button-icon {
+    width: 36px !important;
+    height: 36px !important;
   }
 }

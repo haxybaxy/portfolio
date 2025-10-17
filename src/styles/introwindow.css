@@ -83,8 +83,30 @@
   display: inline-block;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
+  .intro-window {
+    width: 90vw;
+    max-width: 500px;
+    border-radius: 15px;
+  }
+
+  .intro-window-header {
+    height: 35px;
+    padding: 8px 15px;
+  }
+
+  .intro-content-container {
+    padding: 30px 15px;
+  }
+
   .intro-filename {
     white-space: nowrap;
+    font-size: 14px;
+  }
+
+  .folderIcon {
+    max-width: 16px;
+    max-height: 16px;
+    margin-right: 6px;
   }
 }

@@ -37,12 +37,9 @@
 
 .project-detail {
   position: relative;
-  width: 1120px;
+  width: 100%;
   max-width: 1120px;
-  min-width: 1120px;
   height: 600px;
-  max-height: 600px;
-  min-height: 600px;
   margin: 0 20px 20px 20px;
   overflow: hidden;
   border-radius: 8px;
@@ -50,9 +47,8 @@
 }
 
 .detail-image {
-  width: 1120px;
-  height: 600px;
-  max-height: 600px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -147,30 +143,86 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 700px) {
-  .iconContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    justify-content: center;
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 15px 0;
   }
 
-  .projectDesc {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 600px) {
   .project-detail {
-    height: 60vh;
+    width: 95%;
+    height: auto;
+    min-height: 400px;
+    max-height: 70vh;
+    margin: 0 10px 15px 10px;
+  }
+
+  .detail-image {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    max-height: 70vh;
   }
 
   .back-button {
     font-size: 0.9rem;
     padding: 8px 16px;
+    margin: 0 10px 12px 10px;
   }
 
   .projectTitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+
+  .projectDesc {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .projectIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .iconContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail {
+    width: 100%;
+    min-height: 350px;
+    max-height: 65vh;
+    margin: 0 5px 10px 5px;
+  }
+
+  .detail-image {
+    min-height: 350px;
+    max-height: 65vh;
+  }
+
+  .back-button {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+    margin: 0 5px 10px 5px;
+  }
+
+  .projectTitle {
+    font-size: 1.1rem;
+  }
+
+  .projectDesc {
+    font-size: 0.9rem;
+  }
+
+  .projectIcon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .icon-name {
+    font-size: 0.7rem;
   }
 }

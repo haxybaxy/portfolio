@@ -101,6 +101,14 @@ hr {
   cursor: grabbing;
 }
 
+.windowHeader.mobile {
+  cursor: default;
+}
+
+.windowHeader.mobile:active {
+  cursor: default;
+}
+
 .windowControls {
   list-style: none;
   display: flex;
@@ -208,9 +216,44 @@ hr {
   line-height: 1;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .filename {
     left: 70%;
     white-space: nowrap;
+  }
+
+  .window {
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 15px;
+  }
+
+  #experience {
+    height: auto;
+    min-height: 85vh;
+    max-height: 90vh;
+  }
+
+  #experience .contentContainer {
+    height: auto;
+    min-height: 60vh;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  #projects {
+    height: auto;
+    min-height: 85vh;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  #projects .contentContainer {
+    height: auto;
+    min-height: 60vh;
+    max-height: 70vh;
+    overflow-y: auto;
   }
 }
