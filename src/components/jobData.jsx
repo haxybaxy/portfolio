@@ -96,8 +96,8 @@ export const jobData = [
     value: "tab8",
     company: "MVST",
     role: "Full Stack Engineer Intern",
-    startDate: "August 2024",
-    endDate: "August 2025",
+    startDate: "June 2025",
+    endDate: "November 2025",
     content: [
       "Developed mobile app pet care marketplace (Liesl) using React Native, NestJS, and PostgreSQL.",
       "Architected and managed scalable backend infrastructure on AWS (ECS, RDS, S3, CloudFront), and AWS CDK for Infrastructure as Code.",

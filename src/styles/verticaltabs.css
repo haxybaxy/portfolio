@@ -1,8 +1,8 @@
 .vertical-tabs-container {
   display: flex;
-  height: 100%;
   width: 100%;
-  min-height: 50vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .vertical-tabs-list {
@@ -13,18 +13,49 @@
   padding: 8px;
   width: 20%;
   transition: background-color 0.3s ease;
+  overflow-y: scroll !important;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .vertical-tab-trigger {
   padding: 10px 16px;
   cursor: pointer;
-  color: #74c7ec;
   background-color: var(--window-bg);
   border: none;
   border-bottom: 1px solid rgb(100, 100, 100);
   text-align: left;
   transition: background-color 0.3s ease;
   font-family: 'IBM Plex Mono', monospace;
+  flex-shrink: 0;
+  min-height: fit-content;
+}
+
+.tab-trigger-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.tab-company {
+  color: #74c7ec;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tab-role {
+  color: #a6adc8;
+  font-size: 0.85rem;
+  line-height: 1.2;
 }
 
 .vertical-tab-trigger:hover {
@@ -43,6 +74,8 @@
   position: relative;
   width: 80%;
   transition: background-color 0.3s ease;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .listBullet {

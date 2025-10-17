@@ -78,7 +78,13 @@ export default function VerticalTabs() {
       <Tabs.List className="vertical-tabs-list" orientation="vertical">
         {jobData.slice().reverse().map((tab) => (
           <Tabs.Trigger key={tab.value} value={tab.value} className="vertical-tab-trigger">
-            <img src="folder.svg" className='listBullet' />{tab.company}
+            <div className="tab-trigger-content">
+              <img src="folder.svg" className='listBullet' />
+              <div className="tab-text">
+                <div className="tab-company">{tab.company}</div>
+                <div className="tab-role">{tab.role}</div>
+              </div>
+            </div>
           </Tabs.Trigger>
         ))}
       </Tabs.List>

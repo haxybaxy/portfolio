@@ -12,9 +12,23 @@
   transition: background-color 0.3s ease;
 }
 
+#experience {
+  height: 80vh;
+  max-height: 80vh;
+}
+
+#experience .contentContainer {
+  position: relative;
+  height: calc(80vh - 140px);
+  overflow: hidden;
+  flex: 1;
+}
+
 .contentContainer {
   position: relative;
   height: 100%;
+  overflow: hidden;
+  flex: 1;
 }
 
 .sectionTitle{
