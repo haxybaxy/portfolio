@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import useSound from 'use-sound';
 
 
-export default function Window({ children, title, id, filename, headerstyle, onClose }) {
+export default function Window({ children, title, id, filename, headerstyle, onClose, bottomBar, hideTitle, hideLine }) {
   const [startTyping, setStartTyping] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
@@ -32,7 +32,7 @@ export default function Window({ children, title, id, filename, headerstyle, onC
               <span>{filename}</span>
             </div>
           </div>
-          <div className="sectionHeader" style={headerstyle}>
+          <div className={`sectionHeader ${hideTitle ? 'hidden' : ''}`} style={headerstyle}>
             <h1 className="promptchars"> <span style={{ color: "#74c7ec" }}> ~ </span> ❯</h1>
             <span className="typeAnimation">
               {startTyping && <Typewriter
@@ -45,14 +45,18 @@ export default function Window({ children, title, id, filename, headerstyle, onC
                 delaySpeed={1000}
               />}
             </span>
-            <hr className="headerLine"></hr>
+            {!hideLine && <hr className="headerLine"></hr>}
           </div>
           <div className="contentContainer">
             <FadeInSection delay={'900ms'}>
               {children}
             </FadeInSection>
           </div>
-
+          {bottomBar && (
+            <div className="windowBottomBar">
+              {bottomBar}
+            </div>
+          )}
         </div>
       </Draggable>
     </FadeInSection>

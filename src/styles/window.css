@@ -24,6 +24,37 @@
   flex: 1;
 }
 
+#projects {
+  height: 700px;
+  max-height: 700px;
+  min-height: 700px;
+  width: 1200px;
+  max-width: 1200px;
+  min-width: 1200px;
+}
+
+#projects .contentContainer {
+  position: relative;
+  height: 630px;
+  max-height: 630px;
+  min-height: 630px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.windowBottomBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.sectionHeader.hidden {
+  display: none;
+}
+
 .contentContainer {
   position: relative;
   height: 100%;
