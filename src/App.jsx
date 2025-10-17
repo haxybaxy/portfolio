@@ -3,7 +3,7 @@ import Intro from "./components/intro";
 import AboutMe from "./components/aboutme";
 import Experience from "./components/experience";
 import Projects from "./components/projects";
-import NavBar from "./components/navigation";
+import Footer from "./components/footer";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -20,8 +20,8 @@ export default function App() {
 
   return (
     <div className="App">
-      <NavBar />
       <Intro onOpenSection={setOpenSection} />
+      <Footer />
 
       {openSection === 'about' && (
         <div className="overlay">

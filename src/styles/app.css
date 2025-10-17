@@ -19,6 +19,5 @@
   align-items: flex-start;
   z-index: 1000;
   padding: 20px;
-  padding-top: 100px;
   overflow-y: auto;
 }
