@@ -44,8 +44,15 @@
 .skillItem {
   font-size: 0.8rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   white-space: nowrap;
+  gap: 5px;
+}
+
+.skillName {
+  text-align: center;
+  font-weight: 500;
 }
 
 .skillIcon {
@@ -54,7 +61,6 @@
   background-color: #ffffff;
   border-radius: 10%;
   padding: 2px;
-  margin-right: 5px;
 }
 
 .skillIcon:hover {
@@ -80,6 +86,12 @@
   margin-top: 20px;
   margin-bottom: 10px;
   transform: rotate(-2deg); /* Rotate the Polaroid for a more realistic look */
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .socialIcon {
@@ -120,11 +132,6 @@
   }
   .skillsList {
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  }
-
-  .skillItem {
-    display: flex;
-    flex-direction: column;
   }
 
 }

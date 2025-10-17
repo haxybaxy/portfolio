@@ -27,7 +27,7 @@ const skills = [
   { name: "Docker", icon: "/icons/docker.svg" },
   { name: "GH Actions", icon: "/icons/github.svg" },
   { name: "SK-Learn", icon: "/icons/scikitlearn.svg" },
-  { name: "HF", icon: "/icons/huggingface.svg" },
+  { name: "Hugging Face", icon: "/icons/huggingface.svg" },
   { name: "Langchain", icon: "/icons/langchain.svg" },
   { name: "Langgraph", icon: "/icons/langgraph.svg" },
   { name: "PyTorch", icon: "/icons/pytorch.svg" },
@@ -54,8 +54,8 @@ export default function AboutMe({ onClose }) {
           <ul className="skillsList">
           {skills.map((skill, index) => (
                 <li key={index} className="skillItem">
+                  <span className="skillName">{skill.name}</span>
                   <img src={skill.icon} alt={`${skill.name} icon`} className="skillIcon" />
-                  {skill.name}
                 </li>
               ))}
           </ul>
