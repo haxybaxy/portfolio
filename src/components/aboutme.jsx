@@ -46,7 +46,7 @@ const skillCategories = [
       { name: "Firebase", icon: "/icons/firebase.svg" },
       { name: "Docker", icon: "/icons/docker.svg" },
       { name: "Linux", icon: "/icons/linux.svg" },
-      { name: "GH Actions", icon: "/icons/github.svg" },
+      { name: "Actions", icon: "/icons/github.svg" },
       { name: "DigitalOcean", icon: "/icons/digitalocean.svg" },
       { name: "Git", icon: "/icons/git.svg" },
     ]
