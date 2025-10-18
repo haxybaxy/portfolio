@@ -7,9 +7,9 @@
 Welcome to my portfolio website! 🚀
 ## 📋 Project Overview
 
-This portfolio website is built using **React** and **Vite**, with **Three.js** for the 3D head. 
-The experience section is inspired by a 'modern' setup for **Neovim**, you can use j and k for navigating jobs and v and i to try and enter "visual" / "insert" modes. 
-The projects section is based on the default **tmux** set up, since I thought it would be more immediately recognizable compared to a more customized one.
+- This portfolio website is built using **React** and **Vite**, with **Three.js** for the 3D head. 
+- The experience section is inspired by a 'modern' setup for **Neovim**, you can use j and k for navigating jobs and v and i to try and enter "visual" / "insert" modes. 
+- The projects section is based on the default **tmux** set up, since I thought it would be more immediately recognizable compared to a more customized one.
 ## 📦 Installation
 
 To run this project locally, follow these steps:
