@@ -1,6 +1,6 @@
 import Window from "./window";
 import VerticalTabs from "./verticaltabs";
-import "../styles/experience.css";
+
 export default function Experience({ onClose }) {
 
   return (
