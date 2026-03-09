@@ -13,7 +13,7 @@ const skillCategories = [
       { name: "C", icon: "/icons/c.svg" },
       { name: "C++", icon: "/icons/cpp.svg" },
       { name: "C#", icon: "/icons/csharp.svg" },
-    ]
+    ],
   },
   {
     title: "Frameworks & Libraries",
@@ -27,7 +27,7 @@ const skillCategories = [
       { name: "Expo", icon: "/icons/expo.svg" },
       { name: "Django", icon: "/icons/django.svg" },
       { name: "FastAPI", icon: "/icons/fastapi.svg" },
-    ]
+    ],
   },
   {
     title: "Databases",
@@ -36,7 +36,7 @@ const skillCategories = [
       { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
       { name: "MongoDB", icon: "/icons/mongodb.svg" },
       { name: "SQLite", icon: "/icons/sqlite.svg" },
-    ]
+    ],
   },
   {
     title: "Cloud & DevOps",
@@ -49,7 +49,8 @@ const skillCategories = [
       { name: "Actions", icon: "/icons/github.svg" },
       { name: "DigitalOcean", icon: "/icons/digitalocean.svg" },
       { name: "Git", icon: "/icons/git.svg" },
-    ]
+      { name: "Terraform", icon: "/icons/terraform.svg" },
+    ],
   },
   {
     title: "AI & ML",
@@ -62,24 +63,38 @@ const skillCategories = [
       { name: "Langgraph", icon: "/icons/langgraph.svg" },
       { name: "OpenCV", icon: "/icons/opencv.svg" },
       { name: "ROS", icon: "/icons/ros.svg" },
-    ]
+    ],
   },
 ];
 
-
 export default function AboutMe({ onClose }) {
   return (
-    <Window title="about me" id="aboutme" filename="zaidalsaheb - whoami" onClose={onClose}>
+    <Window
+      title="about me"
+      id="aboutme"
+      filename="zaidalsaheb - whoami"
+      onClose={onClose}
+    >
       <div className="aboutMeContainer">
         <div className="textContainer">
           <p>
-            I am currently an <span className="purpleText boldText">undergrad student at IE University</span>, pursuing a bachelors degree in <span className="purpleText boldText">Computer Science and Artificial Intelligence</span>. I am very passionate about <span className="boldText">technology</span> and all of its <span className="boldText">interconnected facets</span>, which drives me to learn about <span className="boldText">anything and everything</span>.
+            I am currently an{" "}
+            <span className="purpleText boldText">
+              undergrad student at IE University
+            </span>
+            , pursuing a bachelors degree in{" "}
+            <span className="purpleText boldText">
+              Computer Science and Artificial Intelligence
+            </span>
+            . I am very passionate about{" "}
+            <span className="boldText">technology</span> and all of its{" "}
+            <span className="boldText">interconnected facets</span>, which
+            drives me to learn about{" "}
+            <span className="boldText">anything and everything</span>.
           </p>
 
-          <p>
-            Here are some of the technologies that I&apos;ve worked with:
-          </p>
-          <FadeInSection delay={'1000ms'}>
+          <p>Here are some of the technologies that I&apos;ve worked with:</p>
+          <FadeInSection delay={"1000ms"}>
             <div className="skillsContainer">
               {skillCategories.map((category, categoryIndex) => (
                 <div key={categoryIndex} className="skillCategory">
@@ -88,7 +103,11 @@ export default function AboutMe({ onClose }) {
                     {category.skills.map((skill, skillIndex) => (
                       <li key={skillIndex} className="skillItem">
                         <span className="skillName">{skill.name}</span>
-                        <img src={skill.icon} alt={`${skill.name} icon`} className="skillIcon" />
+                        <img
+                          src={skill.icon}
+                          alt={`${skill.name} icon`}
+                          className="skillIcon"
+                        />
                       </li>
                     ))}
                   </ul>
@@ -99,19 +118,28 @@ export default function AboutMe({ onClose }) {
           <p></p>
         </div>
         <div className="imgAndSocials">
-        <div className="tape"></div>
-          <img src="myphoto.jpeg" alt="My Photo" className="myphoto"/>
-          <p className="photoCaption">You can also check out my socials here:</p>
+          <div className="tape"></div>
+          <img src="myphoto.jpeg" alt="My Photo" className="myphoto" />
+          <p className="photoCaption">
+            You can also check out my socials here:
+          </p>
           <div className="socialIcons">
-                <a href="https://github.com/haxybaxy" target="_blank" rel="noopener noreferrer">
-                  <GitHub fontSize="large" className="socialIcon"/>
-                </a>
-                <a href="https://www.linkedin.com/in/zaid-saheb" target="_blank" rel="noopener noreferrer">
-                  <LinkedIn fontSize="large" className="socialIcon"/>
-                </a>
+            <a
+              href="https://github.com/haxybaxy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHub fontSize="large" className="socialIcon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/zaid-saheb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedIn fontSize="large" className="socialIcon" />
+            </a>
           </div>
         </div>
-
       </div>
     </Window>
   );
