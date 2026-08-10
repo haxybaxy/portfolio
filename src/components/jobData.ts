@@ -65,6 +65,7 @@ export const jobData: Job[] = [
       "MongoDB",
       "Python",
     ],
+    relatedProjects: ["IE Robotics Club Website"],
   },
   {
     value: "tab4",
@@ -107,6 +108,7 @@ export const jobData: Job[] = [
       "Python",
       "Docker",
     ],
+    relatedProjects: ["Remote Lab"],
   },
   {
     value: "tab6",
@@ -135,6 +137,7 @@ export const jobData: Job[] = [
       "Python",
       "Flutter",
     ],
+    relatedProjects: ["X++ Assistant"],
   },
   {
     value: "tab7",
@@ -180,6 +183,7 @@ export const jobData: Job[] = [
       "CI/CD",
       "Cloud Architecture",
     ],
+    relatedProjects: ["Liesl"],
   },
   {
     value: "tab9",
@@ -202,5 +206,6 @@ export const jobData: Job[] = [
       "Pinecone",
       "LangFuse",
     ],
+    relatedProjects: ["Skoll"],
   },
 ];

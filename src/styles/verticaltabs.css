@@ -67,15 +67,32 @@
   font-weight: bold;
 }
 
+/* Column layout: the body scrolls, the nvim bar stays pinned as a footer */
 .vertical-tab-content {
-  padding: 16px;
   flex-grow: 1;
   background-color: var(--window-bg);
   position: relative;
   width: 80%;
   transition: background-color 0.3s ease;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   max-height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.vertical-tab-content[hidden] {
+  display: none;
+}
+
+.tab-content-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .listBullet {
@@ -116,10 +133,39 @@
 
 .contentSkills {
   font-size: 1rem;
-  padding-bottom: 30px;
   font-weight: bold;
   color: var(--window-text);
   transition: color 0.3s ease;
+}
+
+.relatedProjects {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding-bottom: 16px;
+}
+
+.relatedProjectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #74c7ec;
+  transition: color 0.3s ease;
+}
+
+.relatedProjectLink:hover {
+  text-decoration: underline;
+}
+
+.relatedProjectLink .listBullet {
+  margin-right: 6px;
 }
 
 @media (max-width: 768px) {
@@ -164,9 +210,11 @@
   .vertical-tab-content {
     width: 100%;
     flex: 1;
-    overflow-y: auto;
-    padding: 12px;
     min-height: 0;
+  }
+
+  .tab-content-body {
+    padding: 12px;
   }
 
   .contentRole {
@@ -193,6 +241,9 @@
 
   .contentSkills {
     font-size: 0.95rem;
-    padding-bottom: 20px;
+  }
+
+  .relatedProjectLink {
+    font-size: 0.95rem;
   }
 }

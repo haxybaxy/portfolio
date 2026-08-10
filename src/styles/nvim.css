@@ -1,17 +1,20 @@
 .nvim {
   font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  flex-shrink: 0;
 }
 
+/* Floats just above the bar without reserving space when empty */
 .insertError {
   position: absolute;
-  bottom: 10px;
+  bottom: 100%;
+  left: 16px;
+  margin: 0 0 6px 0;
   color: rgb(233, 39, 39);
 }
 
 .nvimbar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   background-color: var(--nvim-bar-bg);
   display: flex;

@@ -12,6 +12,8 @@ export interface Job {
   endDate: string;
   content: string[];
   skills: string[];
+  /** Titles of projects in projectsData that came out of this role */
+  relatedProjects?: string[];
 }
 
 export interface Project {

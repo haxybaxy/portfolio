@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Window from "./window";
 import ProjectGrid from "./projectgrid";
 import ProjectDetail from "./projectdetail";
@@ -7,17 +6,18 @@ import "../styles/projects.css";
 
 interface ProjectsProps {
   onClose: () => void;
+  selectedProject: number | null;
+  onSelectProject: (index: number | null) => void;
+  onOpenJob: (value: string) => void;
 }
 
-export default function Projects({ onClose }: ProjectsProps) {
-  const [selectedProject, setSelectedProject] = useState<number | null>(null);
-
+export default function Projects({ onClose, selectedProject, onSelectProject, onOpenJob }: ProjectsProps) {
   const handleSelectProject = (index: number) => {
-    setSelectedProject(index);
+    onSelectProject(index);
   };
 
   const handleBack = () => {
-    setSelectedProject(null);
+    onSelectProject(null);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function Projects({ onClose }: ProjectsProps) {
         {selectedProject === null ? (
           <ProjectGrid onSelectProject={handleSelectProject} />
         ) : (
-          <ProjectDetail projectIndex={selectedProject} onBack={handleBack} />
+          <ProjectDetail projectIndex={selectedProject} onBack={handleBack} onOpenJob={onOpenJob} />
         )}
       </div>
     </Window>
