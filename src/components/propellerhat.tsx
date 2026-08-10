@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unknown-property */
 import { Suspense, useRef } from "react";
+import type { Group } from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import "../styles/propellerhat.css";
 
 function PropellerHat() {
-  const group = useRef();
+  const group = useRef<Group>(null);
   const { nodes } = useGLTF("/propellerhat/propellerhat.glb");
   // console.log(nodes); // Uncomment to see the structure of the nodes object, seperated out in blender
 

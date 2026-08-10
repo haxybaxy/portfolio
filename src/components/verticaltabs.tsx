@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
+import type { MouseEventHandler } from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import Nvim from './nvim';
 import '../styles/verticaltabs.css';
 import { jobData } from './jobData';
+import type { VimMode } from '../types';
 
 export default function VerticalTabs() {
   const [lineNumber, setLineNumber] = useState(1);
   const [charNumber, setCharNumber] = useState(1);
   const [percent, setPercent] = useState(0);
   const [insertError, setInsertError] = useState("");
-  const [vimMode, setVimMode] = useState("NORMAL");
+  const [vimMode, setVimMode] = useState<VimMode>("NORMAL");
   const [activeTab, setActiveTab] = useState(jobData[jobData.length - 1].value);
 
-  const handleClick = (event) => {
+  const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {
     const contentElement = event.currentTarget;
     const contentText = contentElement.innerText;
 
@@ -50,7 +52,7 @@ export default function VerticalTabs() {
   };
 
   useEffect(() => {
-    const handleKeyPress = (event) => {
+    const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "I" || event.key === "i") {
         setInsertError("E45: 'readonly' option is set");
       } else if (event.key === "V" || event.key === "v") {
@@ -75,7 +77,7 @@ export default function VerticalTabs() {
 
   return (
     <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="vertical-tabs-container">
-      <Tabs.List className="vertical-tabs-list" orientation="vertical">
+      <Tabs.List className="vertical-tabs-list">
         {jobData.slice().reverse().map((tab) => (
           <Tabs.Trigger key={tab.value} value={tab.value} className="vertical-tab-trigger">
             <div className="tab-trigger-content">
@@ -108,7 +110,7 @@ export default function VerticalTabs() {
             ))}
           </ul>
           <h3 className='contentSkills'>{vimMode === 'VISUAL' ? '**' : ''}Skills: {tab.skills.join(', ')}.{vimMode === 'VISUAL' ? '**' : ''}</h3>
-          <Nvim filename={tab.company}lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode} />
+          <Nvim filename={tab.company} lineNumber={lineNumber} charNumber={charNumber} percent={percent} insertError={insertError} vimMode={vimMode} />
         </Tabs.Content>
       ))}
     </Tabs.Root>

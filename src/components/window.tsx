@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Draggable from 'react-draggable'
 import "../styles/window.css";
 import FadeInSection from "./fadeinsection";
 import { Typewriter } from 'react-simple-typewriter';
 import useSound from 'use-sound';
 
+interface WindowProps {
+  children: ReactNode;
+  title: string;
+  filename: string;
+  onClose: () => void;
+  id?: string;
+  headerstyle?: CSSProperties;
+  bottomBar?: ReactNode;
+  hideTitle?: boolean;
+  hideLine?: boolean;
+}
 
-export default function Window({ children, title, id, filename, headerstyle, onClose, bottomBar, hideTitle, hideLine }) {
+export default function Window({ children, title, id, filename, headerstyle, onClose, bottomBar, hideTitle, hideLine }: WindowProps) {
   const [startTyping, setStartTyping] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isMobile, setIsMobile] = useState(false);

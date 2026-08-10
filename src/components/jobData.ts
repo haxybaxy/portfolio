@@ -1,4 +1,6 @@
-export const jobData = [
+import type { Job } from "../types";
+
+export const jobData: Job[] = [
   {
     value: "tab1",
     company: "Coding Club - IE University",

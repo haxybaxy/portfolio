@@ -1,14 +1,24 @@
 import { useEffect, useRef } from 'react';
 import '../styles/stars.css';
 
+interface Star {
+  x: number;
+  y: number;
+  size: number;
+  speed: number;
+  opacity: number;
+  twinkleSpeed: number;
+}
+
 export default function Stars() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     // Set canvas size
     const resizeCanvas = () => {
@@ -19,7 +29,7 @@ export default function Stars() {
     window.addEventListener('resize', resizeCanvas);
 
     // Star configuration
-    const stars = [];
+    const stars: Star[] = [];
     const starCount = 200;
 
     // Create stars
@@ -35,7 +45,7 @@ export default function Stars() {
     }
 
     // Animation loop
-    let animationFrameId;
+    let animationFrameId = 0;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 

@@ -2,7 +2,11 @@ import { useEffect, useState } from "react";
 import "../styles/tmux.css";
 import { projectsData } from "./projectsData";
 
-export default function Tmux({ selectedProject }) {
+interface TmuxProps {
+  selectedProject: number | null;
+}
+
+export default function Tmux({ selectedProject }: TmuxProps) {
   const [time, setTime] = useState("");
   const [date, setDate] = useState("");
 

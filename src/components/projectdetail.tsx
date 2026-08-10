@@ -3,7 +3,12 @@ import "../styles/projectdetail.css";
 import { Github, Link, ArrowLeft } from 'lucide-react';
 import useSound from 'use-sound';
 
-export default function ProjectDetail({ projectIndex, onBack }) {
+interface ProjectDetailProps {
+  projectIndex: number;
+  onBack: () => void;
+}
+
+export default function ProjectDetail({ projectIndex, onBack }: ProjectDetailProps) {
   const project = projectsData[projectIndex];
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
 

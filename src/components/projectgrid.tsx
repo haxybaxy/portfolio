@@ -1,6 +1,7 @@
 import { projectsData } from "./projectsData";
 import "../styles/projectgrid.css";
 import useSound from 'use-sound';
+import type { Project } from "../types";
 
 // Display order for category sections; anything not listed falls to the bottom
 const categoryOrder = [
@@ -11,11 +12,17 @@ const categoryOrder = [
   "Competitions",
 ];
 
-export default function ProjectGrid({ onSelectProject }) {
+type IndexedProject = Project & { originalIndex: number };
+
+interface ProjectGridProps {
+  onSelectProject: (index: number) => void;
+}
+
+export default function ProjectGrid({ onSelectProject }: ProjectGridProps) {
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
 
   // Group projects by category
-  const projectsByCategory = projectsData.reduce((acc, project, index) => {
+  const projectsByCategory = projectsData.reduce<Record<string, IndexedProject[]>>((acc, project, index) => {
     const category = project.category || "Uncategorized";
     if (!acc[category]) {
       acc[category] = [];
@@ -24,7 +31,7 @@ export default function ProjectGrid({ onSelectProject }) {
     return acc;
   }, {});
 
-  const rank = (category) => {
+  const rank = (category: string) => {
     const index = categoryOrder.indexOf(category);
     return index === -1 ? categoryOrder.length : index;
   };
@@ -33,7 +40,7 @@ export default function ProjectGrid({ onSelectProject }) {
     ([a], [b]) => rank(a) - rank(b)
   );
 
-  const handleSelectProject = (index) => {
+  const handleSelectProject = (index: number) => {
     playClick();
     onSelectProject(index);
   };

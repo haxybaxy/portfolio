@@ -1,7 +1,14 @@
+import type { ReactNode } from "react";
 import "../styles/introwindow.css";
 import FadeInSection from "./fadeinsection";
 
-export default function IntroWindow({ children, id, filename }) {
+interface IntroWindowProps {
+  children: ReactNode;
+  id?: string;
+  filename: string;
+}
+
+export default function IntroWindow({ children, id, filename }: IntroWindowProps) {
   return (
     <FadeInSection style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'visible' }}>
       <div className="intro-window" id={id}>
