@@ -11,7 +11,15 @@ export const jobData = [
       "Designed 50+ posts for social media and helped build club presence on Campus, IEConnects, and Instagram.",
       "Tracked, reported, and acted on analytics gathered from marketing campaign responses to increase members by 100%.",
     ],
-    skills: ["Python","HTML/CSS","Google Cloud","Adobe Photoshop"," Adobe Illustrator", "Canva", "Buffer"]
+    skills: [
+      "Python",
+      "HTML/CSS",
+      "Google Cloud",
+      "Adobe Photoshop",
+      " Adobe Illustrator",
+      "Canva",
+      "Buffer",
+    ],
   },
   {
     value: "tab2",
@@ -24,7 +32,14 @@ export const jobData = [
       "Utilizing React, Express.js, MySQL and Google Cloud Platform to design and maintain key features of the platform.",
       "Using Google Analytics to keep track of user traffic and behavior to boost performance and user experience.",
     ],
-    skills: ["React", "Tailwind CSS", "Express.js", "MySQL", "Google Analytics", "Google Cloud"]
+    skills: [
+      "React",
+      "Tailwind CSS",
+      "Express.js",
+      "MySQL",
+      "Google Analytics",
+      "Google Cloud",
+    ],
   },
   {
     value: "tab3",
@@ -37,7 +52,17 @@ export const jobData = [
       "Presented 10+ hands-on workshops to 30+ attendees about open source development, state of the art ML models, and generative AI. Utilized working demos of AI/ML models and other projects for greater attendee interaction.",
       "Maintaining Club Website and GitHub with front-end and back-end design and managing developer projects with GitHub Projects.",
     ],
-    skills: ["TensorFlow", "PyTorch", "OpenCV", "Astro.js", "React", "Express.js","Node.js", "MongoDB", "Python"]
+    skills: [
+      "TensorFlow",
+      "PyTorch",
+      "OpenCV",
+      "Astro.js",
+      "React",
+      "Express.js",
+      "Node.js",
+      "MongoDB",
+      "Python",
+    ],
   },
   {
     value: "tab4",
@@ -50,20 +75,36 @@ export const jobData = [
       "Built a sentiment analysis model to improve brand management and e-commerce services on TikTok.",
       "Supported LATIDO's B2C expansion by providing e-commerce integration tools, data analysis strategies, and CRM system recommendations.",
     ],
-    skills: ["OpenAI API","Whisper","HuggingFace Transformers","Python", "Google Analytics","React","Node.js",]
+    skills: [
+      "OpenAI API",
+      "Whisper",
+      "HuggingFace Transformers",
+      "Python",
+      "Google Analytics",
+      "React",
+      "Node.js",
+    ],
   },
   {
     value: "tab5",
     company: "IEU School of Science and Technology",
     role: "Research Assistant",
     startDate: "March 2024",
-    endDate: "Present",
+    endDate: "June 2026",
     content: [
       "Collaborating with professors to implement AI and Blockchain algorithms in a multi-robot system lab.",
       "Developing an AI-driven computer vision system for remote access and automation of robots in the lab using OpenCV and Tensorflow.",
       "Using ROS and Docker to create simulation environments for the robots to test AI algorithms and perform student experiments.",
     ],
-    skills: ["TensorFlow", "PyTorch", "OpenCV", "Raspberry Pi", "ROS", "Python", "Docker"]
+    skills: [
+      "TensorFlow",
+      "PyTorch",
+      "OpenCV",
+      "Raspberry Pi",
+      "ROS",
+      "Python",
+      "Docker",
+    ],
   },
   {
     value: "tab6",
@@ -77,7 +118,21 @@ export const jobData = [
       "Created AI tools to enhance employee productivity and operational efficiency within the company.",
       "Utilized Power BI to analyze data and provide actionable insights to improve decision-making and business processes.",
     ],
-    skills: ["C#", "ASP.net","Azure", "Power BI", "Dynamics 365", "React", "Node.js", "Express.js","Pinecone","OpenAI API", "LangChain", "Python", "Flutter"]
+    skills: [
+      "C#",
+      "ASP.net",
+      "Azure",
+      "Power BI",
+      "Dynamics 365",
+      "React",
+      "Node.js",
+      "Express.js",
+      "Pinecone",
+      "OpenAI API",
+      "LangChain",
+      "Python",
+      "Flutter",
+    ],
   },
   {
     value: "tab7",
@@ -90,7 +145,14 @@ export const jobData = [
       "Coordinated hands-on workshops and events for bachelor and master students about developer technologies.",
       "Collaborated with professionals and the Google Developer Network to create technical resources to grow the developer community.",
     ],
-    skills: ["Google Cloud Platform", "Firebase", "Flutter", "Python", "Node.js", "React"]
+    skills: [
+      "Google Cloud Platform",
+      "Firebase",
+      "Flutter",
+      "Python",
+      "Node.js",
+      "React",
+    ],
   },
   {
     value: "tab8",
@@ -104,6 +166,39 @@ export const jobData = [
       "Implemented CI/CD pipelines with GitHub Actions and Docker, automating testing, deployment, and containerized service delivery.",
       "Collaborated with Designers, Product Managers, and Developers to launch the application on App Stores in Switzerland, to more than 5k active users.",
     ],
-    skills: ["AWS", "Next.js", "React Native", "NestJS", "PostgreSQL", "Docker", "GitHub Actions", "TypeScript", "CI/CD", "Cloud Architecture"]
+    skills: [
+      "AWS",
+      "Next.js",
+      "React Native",
+      "NestJS",
+      "PostgreSQL",
+      "Docker",
+      "GitHub Actions",
+      "TypeScript",
+      "CI/CD",
+      "Cloud Architecture",
+    ],
+  },
+  {
+    value: "tab9",
+    company: "Skoll",
+    role: "Chief Technical Officer",
+    startDate: "December 2025",
+    endDate: "Present",
+    content: [
+      "Leading team of 5 developers to create the first AI Go-To-Market Engineer.",
+      "Developing LLM integrated platform with LangGraph and LangChain, serving 10 corporate clients in production.",
+      "Created distributed LLM and inference infrastructure and application code with FastAPI and Amazon Web Services.",
+    ],
+    skills: [
+      "Python",
+      "FastAPI",
+      "LangGraph",
+      "LangChain",
+      "Next.js",
+      "AWS",
+      "Pinecone",
+      "LangFuse",
+    ],
   },
 ];
