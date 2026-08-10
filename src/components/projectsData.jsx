@@ -1,18 +1,33 @@
 export const projectsData = [
   {
-    title: "Launchyfi",
-    description: "World's first AI GTM Engineer. Aims to link outreach tools, enrichment tools and CRMs autonomously.",
-    imageUrl: "/projectphotos/launchyfi.webp",
+    title: "Skoll",
+    description:
+      "World's first AI GTM Engineer. Aims to link outreach tools, enrichment tools and CRMs autonomously.",
+    imageUrl: "/projectphotos/skoll.webp",
     category: "Startups",
-    link: "https://launchyfi.com",
-    tmuxname: "launchyfi",
+    link: "https://useskoll.com",
+    tmuxname: "skoll",
     icons: {
       "Next.js": "/icons/nextjs.svg",
-      Supabase: "/icons/supabase.svg",
+      Vite: "/icons/vite.svg",
+      AWS: "/icons/aws.svg",
       Python: "/icons/python.svg",
       FastAPI: "/icons/fastapi.svg",
-      Langgraph: "/icons/langgraph.svg",
+      LangGraph: "/icons/langgraph.svg",
+      LangFuse: "/icons/langfuse.svg",
       Pinecone: "/icons/pinecone.svg",
+    },
+  },
+  {
+    title: "Claude Tmux Status",
+    description:
+      "Claude Code plugin to indicate agent status and project in the vanilla tmux status bar",
+    imageUrl: "/projectphotos/holla.webp",
+    category: "Dev Tools",
+    github: "https://github.com/haxybaxy/claude-tmux-status",
+    tmuxname: "claude-tmux-status",
+    icons: {
+      "Github Actions": "/icons/github.svg",
     },
   },
   {
@@ -28,7 +43,8 @@ export const projectsData = [
   },
   {
     title: "Search Preview",
-    description: "VSCode Extension to mimic file searching with Telescope in Neovim.",
+    description:
+      "VSCode Extension to mimic file searching with Telescope in Neovim.",
     imageUrl: "/projectphotos/searchpreview.webp",
     category: "Dev Tools",
     github: "https://github.com/haxybaxy/search-preview",
@@ -43,11 +59,13 @@ export const projectsData = [
     imageUrl: "/projectphotos/clearsplit.webp",
     category: "Startups",
     link: "https://clearsplit.io",
-    tmuxname: "remotelab",
+    tmuxname: "clearsplit",
     icons: {
       React: "/icons/react.svg",
       Supabase: "/icons/supabase.svg",
-      Langchain: "/icons/langchain.svg",
+      LangChain: "/icons/langchain.svg",
+      NestJS: "/icons/nestjs.svg",
+      Railway: "/icons/railway.svg",
     },
   },
   {
@@ -56,7 +74,7 @@ export const projectsData = [
     imageUrl: "/projectphotos/worktap.webp",
     category: "Startups",
     link: "https://www.worktap.info/",
-    tmuxname: "remotelab",
+    tmuxname: "worktap",
     icons: {
       Expo: "/icons/expo.svg",
       "React Native": "/icons/react.svg",
@@ -66,11 +84,12 @@ export const projectsData = [
   },
   {
     title: "Distributed Stock Market Prediction",
-    description: "LSTM Network that syncs its weights across multiple nodes to predict stock prices. Done for High Performance Computing course. I know the video isn't 4K 1440p, I didn't have enough storage space to render with a higher quality 😭.",
+    description:
+      "LSTM Network that syncs its weights across multiple nodes to predict stock prices. Done for High Performance Computing course. I know the video isn't 4K 1440p, I didn't have enough storage space to render with a higher quality 😭.",
     imageUrl: "/projectphotos/hpc.webp",
     category: "University Projects",
     github: "https://github.com/haxybaxy/hpc-stock-prediction",
-    link:"https://www.youtube.com/watch?v=bE9OQoD-mg0",
+    link: "https://www.youtube.com/watch?v=bE9OQoD-mg0",
     tmuxname: "hpc-stock-prediction",
     icons: {
       Python: "/icons/python.svg",
@@ -80,7 +99,8 @@ export const projectsData = [
   },
   {
     title: "DeployPilot",
-    description: "Prototype for Agentic AI System that can deploy any code on any machine using various MCPs. Done for Recommenders Systems and Chatbots course.",
+    description:
+      "Prototype for Agentic AI System that can deploy any code on any machine using various MCPs. Done for Recommenders Systems and Chatbots course.",
     imageUrl: "/projectphotos/deploypilot.webp",
     category: "University Projects",
     link: "https://www.youtube.com/watch?v=II6IIS46uPw",
@@ -89,9 +109,8 @@ export const projectsData = [
       Docker: "/icons/docker.svg",
       Python: "/icons/python.svg",
       FastAPI: "/icons/fastapi.svg",
-      Langchain: "/icons/langchain.svg",
+      LangChain: "/icons/langchain.svg",
       DigitalOcean: "/icons/digitalocean.svg",
-
     },
   },
   {
@@ -109,7 +128,8 @@ export const projectsData = [
   },
   {
     title: "FitWave",
-    description: "App for personal trainers made by personal trainers. My first startup (it didn't work out).",
+    description:
+      "App for personal trainers made by personal trainers. My first startup (it didn't work out).",
     imageUrl: "/projectphotos/fitwave.webp",
     category: "Startups",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7273049653883924481/",
@@ -120,13 +140,14 @@ export const projectsData = [
       ReactNative: "/icons/react.svg",
       Firebase: "/icons/firebase.svg",
       Python: "/icons/python.svg",
-      Langchain: "/icons/langchain.svg",
+      LangChain: "/icons/langchain.svg",
       Pinecone: "/icons/pinecone.svg",
     },
   },
   {
     title: "Remote Lab",
-    description: "Remote Lab access for users to control the IE Robotics Lab robots from anywhere in the world. Contains ROS package for ArUco tag detection with OpenCV and syncs coordinates with OptiTrack System",
+    description:
+      "Remote Lab access for users to control the IE Robotics Lab robots from anywhere in the world. Contains ROS package for ArUco tag detection with OpenCV and syncs coordinates with OptiTrack System",
     imageUrl: "/projectphotos/remotelab.webp",
     category: "Professional Projects",
     github: "https://github.com/IE-Robotics-Lab/remote_lab",
@@ -141,21 +162,23 @@ export const projectsData = [
   },
   {
     title: "X++ Assistant",
-    description: "Extremely proficient coding assistant for the obscure X++ language in Dynamics 365 Finance and Operations. Currently deployed at Dynamics Innovations.",
+    description:
+      "Extremely proficient coding assistant for the obscure X++ language in Dynamics 365 Finance and Operations. Currently deployed at Dynamics Innovations.",
     imageUrl: "/projectphotos/xppcoder.webp",
     category: "Professional Projects",
     github: "https://github.com/haxybaxy/xppcoder",
     tmuxname: "xppcoder",
     icons: {
       Python: "/icons/python.svg",
-      Langchain: "/icons/langchain.svg",
+      LangChain: "/icons/langchain.svg",
       HuggingFace: "/icons/huggingface.svg",
       Pinecone: "/icons/pinecone.svg",
     },
   },
   {
     title: "EC Language",
-    description: "Bytecode interpreter for custom programming language with dynamic typing and garbage collection, written in C.",
+    description:
+      "Bytecode interpreter for custom programming language with dynamic typing and garbage collection, written in C.",
     imageUrl: "/projectphotos/eclang.webp",
     category: "University Projects",
     github: "https://github.com/haxybaxy/ec-lang",
@@ -167,41 +190,44 @@ export const projectsData = [
   },
   {
     title: "Monsieur",
-    description: "AI Platform that uses ElevenLabs API to provide a managable fleet of virtual front desk employees for hotels. Facilitates phone calls and is able to book rooms and provide services for hotel guests. Built at the Entrepreneur First European Builders League Hackathon.",
+    description:
+      "AI Platform that uses ElevenLabs API to provide a managable fleet of virtual front desk employees for hotels. Facilitates phone calls and is able to book rooms and provide services for hotel guests. Built at the Entrepreneur First European Builders League Hackathon.",
     imageUrl: "/projectphotos/monsieur.webp",
     category: "Competitions",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7327688977786785793/",
     tmuxname: "monsieur",
     icons: {
       "Next.js": "/icons/nextjs.svg",
-      Langgraph: "/icons/langgraph.svg",
+      LangGraph: "/icons/langgraph.svg",
       FastAPI: "/icons/fastapi.svg",
       Supabase: "/icons/supabase.svg",
     },
   },
   {
     title: "Agentic Investment Tracker",
-    description: "Tracknetic is a toolkit designed to help Venture Capitalists and Investors to find new investments in different fields, and keep tabs on notable technologies, companies, people and more, using AI Agents that you can dispatch tasks to conversationally. Won the IE x OpenAI Use Case Showcase Competition.",
+    description:
+      "Tracknetic is a toolkit designed to help Venture Capitalists and Investors to find new investments in different fields, and keep tabs on notable technologies, companies, people and more, using AI Agents that you can dispatch tasks to conversationally. Won the IE x OpenAI Use Case Showcase Competition.",
     imageUrl: "/projectphotos/tracknetic.webp",
     category: "Competitions",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7332082469791227905/",
     tmuxname: "tracknetic",
     icons: {
       React: "/icons/react.svg",
-      Langchain: "/icons/langchain.svg",
-      Langgraph: "/icons/langgraph.svg",
+      LangChain: "/icons/langchain.svg",
+      LangGraph: "/icons/langgraph.svg",
     },
   },
   {
     title: "AI Hackathon 2023",
-    description: "Won runner-up with 96% accuracy in the IEU Hackathon 2023 which required building LLM application to extract financial data from various term sheets.",
+    description:
+      "Won runner-up with 96% accuracy in the IEU Hackathon 2023 which required building LLM application to extract financial data from various term sheets.",
     imageUrl: "/projectphotos/aihackathon.webp",
     category: "Competitions",
     github: "https://github.com/haxybaxy/aihackathon2023",
     tmuxname: "aihackathon",
     icons: {
       Python: "/icons/python.svg",
-      Langchain: "/icons/langchain.svg",
+      LangChain: "/icons/langchain.svg",
       OpenAI: "/icons/openai.svg",
       Pandas: "/icons/pandas.svg",
     },
