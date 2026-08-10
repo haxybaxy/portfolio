@@ -22,12 +22,12 @@ export const projectsData = [
     title: "Claude Tmux Status",
     description:
       "Claude Code plugin to indicate agent status and project in the vanilla tmux status bar",
-    imageUrl: "/projectphotos/holla.webp",
+    imageUrl: "/projectphotos/claude-tmux-status.webp",
     category: "Dev Tools",
     github: "https://github.com/haxybaxy/claude-tmux-status",
     tmuxname: "claude-tmux-status",
     icons: {
-      "Github Actions": "/icons/github.svg",
+      Shell: "/icons/bash.svg",
     },
   },
   {
@@ -120,7 +120,7 @@ export const projectsData = [
     category: "University Projects",
     github: "https://github.com/haxybaxy/eyetracker",
     link: "https://www.youtube.com/watch?v=JJY0FWCcJ8g",
-    tmuxname: "remotelab",
+    tmuxname: "gaze-tracker",
     icons: {
       Python: "/icons/python.svg",
       OpenCV: "/icons/opencv.svg",
@@ -133,7 +133,7 @@ export const projectsData = [
     imageUrl: "/projectphotos/fitwave.webp",
     category: "Startups",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7273049653883924481/",
-    tmuxname: "remotelab",
+    tmuxname: "fitwave",
     icons: {
       Expo: "/icons/expo.svg",
       Typescript: "/icons/typescript.svg",
@@ -142,6 +142,21 @@ export const projectsData = [
       Python: "/icons/python.svg",
       LangChain: "/icons/langchain.svg",
       Pinecone: "/icons/pinecone.svg",
+    },
+  },
+  {
+    title: "Liesl",
+    description:
+      "Dog sitting and walking marketplace in Switzerland, released and maintained during my time at MVST",
+    imageUrl: "/projectphotos/liesl.webp",
+    category: "Professional Projects",
+    link: "https://www.liesl.ch/",
+    tmuxname: "liesl",
+    icons: {
+      "React Native": "/icons/react.svg",
+      NextJS: "/icons/nextjs.svg",
+      NestJS: "/icons/nestjs.svg",
+      AWS: "/icons/aws.svg",
     },
   },
   {
