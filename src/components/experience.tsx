@@ -1,7 +1,11 @@
 import Window from "./window";
 import VerticalTabs from "./verticaltabs";
 
-export default function Experience({ onClose }) {
+interface ExperienceProps {
+  onClose: () => void;
+}
+
+export default function Experience({ onClose }: ExperienceProps) {
 
   return (
     <Window title="experience" id="experience" filename="experience - nvim" onClose={onClose}>

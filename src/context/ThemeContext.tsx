@@ -1,9 +1,16 @@
 import { createContext, useState, useEffect, useContext } from 'react';
+import type { ReactNode } from 'react';
 import useSound from 'use-sound';
+import type { Theme } from '../types';
 
-const ThemeContext = createContext();
+interface ThemeContextValue {
+  theme: Theme;
+  toggleTheme: () => void;
+}
 
-export const useTheme = () => {
+const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
+
+export const useTheme = (): ThemeContextValue => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within ThemeProvider');
@@ -11,11 +18,11 @@ export const useTheme = () => {
   return context;
 };
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(() => {
-    // Check localStorage on initial load
+export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Check localStorage on initial load, ignoring anything that isn't a known theme
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'dark'; // Default to dark theme
+    return savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark'; // Default to dark theme
   });
 
   // Sound effects for theme switching

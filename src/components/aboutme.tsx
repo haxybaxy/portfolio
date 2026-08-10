@@ -2,8 +2,9 @@ import Window from "./window"; // Import the Window component
 import "../styles/aboutme.css"; // Assuming this file contains styles specific to the about me content
 import FadeInSection from "./fadeinsection"; // Import the Fadein component
 import { GitHub, LinkedIn } from "@mui/icons-material";
+import type { SkillCategory } from "../types";
 
-const skillCategories = [
+const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     skills: [
@@ -67,7 +68,11 @@ const skillCategories = [
   },
 ];
 
-export default function AboutMe({ onClose }) {
+interface AboutMeProps {
+  onClose: () => void;
+}
+
+export default function AboutMe({ onClose }: AboutMeProps) {
   return (
     <Window
       title="about me"

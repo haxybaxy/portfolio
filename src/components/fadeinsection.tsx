@@ -1,10 +1,19 @@
 import React from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 import '../styles/fadein.css'; // Make sure this path points to your CSS file
 
-export default function FadeInSection({ children, onVisible, delay, style={}, isClosing=false }) {
+interface FadeInSectionProps {
+  children: ReactNode;
+  onVisible?: () => void;
+  delay?: string;
+  style?: CSSProperties;
+  isClosing?: boolean;
+}
 
-  const combinedStyle = {
+export default function FadeInSection({ children, onVisible, delay, style={}, isClosing=false }: FadeInSectionProps) {
+
+  const combinedStyle: CSSProperties = {
     height: '100%', // Default height
     transitionDelay: `${delay}`,
     ...style, // Override default styles with any provided inline styles

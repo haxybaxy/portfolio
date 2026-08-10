@@ -8,11 +8,12 @@ import ThemeToggle from "./components/themetoggle";
 import WaveBackground from "./components/wavebackground";
 import BackgroundEffects from "./components/backgroundeffects";
 import { ThemeProvider } from "./context/ThemeContext";
+import type { SectionId } from "./types";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
 export default function App() {
-  const [openSection, setOpenSection] = useState(null);
+  const [openSection, setOpenSection] = useState<SectionId | null>(null);
 
   useEffect(() => {
     smoothscroll.polyfill();

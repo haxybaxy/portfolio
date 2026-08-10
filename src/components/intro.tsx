@@ -6,8 +6,13 @@ import IconLucideUser from '~icons/lucide/user';
 import IconLucideBriefcase from '~icons/lucide/briefcase';
 import IconLucideFolderOpen from '~icons/lucide/folder-open';
 import useSound from 'use-sound';
+import type { SectionId } from "../types";
 
-export default function Intro({ onOpenSection }) {
+interface IntroProps {
+  onOpenSection: (section: SectionId) => void;
+}
+
+export default function Intro({ onOpenSection }: IntroProps) {
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
     <div className="intro-container" id="intro">

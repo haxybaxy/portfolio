@@ -5,10 +5,14 @@ import ProjectDetail from "./projectdetail";
 import Tmux from "./tmux";
 import "../styles/projects.css";
 
-export default function Projects({ onClose }) {
-  const [selectedProject, setSelectedProject] = useState(null);
+interface ProjectsProps {
+  onClose: () => void;
+}
 
-  const handleSelectProject = (index) => {
+export default function Projects({ onClose }: ProjectsProps) {
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
+  const handleSelectProject = (index: number) => {
     setSelectedProject(index);
   };
 

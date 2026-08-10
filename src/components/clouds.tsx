@@ -2,13 +2,20 @@ import { useEffect, useRef } from 'react';
 import '../styles/clouds.css';
 
 export default function Clouds() {
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const canvasEl = canvasRef.current;
+    if (!canvasEl) return;
 
-    const ctx = canvas.getContext('2d');
+    const context = canvasEl.getContext('2d');
+    if (!context) return;
+
+    // Re-bind with explicit non-nullable types: TypeScript carries control-flow
+    // narrowing into arrow functions but not into class method bodies, and the
+    // Cloud class below closes over both.
+    const canvas: HTMLCanvasElement = canvasEl;
+    const ctx: CanvasRenderingContext2D = context;
 
     // Load cloud image
     const cloudImage = new Image();
@@ -28,6 +35,13 @@ export default function Clouds() {
 
     // Cloud configuration
     class Cloud {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      speed: number;
+      opacity: number;
+
       constructor() {
         this.x = Math.random() * (canvas.width + 400) - 200;
         this.y = Math.random() * canvas.height * 0.7;
@@ -58,14 +72,14 @@ export default function Clouds() {
     }
 
     // Create clouds
-    const clouds = [];
+    const clouds: Cloud[] = [];
     const cloudCount = 8;
     for (let i = 0; i < cloudCount; i++) {
       clouds.push(new Cloud());
     }
 
     // Animation loop
-    let animationFrameId;
+    let animationFrameId = 0;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
