@@ -1,20 +1,28 @@
 import { projectsData } from "./projectsData";
+import { getRelatedJobs } from "./relatedWork";
 import "../styles/projectdetail.css";
-import { Github, Link, ArrowLeft } from 'lucide-react';
+import { Github, Link, ArrowLeft, ArrowRight, Briefcase } from 'lucide-react';
 import useSound from 'use-sound';
 
 interface ProjectDetailProps {
   projectIndex: number;
   onBack: () => void;
+  onOpenJob: (value: string) => void;
 }
 
-export default function ProjectDetail({ projectIndex, onBack }: ProjectDetailProps) {
+export default function ProjectDetail({ projectIndex, onBack, onOpenJob }: ProjectDetailProps) {
   const project = projectsData[projectIndex];
+  const relatedJobs = getRelatedJobs(project.title);
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
 
   const handleBack = () => {
     playClick();
     onBack();
+  };
+
+  const handleOpenJob = (value: string) => {
+    playClick();
+    onOpenJob(value);
   };
 
   return (
@@ -41,6 +49,21 @@ export default function ProjectDetail({ projectIndex, onBack }: ProjectDetailPro
             </div>
           </div>
           <p className="projectDesc">{project.description}</p>
+          {relatedJobs.length > 0 && (
+            <div className="related-experience">
+              {relatedJobs.map((job) => (
+                <button
+                  key={job.value}
+                  className="related-experience-link"
+                  onClick={() => handleOpenJob(job.value)}
+                >
+                  <Briefcase size={16} />
+                  <span>Built at: {job.company}</span>
+                  <ArrowRight size={16} />
+                </button>
+              ))}
+            </div>
+          )}
           <div className="projectIcons">
             <div className="iconContainer">
               {Object.entries(project.icons).map(([name, iconUrl], iconIndex) => (

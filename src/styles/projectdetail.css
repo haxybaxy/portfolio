@@ -82,6 +82,34 @@
   max-width: 70%;
 }
 
+.related-experience {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.related-experience-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.related-experience-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 .project-links {
   display: flex;
   gap: 12px;
@@ -178,6 +206,10 @@
     max-width: 95%;
   }
 
+  .related-experience-link {
+    font-size: 0.95rem;
+  }
+
   .projectIcon {
     width: 2.5rem;
     height: 2.5rem;
@@ -221,6 +253,10 @@
   .projectDesc {
     font-size: 0.9rem;
     max-width: 98%;
+  }
+
+  .related-experience-link {
+    font-size: 0.85rem;
   }
 
   .projectIcon {
