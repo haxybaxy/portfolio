@@ -20,7 +20,6 @@ interface WindowProps {
 
 export default function Window({ children, title, id, filename, headerstyle, onClose, bottomBar, hideTitle, hideLine }: WindowProps) {
   const [startTyping, setStartTyping] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
 
@@ -39,14 +38,12 @@ export default function Window({ children, title, id, filename, headerstyle, onC
     <div className="window" id={id}>
       <div className={`windowHeader ${isMobile ? 'mobile' : ''}`}>
         <ul className="windowControls">
+          {/* The fade-out belongs to the overlay in App, which owns the unmount too —
+              timing it from here meant two clocks that could not stay in sync. */}
           <li className="closeWindow"
             onClick={() => {
               playClick();
-              setIsClosing(true);
-              // Wait for fade-out animation to complete before closing
-              setTimeout(() => {
-                onClose();
-              }, 400); // Match the CSS transition duration
+              onClose();
             }}
             style={{ cursor: 'pointer' }}>X</li>
         </ul>
@@ -84,7 +81,7 @@ export default function Window({ children, title, id, filename, headerstyle, onC
   );
 
   return (
-    <FadeInSection onVisible={() => setStartTyping(true)} isClosing={isClosing}>
+    <FadeInSection onVisible={() => setStartTyping(true)}>
       {isMobile ? WindowContent : <Draggable handle=".windowHeader">{WindowContent}</Draggable>}
     </FadeInSection>
   );

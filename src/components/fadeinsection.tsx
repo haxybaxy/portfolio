@@ -8,10 +8,9 @@ interface FadeInSectionProps {
   onVisible?: () => void;
   delay?: string;
   style?: CSSProperties;
-  isClosing?: boolean;
 }
 
-export default function FadeInSection({ children, onVisible, delay, style={}, isClosing=false }: FadeInSectionProps) {
+export default function FadeInSection({ children, onVisible, delay, style={} }: FadeInSectionProps) {
 
   const combinedStyle: CSSProperties = {
     height: '100%', // Default height
@@ -34,7 +33,7 @@ export default function FadeInSection({ children, onVisible, delay, style={}, is
   }, [inView, onVisible]);
 
   return (
-    <div ref={ref} className={`fade-in-section ${inView ? 'is-visible' : ''} ${isClosing ? 'is-closing' : ''}`} style={combinedStyle}>
+    <div ref={ref} className={`fade-in-section ${inView ? 'is-visible' : ''}`} style={combinedStyle}>
       {children}
     </div>
   );
