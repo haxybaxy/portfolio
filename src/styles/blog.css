@@ -1,0 +1,382 @@
+/*
+ * The rest of the site is terminal chrome and sets IBM Plex Mono globally.
+ * That is the wrong face for a 1,500 word article, so the post body — and only
+ * the post body — opts into a reading face. Chrome, code, and the nvim status
+ * bar all stay mono.
+ *
+ * The .back-button used by BlogPost is defined in projectdetail.css and reused
+ * here deliberately rather than duplicated.
+ */
+
+.blog-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Clears the absolutely-positioned nvim status bar */
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+/* ---------- Post list ---------- */
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 28px 0;
+}
+
+/* Anchors, so reset the underline the prose styles would otherwise imply */
+.blog-card,
+.blog-back,
+.blog-missing-back {
+  text-decoration: none;
+}
+
+/* .blog-post is a flex column, which would stretch the shared .back-button to
+   full width; projectdetail's shrinks to its content, so match that. */
+.blog-back {
+  align-self: flex-start;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px 22px;
+  border: 1px solid var(--prose-border);
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--window-text);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.blog-card:hover {
+  background-color: rgba(197, 112, 224, 0.1);
+  border-color: var(--prose-quote-border);
+  transform: translateY(-2px);
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--prose-muted);
+}
+
+.blog-card-title {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.blog-card-description {
+  margin: 0;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.blog-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.blog-tag {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background-color: var(--nvim-item-bg);
+  color: var(--window-text);
+}
+
+.blog-draft-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #f9e2af;
+  color: #000;
+}
+
+.blog-empty,
+.blog-missing {
+  padding: 40px 28px;
+  color: var(--prose-muted);
+}
+
+.blog-missing-back {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 1px solid var(--prose-border);
+  border-radius: 4px;
+  background-color: var(--nvim-item-bg);
+  color: var(--window-text);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Single post ---------- */
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+}
+
+.blog-article {
+  width: 100%;
+  max-width: 72ch;
+  margin: 0 auto;
+  padding: 0 28px;
+  box-sizing: border-box;
+}
+
+.blog-article-header {
+  padding-bottom: 18px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--prose-border);
+}
+
+.blog-article-title {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--prose-muted);
+}
+
+/* ---------- Prose ---------- */
+
+.blog-prose {
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+.blog-prose > *:first-child {
+  margin-top: 0;
+}
+
+.blog-prose p {
+  margin: 0 0 1.3em;
+}
+
+.blog-prose h1,
+.blog-prose h2,
+.blog-prose h3,
+.blog-prose h4 {
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.3;
+  margin: 2em 0 0.7em;
+  color: var(--window-text);
+}
+
+.blog-prose h1 { font-size: 1.7rem; }
+.blog-prose h2 { font-size: 1.35rem; }
+.blog-prose h3 { font-size: 1.12rem; }
+.blog-prose h4 { font-size: 1rem; }
+
+.blog-prose a {
+  color: var(--prose-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.blog-prose a:hover {
+  color: var(--prose-link-hover);
+}
+
+.blog-prose ul,
+.blog-prose ol {
+  margin: 0 0 1.3em;
+  padding-left: 1.5em;
+}
+
+.blog-prose li {
+  margin-bottom: 0.45em;
+}
+
+.blog-prose blockquote {
+  margin: 1.5em 0;
+  padding: 0.2em 0 0.2em 1.1em;
+  border-left: 3px solid var(--prose-quote-border);
+  color: var(--prose-muted);
+  font-style: italic;
+}
+
+.blog-prose hr {
+  display: block;
+  border: none;
+  border-top: 1px solid var(--prose-border);
+  margin: 2.2em 0;
+}
+
+.blog-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  font-size: 0.92rem;
+}
+
+.blog-prose th,
+.blog-prose td {
+  border: 1px solid var(--prose-border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.blog-prose th {
+  background-color: var(--nvim-item-bg);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Inline code */
+.blog-prose code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.88em;
+  background-color: var(--prose-code-bg);
+  color: var(--prose-code-text);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* Fenced blocks: the <pre> owns the chrome, the <code> resets the inline pill */
+.blog-prose pre {
+  margin: 0 0 1.5em;
+  padding: 16px 18px;
+  background-color: var(--prose-code-block-bg);
+  border: 1px solid var(--prose-border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.blog-prose pre code {
+  background: none;
+  color: var(--text-primary);
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/*
+ * Syntax highlighting. rehype-highlight emits highlight.js class names; rather
+ * than import a prebuilt stylesheet locked to one palette, map them onto
+ * Catppuccin — Mocha for dark, Latte for light — which is the palette the site
+ * already uses (#74c7ec sapphire in the window prompt, #cba6f7 mauve in the
+ * nvim bar). This keeps code blocks readable in both themes.
+ */
+
+[data-theme="dark"] .blog-prose .hljs-comment,
+[data-theme="dark"] .blog-prose .hljs-quote {
+  color: #7f849c;
+  font-style: italic;
+}
+
+[data-theme="dark"] .blog-prose .hljs-keyword,
+[data-theme="dark"] .blog-prose .hljs-selector-tag,
+[data-theme="dark"] .blog-prose .hljs-literal { color: #cba6f7; }
+
+[data-theme="dark"] .blog-prose .hljs-string,
+[data-theme="dark"] .blog-prose .hljs-addition { color: #a6e3a1; }
+
+[data-theme="dark"] .blog-prose .hljs-number,
+[data-theme="dark"] .blog-prose .hljs-built_in { color: #fab387; }
+
+[data-theme="dark"] .blog-prose .hljs-title,
+[data-theme="dark"] .blog-prose .hljs-section,
+[data-theme="dark"] .blog-prose .hljs-name { color: #89b4fa; }
+
+[data-theme="dark"] .blog-prose .hljs-attr,
+[data-theme="dark"] .blog-prose .hljs-attribute,
+[data-theme="dark"] .blog-prose .hljs-type { color: #f9e2af; }
+
+[data-theme="dark"] .blog-prose .hljs-variable,
+[data-theme="dark"] .blog-prose .hljs-template-variable,
+[data-theme="dark"] .blog-prose .hljs-params { color: #f2cdcd; }
+
+[data-theme="dark"] .blog-prose .hljs-meta { color: #74c7ec; }
+
+[data-theme="dark"] .blog-prose .hljs-symbol,
+[data-theme="dark"] .blog-prose .hljs-deletion { color: #f38ba8; }
+
+[data-theme="light"] .blog-prose .hljs-comment,
+[data-theme="light"] .blog-prose .hljs-quote {
+  color: #8c8fa1;
+  font-style: italic;
+}
+
+[data-theme="light"] .blog-prose .hljs-keyword,
+[data-theme="light"] .blog-prose .hljs-selector-tag,
+[data-theme="light"] .blog-prose .hljs-literal { color: #8839ef; }
+
+[data-theme="light"] .blog-prose .hljs-string,
+[data-theme="light"] .blog-prose .hljs-addition { color: #40a02b; }
+
+[data-theme="light"] .blog-prose .hljs-number,
+[data-theme="light"] .blog-prose .hljs-built_in { color: #fe640b; }
+
+[data-theme="light"] .blog-prose .hljs-title,
+[data-theme="light"] .blog-prose .hljs-section,
+[data-theme="light"] .blog-prose .hljs-name { color: #1e66f5; }
+
+[data-theme="light"] .blog-prose .hljs-attr,
+[data-theme="light"] .blog-prose .hljs-attribute,
+[data-theme="light"] .blog-prose .hljs-type { color: #df8e1d; }
+
+[data-theme="light"] .blog-prose .hljs-variable,
+[data-theme="light"] .blog-prose .hljs-template-variable,
+[data-theme="light"] .blog-prose .hljs-params { color: #dd7878; }
+
+[data-theme="light"] .blog-prose .hljs-meta { color: #209fb5; }
+
+[data-theme="light"] .blog-prose .hljs-symbol,
+[data-theme="light"] .blog-prose .hljs-deletion { color: #d20f39; }
+
+.blog-prose .hljs-emphasis { font-style: italic; }
+.blog-prose .hljs-strong { font-weight: 700; }
+
+@media (max-width: 768px) {
+  .blog-list {
+    padding: 8px 16px 0;
+  }
+
+  .blog-article {
+    padding: 0 16px;
+  }
+
+  .blog-article-title {
+    font-size: 1.5rem;
+  }
+
+  .blog-prose {
+    font-size: 0.98rem;
+  }
+}

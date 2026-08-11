@@ -8,7 +8,9 @@
   cursor: pointer;
   padding: 8px;
   transition: all 0.3s ease;
-  z-index: 50;
+  /* Above .overlay (2000) so the toggle stays reachable with a section open —
+     it matters most for the blog, where code blocks are themed. */
+  z-index: 2100;
   color: var(--window-text);
 }
 

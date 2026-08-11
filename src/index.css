@@ -25,6 +25,16 @@
   --nvim-item-bg: rgb(83, 85, 83);
   --tab-hover-bg: rgb(52, 54, 69);
   --tab-active-bg: rgb(66, 69, 91);
+
+  /* Long-form prose. The rest of the site is chrome and never needed these. */
+  --prose-link: hsla(295, 71%, 72%, 1);
+  --prose-link-hover: hsla(295, 85%, 82%, 1);
+  --prose-code-bg: rgba(255, 255, 255, 0.07);
+  --prose-code-text: #f5c2e7;
+  --prose-code-block-bg: rgb(30, 30, 46);
+  --prose-border: rgba(255, 255, 255, 0.12);
+  --prose-muted: rgba(255, 255, 255, 0.55);
+  --prose-quote-border: hsla(295, 71%, 67%, 0.6);
 }
 
 /* Light Theme */
@@ -43,6 +53,16 @@
   --nvim-item-bg: rgb(200, 200, 200);
   --tab-hover-bg: rgb(240, 240, 240);
   --tab-active-bg: rgb(220, 220, 220);
+
+  /* Long-form prose. The rest of the site is chrome and never needed these. */
+  --prose-link: hsl(295, 70%, 42%);
+  --prose-link-hover: hsl(295, 80%, 32%);
+  --prose-code-bg: rgba(0, 0, 0, 0.06);
+  --prose-code-text: #ea76cb;
+  --prose-code-block-bg: rgb(239, 241, 245);
+  --prose-border: rgba(0, 0, 0, 0.14);
+  --prose-muted: rgba(0, 0, 0, 0.55);
+  --prose-quote-border: hsl(295, 70%, 52%);
 }
 
 body {

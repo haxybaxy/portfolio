@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PropellerHatModel from "./propellerhat";
 import IntroWindow from "./introwindow";
 import FadeInSection from "./fadeinsection";
@@ -5,14 +6,16 @@ import "../styles/intro.css";
 import IconLucideUser from '~icons/lucide/user';
 import IconLucideBriefcase from '~icons/lucide/briefcase';
 import IconLucideFolderOpen from '~icons/lucide/folder-open';
+import IconLucideNotebookPen from '~icons/lucide/notebook-pen';
 import useSound from 'use-sound';
-import type { SectionId } from "../types";
 
-interface IntroProps {
-  onOpenSection: (section: SectionId) => void;
-}
-
-export default function Intro({ onOpenSection }: IntroProps) {
+/*
+ * These are <Link>s rather than <button>s so they render as real anchors: a
+ * crawler can follow them to /blog, and cmd-click / middle-click / "copy link"
+ * behave the way they should. .sectionButton already sets text-decoration and
+ * color, so they look identical to the buttons they replaced.
+ */
+export default function Intro() {
   const [playClick] = useSound('/sounds/toc-click.wav', { volume: 0.5 });
   return (
     <div className="intro-container" id="intro">
@@ -29,36 +32,22 @@ export default function Intro({ onOpenSection }: IntroProps) {
               <PropellerHatModel />
               <div className="buttons-container">
               <div className="section-buttons">
-                <button
-                  className="sectionButton"
-                  onClick={() => {
-                    playClick();
-                    onOpenSection('about');
-                  }}
-                >
+                <Link to="/about" className="sectionButton" onClick={() => playClick()}>
                   <IconLucideUser className="button-icon" />
                   <span>About Me</span>
-                </button>
-                <button
-                  className="sectionButton"
-                  onClick={() => {
-                    playClick();
-                    onOpenSection('experience');
-                  }}
-                >
+                </Link>
+                <Link to="/experience" className="sectionButton" onClick={() => playClick()}>
                   <IconLucideBriefcase className="button-icon" />
                   <span>Experience</span>
-                </button>
-                <button
-                  className="sectionButton"
-                  onClick={() => {
-                    playClick();
-                    onOpenSection('projects');
-                  }}
-                >
+                </Link>
+                <Link to="/projects" className="sectionButton" onClick={() => playClick()}>
                   <IconLucideFolderOpen className="button-icon" />
                   <span>Projects</span>
-                </button>
+                </Link>
+                <Link to="/blog" className="sectionButton" onClick={() => playClick()}>
+                  <IconLucideNotebookPen className="button-icon" />
+                  <span>Blog</span>
+                </Link>
               </div>
               </div>
             </div>

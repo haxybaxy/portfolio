@@ -14,7 +14,7 @@ export default function IntroWindow({ children, id, filename }: IntroWindowProps
       <div className="intro-window" id={id}>
         <div className="intro-window-header">
           <div className="intro-filename">
-            <img src="folder.svg" alt="folder" className="folderIcon" />
+            <img src="/folder.svg" alt="folder" className="folderIcon" />
             <span>{filename}</span>
           </div>
         </div>

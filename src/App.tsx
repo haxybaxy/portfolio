@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import {lazy, Suspense, useEffect, useState} from "react";
+import { useLocation, useMatch, useNavigate } from "react-router-dom";
 import Intro from "./components/intro";
 import AboutMe from "./components/aboutme";
 import Experience from "./components/experience";
@@ -13,8 +14,39 @@ import type { SectionId } from "./types";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
+// The blog pulls in a markdown renderer and a syntax highlighter, which have no
+// business in the landing page's bundle alongside three.js.
+const Blog = lazy(() => import("./components/blog"));
+
+const SECTION_PATHS: Record<SectionId, string> = {
+  about: '/about',
+  experience: '/experience',
+  projects: '/projects',
+  blog: '/blog',
+};
+
+const SECTION_IDS = Object.keys(SECTION_PATHS) as SectionId[];
+
+/**
+ * Sections are addressed by URL rather than local state so posts are linkable and
+ * indexable, and so the back button closes an overlay instead of leaving the site.
+ * Everything below still reads `openSection`, so the overlays and their close
+ * animations are unchanged by this.
+ */
+function pathToSection(pathname: string): SectionId | null {
+  return SECTION_IDS.find((id) =>
+    pathname === SECTION_PATHS[id] || pathname.startsWith(`${SECTION_PATHS[id]}/`)
+  ) ?? null;
+}
+
 export default function App() {
-  const [openSection, setOpenSection] = useState<SectionId | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const blogMatch = useMatch('/blog/:slug');
+
+  const openSection = pathToSection(location.pathname);
+  const selectedPost = blogMatch?.params.slug ?? null;
+
   // Selection state lives here so experience and projects can navigate into each other
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [activeJob, setActiveJob] = useState(jobData[jobData.length - 1].value);
@@ -38,19 +70,19 @@ export default function App() {
   }, [openSection]);
 
   const handleCloseSection = () => {
-    setOpenSection(null);
+    navigate('/');
     // Projects always reopens on the grid, as it did when its state was local
     setSelectedProject(null);
   };
 
   const handleOpenProject = (index: number) => {
     setSelectedProject(index);
-    setOpenSection('projects');
+    navigate(SECTION_PATHS.projects);
   };
 
   const handleOpenJob = (value: string) => {
     setActiveJob(value);
-    setOpenSection('experience');
+    navigate(SECTION_PATHS.experience);
   };
 
   return (
@@ -59,7 +91,7 @@ export default function App() {
         <ThemeToggle />
         <BackgroundEffects />
         <WaveBackground />
-        <Intro onOpenSection={setOpenSection} />
+        <Intro />
         <Footer />
 
         {openSection === 'about' && (
@@ -92,6 +124,16 @@ export default function App() {
                 onSelectProject={setSelectedProject}
                 onOpenJob={handleOpenJob}
               />
+            </div>
+          </div>
+        )}
+
+        {openSection === 'blog' && (
+          <div className="overlay">
+            <div className="overlay-content">
+              <Suspense fallback={null}>
+                <Blog onClose={handleCloseSection} slug={selectedPost} />
+              </Suspense>
             </div>
           </div>
         )}
