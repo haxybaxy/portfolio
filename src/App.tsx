@@ -141,10 +141,10 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        {/* The toggle belongs to the landing page — with a section open it would
-            float over the window rather than sit on the page behind it. Keyed to `view`
-            so it does not reappear underneath a backdrop that is still fading. */}
-        {!view && <ThemeToggle />}
+        {/* Stays mounted with a section open: at z-index 100 it sits under the backdrop
+            and dims along with the rest of the landing page, rather than vanishing from
+            it. */}
+        <ThemeToggle />
         <BackgroundEffects />
         <WaveBackground />
         <Intro />
