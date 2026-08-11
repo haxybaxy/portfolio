@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Mail, Check, Github, Linkedin } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Mail, Check, Github, Linkedin } from "lucide-react";
 import "../styles/footer.css";
 
 /** Matches the fade-out in footer.css. The icons only move once it has finished. */
@@ -16,7 +16,7 @@ const COPIED_MS = 1800;
  * somebody actually clicks. This stops scrapers, not a determined human reading the
  * bundle, which is the trade being made.
  */
-const EMAIL_B64 = 'emFpZGtzYWhlYkBnbWFpbC5jb20=';
+const EMAIL_B64 = "aGltQHphaWRhbHNhaGViLmNvbQ==";
 
 async function copyToClipboard(text: string): Promise<boolean> {
   try {
@@ -29,14 +29,14 @@ async function copyToClipboard(text: string): Promise<boolean> {
   }
 
   try {
-    const scratch = document.createElement('textarea');
+    const scratch = document.createElement("textarea");
     scratch.value = text;
-    scratch.setAttribute('readonly', '');
-    scratch.style.position = 'fixed';
-    scratch.style.opacity = '0';
+    scratch.setAttribute("readonly", "");
+    scratch.style.position = "fixed";
+    scratch.style.opacity = "0";
     document.body.appendChild(scratch);
     scratch.select();
-    const copied = document.execCommand('copy');
+    const copied = document.execCommand("copy");
     document.body.removeChild(scratch);
     return copied;
   } catch {
@@ -80,12 +80,16 @@ export default function Footer({ atTop = false }: FooterProps) {
   };
 
   return (
-    <footer className={`footer ${drawnAtTop ? 'is-top' : ''} ${leaving ? 'is-leaving' : ''}`}>
+    <footer
+      className={`footer ${drawnAtTop ? "is-top" : ""} ${leaving ? "is-leaving" : ""}`}
+    >
       <div className="socialIcons">
         <button
           type="button"
-          className={`socialLink socialButton ${copied ? 'is-copied' : ''}`}
-          aria-label={copied ? 'Email address copied to clipboard' : 'Copy email address'}
+          className={`socialLink socialButton ${copied ? "is-copied" : ""}`}
+          aria-label={
+            copied ? "Email address copied to clipboard" : "Copy email address"
+          }
           onClick={handleCopyEmail}
         >
           {copied ? <Check size={24} /> : <Mail size={24} />}
@@ -93,12 +97,24 @@ export default function Footer({ atTop = false }: FooterProps) {
         {/* Announced rather than shown: the tick is the visual confirmation, and the
             address itself must stay out of the DOM. */}
         <span className="visuallyHidden" role="status">
-          {copied ? 'Email address copied to clipboard' : ''}
+          {copied ? "Email address copied to clipboard" : ""}
         </span>
-        <a href="https://github.com/haxybaxy" target="_blank" rel="noopener noreferrer" className="socialLink" aria-label="GitHub">
+        <a
+          href="https://github.com/haxybaxy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="socialLink"
+          aria-label="GitHub"
+        >
           <Github size={24} />
         </a>
-        <a href="https://www.linkedin.com/in/zaidalsaheb" target="_blank" rel="noopener noreferrer" className="socialLink" aria-label="LinkedIn">
+        <a
+          href="https://www.linkedin.com/in/zaidalsaheb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="socialLink"
+          aria-label="LinkedIn"
+        >
           <Linkedin size={24} />
         </a>
       </div>

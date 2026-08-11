@@ -50,7 +50,7 @@ export default function Intro({ isBlogOpen, blogSlug, onCloseBlog }: IntroProps)
   return (
     <div className="intro-container" id="intro">
       <IntroWindow
-        filename={isBlogOpen ? "blog - nvim" : "zaidalsaheb - fastfetch"}
+        filename={isBlogOpen ? "blog - bat" : "zaidalsaheb - fastfetch"}
         id="intro-window"
         expanded={isBlogOpen}
         onClose={onCloseBlog}

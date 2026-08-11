@@ -34,7 +34,7 @@ function Blog({ slug }: BlogProps) {
       ) : (
         <div className="blog-missing">
           <h2>No post called “{slug}”.</h2>
-          <Link to="/blog" className="blog-missing-back">Back to Blog</Link>
+          <Link to="/blog" className="blog-missing-back">Back to All Posts</Link>
         </div>
       )}
     </div>

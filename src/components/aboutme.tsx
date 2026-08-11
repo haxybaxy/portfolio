@@ -137,7 +137,7 @@ export default function AboutMe({ onClose }: AboutMeProps) {
               <GitHub fontSize="large" className="socialIcon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/zaid-saheb"
+              href="https://www.linkedin.com/in/zaidalsaheb"
               target="_blank"
               rel="noopener noreferrer"
             >

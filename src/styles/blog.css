@@ -2,9 +2,6 @@
  * The rest of the site is terminal chrome and sets IBM Plex Mono globally.
  * That is the wrong face for a 1,500 word article, so the post body — and only
  * the post body — opts into a reading face. Window chrome and code stay mono.
- *
- * The .back-button used by BlogPost is defined in projectdetail.css and reused
- * here deliberately rather than duplicated.
  */
 
 /* Fills .intro-secondary, so the article scrolls inside a window whose bottom edge
@@ -21,16 +18,16 @@
 
 /* ---------- Post list ---------- */
 
-/* Capped and centred so the cards keep a readable measure in a window that is now
-   1200px wide, and line up with the article's own 72ch column. */
+/* Fills the expanded window rather than floating in the middle of it, with the
+   same 48px gutters as .blog-article so cards and article share both edges. */
 .blog-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 8px 28px 0;
+  padding: 8px 48px 0;
   box-sizing: border-box;
 }
 
@@ -41,10 +38,43 @@
   text-decoration: none;
 }
 
-/* .blog-post is a flex column, which would stretch the shared .back-button to
-   full width; projectdetail's shrinks to its content, so match that. */
+/*
+ * Deliberately NOT the .back-button pill that ProjectDetail uses. Sitting directly
+ * above a 2rem title, a bordered and filled button outweighs the thing it
+ * introduces. This is meta, not chrome: it matches the date/tag line under the
+ * title (0.85rem, --prose-muted) so the title is the loudest thing in the column.
+ *
+ * The box mirrors .blog-article's geometry — same max-width, same padding — so the
+ * link's text edge lands exactly on the article's, at every breakpoint.
+ */
 .blog-back {
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 0 18px;
+  padding: 0 48px;
+  box-sizing: border-box;
+  color: var(--prose-muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.blog-back:hover {
+  color: var(--prose-link);
+}
+
+/* The arrow carries the movement the old button did with translateX, without
+   shifting the label out from under the cursor. */
+.blog-back svg {
+  transition: transform 0.2s ease;
+}
+
+.blog-back:hover svg {
+  transform: translateX(-3px);
 }
 
 .blog-card {
@@ -142,11 +172,13 @@
   padding-top: 8px;
 }
 
+/* max-width matches the expanded window, so the padding is the only thing insetting
+   the text — the article reads edge to edge rather than as a narrow centred column. */
 .blog-article {
   width: 100%;
-  max-width: 72ch;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 48px;
   box-sizing: border-box;
 }
 
@@ -375,7 +407,8 @@
     padding: 8px 16px 0;
   }
 
-  .blog-article {
+  .blog-article,
+  .blog-back {
     padding: 0 16px;
   }
 

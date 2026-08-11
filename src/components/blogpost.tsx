@@ -40,8 +40,8 @@ export default function BlogPost({ post }: BlogPostProps) {
 
   return (
     <div className="blog-post">
-      <Link to="/blog" className="back-button blog-back" onClick={() => playClick()}>
-        <ArrowLeft size={24} /> Back to Blog
+      <Link to="/blog" className="blog-back" onClick={() => playClick()}>
+        <ArrowLeft size={16} /> Back to All Posts
       </Link>
 
       <article className="blog-article">
