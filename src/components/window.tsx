@@ -40,12 +40,14 @@ export default function Window({ children, title, id, filename, headerstyle, onC
         <ul className="windowControls">
           {/* The fade-out belongs to the overlay in App, which owns the unmount too —
               timing it from here meant two clocks that could not stay in sync. */}
+          {/* No glyph inside, so the label is the only thing naming it */}
           <li className="closeWindow"
+            aria-label="Close"
             onClick={() => {
               playClick();
               onClose();
             }}
-            style={{ cursor: 'pointer' }}>X</li>
+            style={{ cursor: 'pointer' }}></li>
         </ul>
         <div className="filename">
           <img src="/folder.svg" alt="folder" className="folderIcon" />

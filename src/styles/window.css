@@ -55,23 +55,6 @@
   flex: 1;
 }
 
-/* max-width only, no min-width: #projects' fixed 1200px min-width overflows
-   horizontally between 769px and 1199px, and that is not worth repeating. */
-#blog {
-  height: 85vh;
-  max-height: 85vh;
-  max-width: 1000px;
-}
-
-/* The blog owns its own scroller (.blog-scroll) so the nvim status bar can
-   report real scroll position; contentContainer just gives it a bounded box. */
-#blog .contentContainer {
-  height: auto;
-  min-height: 0;
-  flex: 1;
-  overflow: hidden;
-}
-
 .windowBottomBar {
   position: absolute;
   bottom: 0;
@@ -161,15 +144,13 @@ hr {
   line-height: calc(1em - 3px);
 }
 
+/* A bare dot: no X inside, so hover is what darkens it */
 .closeWindow {
   background-color: #ff5f56;
-  color:#8e3336;
-  font-weight: bolder;
 }
 
 .closeWindow:hover {
   background-color: #8e3336;
-  color:#ff5f56;
 }
 
 .minWindow {
@@ -282,12 +263,6 @@ hr {
     min-height: 60vh;
     max-height: 70vh;
     overflow-y: auto;
-  }
-
-  #blog {
-    height: 85vh;
-    max-height: 85vh;
-    max-width: 100%;
   }
 
   #projects {

@@ -1,30 +1,37 @@
 /*
  * The rest of the site is terminal chrome and sets IBM Plex Mono globally.
  * That is the wrong face for a 1,500 word article, so the post body — and only
- * the post body — opts into a reading face. Chrome, code, and the nvim status
- * bar all stay mono.
+ * the post body — opts into a reading face. Window chrome and code stay mono.
  *
  * The .back-button used by BlogPost is defined in projectdetail.css and reused
  * here deliberately rather than duplicated.
  */
 
+/* Fills .intro-secondary, so the article scrolls inside a window whose bottom edge
+   is the bottom of the viewport rather than scrolling the page. */
 .blog-scroll {
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  /* Clears the absolutely-positioned nvim status bar */
-  padding-bottom: 40px;
+  padding-bottom: 32px;
   box-sizing: border-box;
 }
 
 /* ---------- Post list ---------- */
 
+/* Capped and centred so the cards keep a readable measure in a window that is now
+   1200px wide, and line up with the article's own 72ch column. */
 .blog-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 8px 28px 0;
+  box-sizing: border-box;
 }
 
 /* Anchors, so reset the underline the prose styles would otherwise imply */

@@ -1,10 +1,59 @@
+/*
+ * The intro window doubles as the blog window: navigating to /blog expands it in
+ * place rather than opening a second window over the page.
+ *
+ * height: auto -> <length> does not transition, so the growth is driven by
+ * flex-grow: 0 -> 1 on .intro-window inside a frame that has a definite height.
+ * flex-grow animates as a number, and with a single growing item the resolved
+ * height is `natural + grow x freeSpace`, which is a real linear height ramp with
+ * no JS measurement anywhere.
+ */
+
+/* Gives the window a definite height to grow into. Its own bottom edge is the
+   viewport bottom, which is what lets the expanded window land exactly there. */
+.intro-window-frame {
+  /* Clears .theme-toggle-fixed (top: 20px, ~40px tall), which is z-index 100 and so
+     paints over the window. Derived from that, not chosen aesthetically. */
+  --intro-top-gap: 72px;
+  /* One duration and one curve for every part of the morph, so the box, the corners
+     and the two content layers cannot drift out of sync. Ease-in-out rather than a
+     front-loaded curve: the growth should read as one continuous movement, not as a
+     jump followed by a long tail. */
+  --morph-dur: 480ms;
+  --morph-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  /* This project has no global box-sizing reset, and the padding below must not
+     add to the frame's height or the window would overshoot the viewport. */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+  transition: padding-top var(--morph-dur) var(--morph-ease);
+}
+
+/* Animated in lockstep with flex-grow rather than being a constant: a fixed
+   padding-top would push the collapsed window off centre on the landing page. */
+.intro-window-frame.is-expanded {
+  padding-top: var(--intro-top-gap);
+}
+
 .intro-window {
   height: auto;
   width: 95vw;
   max-width: 900px;
   border-radius: 20px;
   background-color: var(--window-bg);
-  margin: auto 0;
+  margin: 0;
+  /* Never `flex: 1` — that is `1 1 0%`, which zeroes the natural height the grow
+     animation ramps up from. flex-shrink: 0 keeps the short-viewport overflow
+     behaviour the window had before it was a flex item. */
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -12,39 +61,110 @@
     0 10px 40px rgba(0, 0, 0, 0.3),
     0 4px 12px rgba(0, 0, 0, 0.2),
     0 1px 3px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease;
+  transition:
+    flex-grow var(--morph-dur) var(--morph-ease),
+    max-width var(--morph-dur) var(--morph-ease),
+    width var(--morph-dur) var(--morph-ease),
+    border-radius var(--morph-dur) var(--morph-ease),
+    background-color 0.3s ease;
 }
 
-.intro-window-wrapper {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.intro-window-frame.is-expanded .intro-window {
+  flex-grow: 1;
+  max-width: 1200px;
+  /* Bounds the pathological case where the intro content alone is taller than the
+     frame (very short viewports). Not animated, so that case snaps. */
+  max-height: 100%;
+  border-radius: 20px 20px 0 0;
 }
 
 .intro-content-container {
   position: relative;
   height: 100%;
+  /* overflow is visible here, so min-height: auto would refuse to shrink below the
+     content's min-content height and the window could not fill the frame. */
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.intro-window-frame.is-expanded .intro-content-container {
+  height: auto;
+  flex: 1 1 auto;
+}
+
+/* Owns the window's natural height, and keeps owning it while the blog is open, so
+   flex-grow always has a small stable base size to grow from. The padding lives
+   here rather than on .intro-content-container: animating it away on the container
+   would drop the natural height 64px mid-morph and the window would hitch. */
+.intro-primary {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   padding: 32px 20px;
-}
-
-.intro-section-header {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Returning: rises into place well before the box finishes, overlapping the outgoing
+     layer just enough to read as a dissolve. Transform is safe here — it does not feed
+     back into the natural height this element defines. */
+  transition:
+    opacity 260ms ease 100ms,
+    transform 260ms var(--morph-ease) 100ms;
 }
 
-.intro-header-line {
-  flex-grow: 1;
-  margin: auto 30px;
-  display: inline;
+/* 0.001 rather than 0, and never visibility: hidden. Both of those let the browser skip
+   painting the subtree, which means the three.js canvas inside it never renders — and
+   landing straight on a /blog URL then paid its ~400ms first render on the click that
+   closes the blog, freezing the window before it collapsed. Staying imperceptibly
+   painted moves that work to load time. The element is inert (see introwindow.tsx), so
+   it is still out of the tab order and the accessibility tree. */
+.intro-window-frame.is-expanded .intro-primary {
+  opacity: 0.001;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms var(--morph-ease);
+}
+
+/* Out of flow on purpose: in normal flow a full article's height would become the
+   window's flex base size, leaving no free space for flex-grow to distribute, and
+   the expand animation would silently stop working. */
+.intro-secondary {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms var(--morph-ease),
+    visibility 0s linear 180ms;
+}
+
+.intro-window-frame.is-expanded .intro-secondary {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition:
+    opacity 240ms ease 100ms,
+    transform 240ms var(--morph-ease) 100ms,
+    visibility 0s linear 0s;
 }
 
 .intro-window-header {
   width: 100%;
   height: 40px;
+  flex-shrink: 0;
   background-color: var(--window-header-bg);
   display: flex;
   flex-direction: row;
@@ -53,6 +173,37 @@
   align-items: center;
   position: relative;
   transition: background-color 0.3s ease;
+}
+
+/* A bare dot: the same red as .closeWindow in window.css, without the X glyph, so hover
+   is what darkens it. Duplicated rather than cross-imported so this stylesheet does not
+   depend on one loaded by a different component. */
+.intro-close {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #ff5f56;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: opacity 140ms ease, visibility 0s linear 140ms, background-color 0.2s ease;
+}
+
+.intro-window-frame.is-expanded .intro-close {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 200ms ease 180ms, visibility 0s linear 0s, background-color 0.2s ease;
+}
+
+.intro-close:hover {
+  background-color: #8e3336;
 }
 
 .folderIcon {
@@ -69,28 +220,33 @@
   transition: color 0.3s ease;
 }
 
-.intro-type-animation {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: calc(1.375rem + 1.5vw);
-  font-weight: 500;
-  padding: 15px;
-  display: inline-block;
+/* Keyed in the component, so a name change replays this instead of hard-cutting.
+   Delayed to land with the content cross-fade rather than ahead of it. */
+.intro-filename-text {
+  animation: introFilenameIn 220ms ease 120ms both;
 }
 
-.intro-promptchars {
-  color: hsl(116, 96%, 43%);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: calc(1.375rem + 1.5vw);
-  font-weight: 500;
-  padding: 20px;
-  display: inline-block;
+@keyframes introFilenameIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: none; }
 }
 
 @media (max-width: 768px) {
+  .intro-window-frame {
+    --intro-top-gap: 64px;
+  }
+
   .intro-window {
     width: 90vw;
     max-width: 500px;
     border-radius: 15px;
+  }
+
+  /* 100vw rather than `none`: `none` is not interpolatable, so the width would snap. */
+  .intro-window-frame.is-expanded .intro-window {
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 15px 15px 0 0;
   }
 
   .intro-window-header {
@@ -98,7 +254,7 @@
     padding: 8px 15px;
   }
 
-  .intro-content-container {
+  .intro-primary {
     padding: 30px 15px;
   }
 

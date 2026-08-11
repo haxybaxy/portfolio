@@ -23,7 +23,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* The star field and the waves are position: fixed at z-index 0, so in-flow content
+     paints under them. The window only cleared them before because FadeInSection's
+     transform happened to make a stacking context; say it explicitly instead. */
+  position: relative;
+  z-index: 1;
   height: 100vh;
+  /* On mobile Safari 100vh spans under the collapsible URL bar. The expanded blog
+     window pins its bottom edge to this box, so that would put the end of the
+     article underneath the browser chrome. */
+  height: 100dvh;
   width: 100%;
 }
 

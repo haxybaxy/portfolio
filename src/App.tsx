@@ -1,4 +1,4 @@
-import {lazy, Suspense, useCallback, useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import type { TransitionEvent } from "react";
 import { useLocation, useMatch, useNavigate } from "react-router-dom";
 import Intro from "./components/intro";
@@ -15,10 +15,6 @@ import type { SectionId } from "./types";
 import "./styles/app.css";
 import smoothscroll from 'smoothscroll-polyfill';
 
-// The blog pulls in a markdown renderer and a syntax highlighter, which have no
-// business in the landing page's bundle alongside three.js.
-const Blog = lazy(() => import("./components/blog"));
-
 const SECTION_PATHS: Record<SectionId, string> = {
   about: '/about',
   experience: '/experience',
@@ -26,7 +22,11 @@ const SECTION_PATHS: Record<SectionId, string> = {
   blog: '/blog',
 };
 
-const SECTION_IDS = Object.keys(SECTION_PATHS) as SectionId[];
+/* The blog is not one of these: it expands the landing page's own window in place
+   rather than opening over it, so it never enters the overlay machinery below. */
+type OverlaySection = Exclude<SectionId, 'blog'>;
+
+const OVERLAY_SECTION_IDS: OverlaySection[] = ['about', 'experience', 'projects'];
 
 /** A watchdog, not a timing source: the CSS transition in app.css times the fade, this
  *  only stops the overlay wedging on screen if transitionend is lost (backgrounded tab,
@@ -35,7 +35,7 @@ const SECTION_IDS = Object.keys(SECTION_PATHS) as SectionId[];
 const EXIT_WATCHDOG_MS = 600;
 
 /** What the overlay is currently showing, which outlives the URL by one exit animation. */
-type OverlayView = { section: SectionId; post: string | null };
+type OverlayView = { section: OverlaySection };
 
 /**
  * Sections are addressed by URL rather than local state so posts are linkable and
@@ -43,8 +43,8 @@ type OverlayView = { section: SectionId; post: string | null };
  * The overlay renders from `view` rather than straight off this, so that a section
  * closed by the back button gets the same fade-out as one closed by its X button.
  */
-function pathToSection(pathname: string): SectionId | null {
-  return SECTION_IDS.find((id) =>
+function pathToSection(pathname: string): OverlaySection | null {
+  return OVERLAY_SECTION_IDS.find((id) =>
     pathname === SECTION_PATHS[id] || pathname.startsWith(`${SECTION_PATHS[id]}/`)
   ) ?? null;
 }
@@ -55,7 +55,11 @@ export default function App() {
   const blogMatch = useMatch('/blog/:slug');
 
   const openSection = pathToSection(location.pathname);
-  const selectedPost = blogMatch?.params.slug ?? null;
+  // Matched off the pathname rather than the route so anything under /blog still lands
+  // on the blog, as it did when the blog was one of the sections above.
+  const isBlogOpen = location.pathname === SECTION_PATHS.blog
+    || location.pathname.startsWith(`${SECTION_PATHS.blog}/`);
+  const blogSlug = blogMatch?.params.slug ?? null;
 
   // Selection state lives here so experience and projects can navigate into each other
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -65,13 +69,13 @@ export default function App() {
   // keep rendering it, so the backdrop and the window can fade out together instead of
   // both vanishing in the frame the URL changes.
   const [view, setView] = useState<OverlayView | null>(
-    openSection ? { section: openSection, post: selectedPost } : null
+    openSection ? { section: openSection } : null
   );
 
   // Adjusted during render rather than in an effect: an effect would run after the commit
   // that already unmounted the overlay, which shows up as an unmount/remount flash.
-  if (openSection && (view === null || view.section !== openSection || view.post !== selectedPost)) {
-    setView({ section: openSection, post: selectedPost });
+  if (openSection && (view === null || view.section !== openSection)) {
+    setView({ section: openSection });
   }
 
   const isClosing = openSection === null && view !== null;
@@ -147,12 +151,11 @@ export default function App() {
         <ThemeToggle />
         <BackgroundEffects />
         <WaveBackground />
-        <Intro />
-        <Footer />
+        {/* The blog lives inside the landing page's own window rather than over it, so
+            it is driven from here rather than from the overlay below. */}
+        <Intro isBlogOpen={isBlogOpen} blogSlug={blogSlug} onCloseBlog={handleCloseSection} />
+        <Footer atTop={isBlogOpen} />
 
-        {/* `view.post`, not `selectedPost`: the latter comes straight off the route match,
-            so it drops to null the instant the URL changes and a post being closed would
-            visibly flip back to the post list mid-fade. */}
         {view && (
           <div
             ref={overlayRef}
@@ -178,12 +181,6 @@ export default function App() {
                   onSelectProject={setSelectedProject}
                   onOpenJob={handleOpenJob}
                 />
-              )}
-
-              {view.section === 'blog' && (
-                <Suspense fallback={null}>
-                  <Blog onClose={handleCloseSection} slug={view.post} />
-                </Suspense>
               )}
             </div>
           </div>

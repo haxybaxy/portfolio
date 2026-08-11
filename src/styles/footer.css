@@ -8,7 +8,50 @@
   align-items: center;
   padding: 20px;
   background-color: transparent;
+  /* Above .intro-container's z-index 1 so the icons are never clipped by the window. */
   z-index: 50;
+  /* The `both` fill is what makes each move read as an entrance rather than a jump: the
+     backwards fill pins the icons at opacity 0 through the delay, so they are invisible
+     at the moment they switch ends of the page. This delay covers the collapse back to
+     the landing page; on a plain load it is just a gentle entrance. */
+  animation: footerIn 250ms ease 150ms both;
+}
+
+/* Centred in the gap above the expanded blog window. Shorter padding than the base so
+   it clears the window's top edge on mobile, where that gap is only 64px. */
+.footer.is-top {
+  top: 0;
+  bottom: auto;
+  padding: 16px 20px;
+  /* footerInTop is footerIn under another name, and that matters: an animation only
+     restarts when its *name* changes, so reusing footerIn here would leave the finished
+     page-load animation in place and the icons would jump to the top at full opacity. */
+  animation: footerInTop 280ms ease 180ms both;
+}
+
+/* Must stay after .is-top: equal specificity, so source order is what lets this win the
+   animation while .is-top still supplies the position. The component holds the old
+   position for exactly this long, so the icons fade out where they are rather than
+   switching ends of the page in full view. */
+.footer.is-leaving {
+  animation: footerOut 150ms ease both;
+}
+
+@keyframes footerIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes footerInTop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* A plain fade, no drift: this one runs in both directions, and any drift would point
+   the wrong way in one of them. */
+@keyframes footerOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 .socialIcons {
@@ -27,9 +70,37 @@
   text-decoration: none;
 }
 
+/* The email icon is a button, not a link — it copies rather than opening a mail client */
+.socialButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.socialButton.is-copied {
+  opacity: 1;
+  color: hsl(116, 60%, 55%);
+}
+
 .socialLink:hover {
   opacity: 1;
   transform: translateY(-3px);
+}
+
+/* Reachable by screen readers, invisible on screen */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .socialLink:active {
