@@ -88,7 +88,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <div className="App">
-        <ThemeToggle />
+        {/* The toggle belongs to the landing page — with a section open it would
+            float over the window rather than sit on the page behind it. */}
+        {!openSection && <ThemeToggle />}
         <BackgroundEffects />
         <WaveBackground />
         <Intro />
