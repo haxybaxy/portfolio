@@ -6,9 +6,9 @@ tags: [git, agents, tooling]
 draft: false
 ---
 
-Usually once a codebase's conventions have all been established and I need to start adding more business logic, I have three or four agents running at once, each on a separate task. I've set up my workflow to accommodate for this by making it as easy as possible to manage agents in separate worktrees.
+Usually once a codebase's conventions have all been established and I need to start adding more business logic, I have three or four agents running at once, each on a separate task. I've set up my workflow to accommodate this by making it as easy as possible to manage agents in separate worktrees.
 
-So each agent gets its own git worktree. I use [worktrunk](https://worktrunk.dev) to define global settings and language/repo specific settings:
+So each agent gets its own git worktree. I use [worktrunk](https://worktrunk.dev) to define global settings and language/repo-specific settings:
 
 | Layer  | Lives in                              | Decides                                            |
 | ------ | ------------------------------------- | -------------------------------------------------- |
@@ -24,9 +24,9 @@ In `~/.config/worktrunk/config.toml`:
 nt = "wt switch --create --base develop {{ args }}"
 ```
 
-`nt some-branch` creates the worktree, branches it off `develop`, since it's the default branch for most of my projects and drops me in it.
+`nt some-branch` creates the worktree, branches it off `develop` since it's the default branch for most of my projects, and drops me in it.
 
-I run everything inside [herdr](https://herdr.dev), so each worktree is a workspace with its own agent pane. Even though Herdr ships a built-in new-worktree action; I use the [worktrunk herdr plugin](https://github.com/devashish2203/herdr-worktrunk) instead:
+I run everything inside [herdr](https://herdr.dev), so each worktree is a workspace with its own agent pane. Even though herdr ships a built-in new-worktree action, I use the [worktrunk herdr plugin](https://github.com/devashish2203/herdr-worktrunk) instead:
 
 ```toml
 new_worktree = ""
@@ -82,7 +82,7 @@ dev = "just dev"
 
 `{{ branch | hash_port }}` is one of worktrunk's template filters. It hashes the branch name into the 10000–19999 range, so every tree gets a port of its own instead of all of them wanting 5173.
 
-With this post start hook, every agent's frontend can just stay up, and checking on one is flipping to its tab instead of stopping a server to start another. Because it's a hash and not a counter, a branch keeps the same port even after I remove the tree and make it again later, so whatever I had open still points at the right thing.
+With this post-start hook, every agent's frontend can just stay up, and checking on one is flipping to its tab instead of stopping a server to start another. Because it's a hash and not a counter, a branch keeps the same port even after I remove the tree and make it again later, so whatever I had open still points at the right thing.
 
 The rest of the filter set is worth reading. `sanitize` and `sanitize_hash` for filesystem-safe names, `sanitize_db` for a database identifier, `hash` for a short digest. Combined with the variables hooks can reach (the branch, the worktree path, the base branch, the repo), most of the per-tree values I would otherwise script by hand are one template away.
 
@@ -100,7 +100,7 @@ Dependencies are deliberately absent from that list. `node_modules` and `.venv` 
 
 ## Test databases
 
-One thing that I noticed would slow down end to end agent work is that they would execute test suites that build and drop the schema simultaneously on the same database. I've had to adjust e2e test suites on several projects to accommodate my workflow.
+One thing that I noticed would slow down end-to-end agent work is that agents would execute test suites that build and drop the schema simultaneously on the same database. I've had to adjust e2e test suites on several projects to accommodate my workflow.
 
 I've made it so that every worktree creates a unique database name:
 
@@ -124,4 +124,4 @@ Cleanup runs off that marker instead of a name pattern, so once a worktree is go
 
 ## What a day looks like
 
-I run `nt fix-webhook-retry`, wait a few seconds for the installs, start an agent, and go do the same thing three more times. I reviewing changes in each herdr workspace with [hunk](https://github.com/modem-dev/hunk). When I'm done, I open a PR to `develop` by pressing o on lazygit, and do `prefix+shift+d` to delete the worktree and have the test db pruned.
+I run `nt fix-webhook-retry`, wait a few seconds for the installs, start an agent, and go do the same thing three more times. I review changes in each herdr workspace with [hunk](https://github.com/modem-dev/hunk). When I'm done, I open a PR to `develop` by pressing `o` in lazygit, then `prefix+shift+d` to delete the worktree and have the test database pruned.
