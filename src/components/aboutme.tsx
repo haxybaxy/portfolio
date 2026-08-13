@@ -124,7 +124,7 @@ export default function AboutMe({ onClose }: AboutMeProps) {
         </div>
         <div className="imgAndSocials">
           <div className="tape"></div>
-          <img src="myphoto.jpeg" alt="My Photo" className="myphoto" />
+          <img src="/myphoto.jpeg" alt="My Photo" className="myphoto" />
           <p className="photoCaption">
             You can also check out my socials here:
           </p>
@@ -137,7 +137,7 @@ export default function AboutMe({ onClose }: AboutMeProps) {
               <GitHub fontSize="large" className="socialIcon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/zaid-saheb"
+              href="https://www.linkedin.com/in/zaidalsaheb"
               target="_blank"
               rel="noopener noreferrer"
             >

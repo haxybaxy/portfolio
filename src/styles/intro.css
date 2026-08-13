@@ -1,12 +1,21 @@
+/*
+ * Widened from 600px to fit a fourth section button on one row. The prose keeps
+ * the original 600px measure below so the greeting and caption are unchanged.
+ */
 #title {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 600px;
+  max-width: 780px;
   text-align: center;
   width: 100%;
+}
+
+.greeting-text,
+.caption {
+  max-width: 600px;
 }
 
 .intro-container {
@@ -14,7 +23,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* The star field and the waves are position: fixed at z-index 0, so in-flow content
+     paints under them. The window only cleared them before because FadeInSection's
+     transform happened to make a stacking context; say it explicitly instead. */
+  position: relative;
+  z-index: 1;
   height: 100vh;
+  /* On mobile Safari 100vh spans under the collapsible URL bar. The expanded blog
+     window pins its bottom edge to this box, so that would put the end of the
+     article underneath the browser chrome. */
+  height: 100dvh;
   width: 100%;
 }
 
@@ -100,11 +118,18 @@
   width: 100%;
 }
 
+/*
+ * A grid rather than flex-wrap: with four buttons, wrapping produced a lopsided
+ * 3+1. Equal columns keep the row count identical to the old three-button
+ * layout at every breakpoint, so this adds no vertical height. minmax(0, 1fr)
+ * makes the sizing independent of the missing global box-sizing reset.
+ */
 .section-buttons {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
   justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .sectionButton {
@@ -118,13 +143,14 @@
   background-color: transparent;
   font-size: 16px;
   font-weight: 600;
-  padding: 24px 32px;
+  padding: 22px 12px;
   cursor: pointer;
   border: none;
   border-radius: 12px;
   transition: all 0.3s ease;
   font-family: inherit;
-  min-width: 140px;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .sectionButton:hover {
@@ -165,14 +191,15 @@
   }
 
   .section-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     width: 100%;
   }
 
   .sectionButton {
     font-size: 13px;
-    padding: 16px 20px;
-    min-width: 100px;
+    padding: 16px 10px;
+    min-width: 0;
     gap: 8px;
   }
 
@@ -193,8 +220,8 @@
 
   .sectionButton {
     font-size: 12px;
-    padding: 14px 16px;
-    min-width: 90px;
+    padding: 14px 8px;
+    min-width: 0;
   }
 
   .button-icon {

@@ -1,6 +1,6 @@
 export type Theme = 'light' | 'dark';
 
-export type SectionId = 'about' | 'experience' | 'projects';
+export type SectionId = 'about' | 'experience' | 'projects' | 'blog';
 
 export type VimMode = 'NORMAL' | 'VISUAL';
 
@@ -25,6 +25,19 @@ export interface Project {
   github?: string;
   link?: string;
   icons: Record<string, string>;
+}
+
+export interface BlogPost {
+  /** Derived from the filename, so posts can be reordered without breaking URLs */
+  slug: string;
+  title: string;
+  /** ISO YYYY-MM-DD */
+  date: string;
+  description: string;
+  tags: string[];
+  draft?: boolean;
+  /** Raw markdown, everything after the frontmatter block */
+  body: string;
 }
 
 export interface Skill {

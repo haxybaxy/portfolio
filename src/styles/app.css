@@ -29,6 +29,9 @@ body.overlay-open {
   overflow: auto;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   overscroll-behavior: contain; /* Prevent scroll chaining to body */
+  opacity: 1;
+  animation: overlayFadeIn 200ms ease-out;
+  transition: opacity 260ms ease-out;
 }
 
 .overlay-content {
@@ -36,6 +39,37 @@ body.overlay-open {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transition: transform 260ms ease-out;
+}
+
+/* Fading .overlay itself takes the backdrop and the window down as one layer, so the two
+   cannot drift apart. ease-out rather than ease-in puts the bulk of the fade up front and
+   leaves a gentle tail, which is what stops the window popping out mid-fade. */
+.overlay.is-closing {
+  opacity: 0;
+  pointer-events: none;
+  /* A still-running entrance animation outranks a transition in the cascade, so
+     closing within 200ms of opening would snap instead of fade. */
+  animation: none;
+}
+
+/* On .overlay-content, not .window: react-draggable writes an inline transform onto
+   .window, and animating that element would clobber a dragged window's position. */
+.overlay.is-closing .overlay-content {
+  transform: translateY(-8px) scale(0.98);
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Reduce Motion asks for less movement, not less legibility — a cross-fade is the
+   standard substitute for motion, so keep the fade and drop only the drift. */
+@media (prefers-reduced-motion: reduce) {
+  .overlay.is-closing .overlay-content {
+    transform: none;
+  }
 }
 
 /* Ensure overlays are scrollable on mobile */

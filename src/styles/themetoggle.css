@@ -8,7 +8,8 @@
   cursor: pointer;
   padding: 8px;
   transition: all 0.3s ease;
-  z-index: 50;
+  /* Below .overlay (2000) so it can never paint over an open window. */
+  z-index: 100;
   color: var(--window-text);
 }
 

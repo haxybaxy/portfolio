@@ -95,7 +95,7 @@ export default function VerticalTabs({ activeTab, onActiveTabChange, onOpenProje
         {jobData.slice().reverse().map((tab) => (
           <Tabs.Trigger key={tab.value} value={tab.value} className="vertical-tab-trigger">
             <div className="tab-trigger-content">
-              <img src="folder.svg" className='listBullet' />
+              <img src="/folder.svg" className='listBullet' />
               <div className="tab-text">
                 <div className="tab-company">{tab.company}</div>
                 <div className="tab-role">{tab.role}</div>
@@ -135,7 +135,7 @@ export default function VerticalTabs({ activeTab, onActiveTabChange, onOpenProje
                       className='relatedProjectLink'
                       onClick={() => handleOpenProject(index)}
                     >
-                      <img src="folder.svg" className='listBullet' alt="" />
+                      <img src="/folder.svg" className='listBullet' alt="" />
                       {vimMode === 'VISUAL' ? (
                         <span>[{project.title}](projects)</span>
                       ) : (
