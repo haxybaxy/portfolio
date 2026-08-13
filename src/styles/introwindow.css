@@ -163,7 +163,12 @@
 
 .intro-window-header {
   width: 100%;
-  height: 40px;
+  /* Without this the horizontal padding is added outside the 100%, so the header
+     overflows the window by 40px and justify-content centres the filename against a
+     box whose midpoint sits 20px right of the window's. Height folds the padding in
+     to keep the bar the size it already rendered at. */
+  box-sizing: border-box;
+  height: 60px;
   flex-shrink: 0;
   background-color: var(--window-header-bg);
   display: flex;
@@ -250,7 +255,8 @@
   }
 
   .intro-window-header {
-    height: 35px;
+    /* 35px + the 8px padding the border-box now absorbs */
+    height: 51px;
     padding: 8px 15px;
   }
 
