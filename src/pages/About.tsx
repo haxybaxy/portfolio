@@ -40,7 +40,7 @@ const PHOTO_COLUMNS = [
 // Spans both columns under the grid
 const WIDE_PHOTO = {
   src: "/mountain.webp",
-  caption: "Sunrise at Sierra Nevada",
+  caption: "Sunrise at Sierra de Guadarrama",
   aspect: "aspect-[8/3]",
 };
 
