@@ -77,12 +77,11 @@ export const blogPosts: BlogPost[] = Object.entries(modules)
   .filter((post) => !post.draft || !import.meta.env.PROD)
   .sort((a, b) => b.date.localeCompare(a.date))
 
-/** Posts live at #/writing/<slug>; the slash keeps them distinct from the page's #writing anchor */
-export const postHref = (slug: string) => `#/writing/${encodeURIComponent(slug)}`
-export const POST_ROUTE = /^#\/writing\/([^/]+)$/
-
 /** The full list of posts, outside the nav while Writing is hidden from the scrolling page */
-export const WRITING_HREF = '#/writing'
+export const WRITING_HREF = '/writing'
+
+/** Each post is prerendered to its own page */
+export const postHref = (slug: string) => `${WRITING_HREF}/${encodeURIComponent(slug)}`
 
 /** "2026-08-11" -> "August 11, 2026", pinned to UTC so it never drifts a day */
 export function formatPostDate(date: string) {

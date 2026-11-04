@@ -57,7 +57,7 @@ function Experience() {
       </Reveal>
 
       {/* Opacity only: the rows are scroll targets, and a translate would throw scrollIntoView off */}
-      <ol ref={listRef} className={`flex flex-col gap-6 ${REVEAL} ${listShown ? '' : 'motion-safe:opacity-0'}`}>
+      <ol ref={listRef} className={`flex flex-col gap-6 ${REVEAL} ${listShown ? '' : 'js:motion-safe:opacity-0'}`}>
         {visible.map((job, i) => {
           const open = openIds.includes(job.id)
           // Rows revealed by "See more" cascade in; the one a #job- link targets appears in place so scrollIntoView lands exactly

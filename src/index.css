@@ -2,6 +2,8 @@
 
 /* Class-based theming: the pre-paint script in index.html puts .dark on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
+/* The same script adds .js, so prerendered content that waits on JS to appear stays visible if JS never runs */
+@custom-variant js (&:where(.js, .js *));
 
 @theme {
   /* Arabic has no glyphs in JetBrains Mono, so those characters fall through to Plex Arabic */

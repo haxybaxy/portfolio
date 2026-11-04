@@ -135,15 +135,16 @@ function ThemeToggle({ hiddenOnMobile }: { hiddenOnMobile: boolean }) {
       title={label}
       className={`${ICON_BUTTON} ${BUTTON_MOTION} right-16 opacity-70 hover:opacity-100 md:right-5 ${hiddenOnMobile ? BUTTON_HIDDEN_MOBILE : ''}`}
     >
-      {/* Both icons share one cell and crossfade, inside the page crossfade when the browser has one */}
-      <Icon name="sun" className={`size-5 [grid-area:1/1] ${SWAP} ${dark ? '' : 'rotate-90 opacity-0'}`} />
-      <Icon name="moon" className={`size-5 [grid-area:1/1] ${SWAP} ${dark ? '-rotate-90 opacity-0' : ''}`} />
+      {/* Both icons share one cell and crossfade, inside the page crossfade when the browser has one.
+          Driven by CSS rather than state, so a prerendered page shows the right one before it hydrates. */}
+      <Icon name="sun" className={`size-5 [grid-area:1/1] ${SWAP} rotate-90 opacity-0 dark:rotate-0 dark:opacity-100`} />
+      <Icon name="moon" className={`size-5 [grid-area:1/1] ${SWAP} dark:-rotate-90 dark:opacity-0`} />
     </button>
   )
 }
 
 /** Desktop link row with one bar that slides under the active link */
-function DesktopLinks({ items, activeId, hidden }: { items: NavItem[]; activeId: string; hidden: boolean }) {
+function DesktopLinks({ items, activeId, hidden, base }: { items: readonly NavItem[]; activeId: string; hidden: boolean; base: string }) {
   const rowRef = useRef<HTMLDivElement>(null)
   const barRef = useRef<HTMLSpanElement>(null)
 
@@ -171,7 +172,7 @@ function DesktopLinks({ items, activeId, hidden }: { items: NavItem[]; activeId:
       {items.map(({ id, label }) => (
         <a
           key={id}
-          href={`#${id}`}
+          href={`${base}#${id}`}
           aria-current={id === activeId ? 'true' : undefined}
           className={`transition-opacity ${id === activeId ? 'font-bold' : 'opacity-70 hover:opacity-100'}`}
         >
@@ -183,7 +184,11 @@ function DesktopLinks({ items, activeId, hidden }: { items: NavItem[]; activeId:
   )
 }
 
-function Nav({ items, activeId }: { items: NavItem[]; activeId: string }) {
+/**
+ * `base` is what links prepend to reach the sections: empty on the scrolling page, where they must stay bare `#id`
+ * for the jump handling in useHideOnScrollDown, and `/` on any other page.
+ */
+function Nav({ items, activeId, base = '' }: { items: readonly NavItem[]; activeId: string; base?: string }) {
   const [open, setOpen] = useState(false)
   // Scrolling down hides the desktop links and fade, and on phones the whole button pill
   const hidden = useHideOnScrollDown()
@@ -213,7 +218,7 @@ function Nav({ items, activeId }: { items: NavItem[]; activeId: string }) {
   return (
     <nav className="group pointer-events-none fixed inset-x-0 top-0 z-20 flex justify-center p-6 text-sm">
       <div aria-hidden="true" className={`${SCRIM} ${HIDEABLE} ${hidden ? SCRIM_HIDDEN : ''}`} />
-      <DesktopLinks items={items} activeId={activeId} hidden={hidden} />
+      <DesktopLinks items={items} activeId={activeId} hidden={hidden} base={base} />
 
       {/* The open menu has its own backdrop, so the pill steps aside */}
       <div aria-hidden="true" className={`${PILL} ${open || hidden ? PILL_HIDDEN : ''}`} />
@@ -241,7 +246,7 @@ function Nav({ items, activeId }: { items: NavItem[]; activeId: string }) {
         {items.map(({ id, label }, i) => (
           <a
             key={id}
-            href={`#${id}`}
+            href={`${base}#${id}`}
             onClick={() => setOpen(false)}
             aria-current={id === activeId ? 'true' : undefined}
             style={{ transitionDelay: open ? `${40 + i * 40}ms` : '0ms' }}

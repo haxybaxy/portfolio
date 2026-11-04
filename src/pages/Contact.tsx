@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from "react";
 import CopiedToast from "../components/CopiedToast";
 import Reveal from "../components/Reveal";
 import SocialLinks from "../components/SocialLinks";
@@ -5,9 +6,17 @@ import { EMAIL } from "../contact";
 import { useCopyEmail } from "../hooks/useCopyEmail";
 import { LINK, SECTION_TITLE } from "../surface";
 
+const neverChanges = () => () => {};
+
 /** The address written out with [at], copied to the clipboard on click */
 function CopyEmailText() {
   const { copied, copy } = useCopyEmail();
+  // Null on the server and while hydrating, so the prerendered page never carries the address
+  const address = useSyncExternalStore(
+    neverChanges,
+    () => EMAIL.replace("@", "[at]"),
+    () => null,
+  );
 
   return (
     <>
@@ -18,7 +27,7 @@ function CopyEmailText() {
         title={copied ? "Copied!" : "Copy email"}
         className={`cursor-pointer self-start text-lg font-bold md:text-xl ${LINK}`}
       >
-        {EMAIL.replace("@", "[at]")}
+        {address ?? "Copy email address"}
       </button>
       <span className="sr-only" aria-live="polite">
         {copied ? "Email copied to clipboard" : ""}

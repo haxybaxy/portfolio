@@ -14,9 +14,9 @@ export const PRESS = 'transition-[opacity,scale] active:scale-95'
 export const EXPAND = 'transition-[grid-template-rows] duration-300'
 /** An element mounting into a list fades up from @starting-style; stagger siblings with transitionDelay */
 export const CASCADE = `${FADE} starting:translate-y-2 starting:opacity-0`
-/** Scroll reveal (useReveal): longer and softer; the hidden state only exists when motion is allowed */
+/** Scroll reveal (useReveal): longer and softer; the hidden state needs motion allowed and JS running to undo it */
 export const REVEAL = 'transition-[opacity,translate] duration-500'
-export const REVEAL_HIDDEN = 'motion-safe:translate-y-3 motion-safe:opacity-0'
+export const REVEAL_HIDDEN = 'js:motion-safe:translate-y-3 js:motion-safe:opacity-0'
 
 /** True when the user asked for less motion; used to skip a behaviour (e.g. a view transition), not just shorten it */
 export const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches

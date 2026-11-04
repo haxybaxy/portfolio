@@ -7,10 +7,15 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zaid</title>
-    <!-- Follow the system theme before first paint so there is no flash; the toggle only overrides it for this tab -->
+    <title>Zaid Alsaheb</title>
+    <!-- Runs before first paint. `js` lets content wait on JS to appear (see index.css); the theme follows the system so there is no flash, and the toggle only overrides it for this tab -->
     <script>
+      document.documentElement.classList.add('js')
       try {
+        // Posts used to live at #/writing/<slug>, so keep links to them working
+        const legacy = /^#(\/writing(?:\/[^/]+)?)$/.exec(location.hash)
+        if (legacy) location.replace(legacy[1])
+
         localStorage.removeItem('theme') // older builds saved the toggle for good
         const stored = sessionStorage.getItem('theme')
         const dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches

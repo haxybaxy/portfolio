@@ -37,7 +37,7 @@ function Koi({ className = '' }: { className?: string }) {
   useGlyphRipple(preRef)
 
   return (
-    <div role="img" aria-label="A koi fish drawn in ASCII characters" className={className}>
+    <div role="img" aria-label="A koi fish drawn in ASCII characters" data-nosnippet className={className}>
       {/* Ligatures must stay off: JetBrains Mono would fuse runs like // and || and break the grid */}
       <pre
         ref={preRef}

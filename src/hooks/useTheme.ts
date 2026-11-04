@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { flushSync } from 'react-dom'
+import { useEffect, useSyncExternalStore } from 'react'
 import { reducedMotion } from '../motion'
 
 // Same key as the pre-paint script in index.html. Session storage, so a new visit follows the system again.
@@ -11,21 +10,27 @@ const FADE_MS = 450
 
 const systemQuery = () => window.matchMedia('(prefers-color-scheme: dark)')
 
+const isDark = () => document.documentElement.classList.contains('dark')
+
+function onClassChange(notify: () => void) {
+  const observer = new MutationObserver(notify)
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
+  return () => observer.disconnect()
+}
+
 /**
  * Light/dark theme backed by the `dark` class on <html>, which index.html sets before first paint.
  * Follows the system setting; the toggle overrides it for this tab until the system setting changes.
  */
 export function useTheme() {
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
+  // Prerendered HTML can't know the theme, so hydration starts from light. Only labels use this: the page and the
+  // toggle's icons follow the class through CSS, so they are right before this catches up.
+  const dark = useSyncExternalStore(onClassChange, isDark, () => false)
 
   const switchTo = (next: boolean) => {
     const root = document.documentElement
-    if (root.classList.contains('dark') === next) return
-    const apply = () => {
-      root.classList.toggle('dark', next)
-      // Render the icon swap now so it lands inside the same transition as the colour change
-      flushSync(() => setDark(next))
-    }
+    if (isDark() === next) return
+    const apply = () => root.classList.toggle('dark', next)
 
     if (reducedMotion()) {
       apply()

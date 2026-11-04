@@ -1,32 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
-import { POST_ROUTE, WRITING_HREF } from './data/blog'
-import Post from './pages/Post'
-import Writing from './pages/Writing'
 import { getScrollProgress } from './scrollProgress'
 import { sections } from './sections'
 
-function useHash() {
-  const [hash, setHash] = useState(() => window.location.hash)
-  useEffect(() => {
-    const update = () => setHash(window.location.hash)
-    window.addEventListener('hashchange', update)
-    return () => window.removeEventListener('hashchange', update)
-  }, [])
-  return hash
-}
-
+/** The one scrolling page; everything else is a static page (src/pages/StaticPage.tsx) */
 function App() {
-  const hash = useHash()
-  const postSlug = POST_ROUTE.exec(hash)?.[1]
-  const isWriting = hash === WRITING_HREF
-  // Pages that replace the scrolling sections
-  const standalone = Boolean(postSlug) || isWriting
   const [activeIndex, setActiveIndex] = useState(0)
 
-  // Track the section in view while on the scrolling page
+  // Track the section in view
   useEffect(() => {
-    if (standalone) return
     const update = () => setActiveIndex(Math.round(getScrollProgress(sections.length)))
     update()
     window.addEventListener('scroll', update, { passive: true })
@@ -35,40 +17,23 @@ function App() {
       window.removeEventListener('scroll', update)
       window.removeEventListener('resize', update)
     }
-  }, [standalone])
-
-  // A post or the post list starts at the top. Leaving one, the anchor in the new hash did not exist when the browser
-  // looked for it, so jump to it once the page has rendered.
-  const wasStandalone = useRef(standalone)
-  useEffect(() => {
-    if (standalone) window.scrollTo({ top: 0, behavior: 'instant' })
-    else if (wasStandalone.current && hash.length > 1) {
-      document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: 'start', behavior: 'instant' })
-    }
-    wasStandalone.current = standalone
-  }, [standalone, hash])
+  }, [])
 
   return (
     <>
-      <Nav items={sections} activeId={standalone ? '' : sections[activeIndex].id} />
-      {standalone ? (
-        <main className="flex min-h-svh flex-col items-center px-6 pt-28 pb-24">
-          {postSlug ? <Post slug={postSlug} /> : <Writing />}
-        </main>
-      ) : (
-        <main>
-          {sections.map(({ id, Component, centered }) => (
-            <section
-              key={id}
-              id={id}
-              // Content sections anchor to the top so expanding rows only grow downwards
-              className={`flex min-h-svh flex-col items-center px-6 ${centered ? 'justify-center py-24' : 'pt-28 pb-24'}`}
-            >
-              <Component />
-            </section>
-          ))}
-        </main>
-      )}
+      <Nav items={sections} activeId={sections[activeIndex].id} />
+      <main>
+        {sections.map(({ id, Component, centered }) => (
+          <section
+            key={id}
+            id={id}
+            // Content sections anchor to the top so expanding rows only grow downwards
+            className={`flex min-h-svh flex-col items-center px-6 ${centered ? 'justify-center py-24' : 'pt-28 pb-24'}`}
+          >
+            <Component />
+          </section>
+        ))}
+      </main>
     </>
   )
 }

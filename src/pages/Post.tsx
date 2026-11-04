@@ -1,22 +1,12 @@
-import { lazy, Suspense, useEffect } from 'react'
+import BlogArticle from '../components/BlogArticle'
 import { blogPosts, formatPostDate } from '../data/blog'
 import { LINK, MUTED, TAG } from '../surface'
-
-// The markdown pipeline only loads once someone opens a post
-const BlogArticle = lazy(() => import('../components/BlogArticle'))
 
 function Post({ slug }: { slug: string }) {
   const post = blogPosts.find((candidate) => candidate.slug === decodeURIComponent(slug))
 
-  useEffect(() => {
-    document.title = post ? `${post.title} · Zaid Alsaheb` : 'Zaid Alsaheb'
-    return () => {
-      document.title = 'Zaid Alsaheb'
-    }
-  }, [post])
-
   const back = (
-    <a href="#home" className={`inline-flex items-center gap-2 text-sm ${LINK}`}>
+    <a href="/#home" className={`inline-flex items-center gap-2 text-sm ${LINK}`}>
       <span aria-hidden="true">←</span> Back
     </a>
   )
@@ -47,9 +37,7 @@ function Post({ slug }: { slug: string }) {
           ))}
         </p>
       </header>
-      <Suspense fallback={<p className="opacity-70">Loading…</p>}>
-        <BlogArticle body={post.body} />
-      </Suspense>
+      <BlogArticle body={post.body} />
     </article>
   )
 }
