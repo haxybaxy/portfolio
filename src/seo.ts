@@ -1,7 +1,7 @@
 import { GITHUB_URL, LINKEDIN_URL } from './contact'
 import { blogPosts, postHref, WRITING_HREF, type BlogPost } from './data/blog'
 
-export const SITE_URL = 'https://www.zaidalsaheb.com'
+export const SITE_URL = 'https://zaidalsaheb.com'
 
 const NAME = 'Zaid Alsaheb'
 const SHARE_IMAGE = { url: `${SITE_URL}/mountain.jpg`, width: 2016, height: 954, alt: 'Sunrise at Sierra de Guadarrama' }
